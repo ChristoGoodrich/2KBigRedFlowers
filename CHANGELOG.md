@@ -12,6 +12,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GitHub community health files, issue forms, pull request template, Dependabot
   configuration, and CodeQL workflow.
 
+## [1.0.1] - 2026-06-01
+
+### Fixed
+
+- Restored readable light-theme colors after the late 2KLab dashboard skin.
+- Kept every mobile navigation entry, including Settings, visible on narrow
+  Android screens.
+- Allowed the mobile Settings dropdown to render outside the header and
+  navigation containers.
+
 ## [1.0.0] - 2026-06-01
 
 ### Added
@@ -23,5 +33,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Optional Supabase-backed cross-device sync while preserving local-first
   storage.
 
-[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.0

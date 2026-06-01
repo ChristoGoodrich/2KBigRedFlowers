@@ -1,0 +1,39 @@
+name: Feature request / 功能建议
+description: Suggest an improvement. 提交改进建议。
+title: "[Feature] "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve / 希望解决的问题
+      description: Describe the user need before proposing a solution. 请先描述用户需求。
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution / 建议方案
+      description: Explain the workflow you would like to see. 请说明希望实现的流程。
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform scope / 涉及平台
+      options:
+        - All platforms / 全平台
+        - Web / 网页
+        - Windows
+        - Android
+        - iOS
+        - macOS
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / 替代方案
+      description: List any workarounds you currently use. 可说明当前使用的临时方案。

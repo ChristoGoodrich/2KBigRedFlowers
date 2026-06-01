@@ -1,0 +1,55 @@
+name: Bug report / 缺陷反馈
+description: Report a reproducible problem. 提交可以复现的问题。
+title: "[Bug] "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Do not include credentials, keys, certificates, or personal data.
+
+        感谢反馈问题。请勿包含账号凭据、key、证书或个人数据。
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform / 平台
+      options:
+        - Web / 网页
+        - Windows
+        - Android
+        - iOS
+        - macOS
+        - Multiple platforms / 多个平台
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / 版本
+      placeholder: v1.0.0 Preview
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem / 问题描述
+      description: What happened, and what did you expect? 实际发生了什么，预期结果是什么？
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps / 复现步骤
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Additional context / 补充信息
+      description: Add screenshots or sanitized logs when helpful. 可添加截图或已脱敏日志。

@@ -1,0 +1,38 @@
+name: Support request / 使用支持
+description: Ask a setup or usage question. 咨询配置或使用问题。
+title: "[Support] "
+labels:
+  - question
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read SUPPORT.md first. Do not include credentials, keys, certificates, or personal data.
+
+        请先阅读 SUPPORT.md。请勿包含账号凭据、key、证书或个人数据。
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform / 平台
+      options:
+        - Web / 网页
+        - Windows
+        - Android
+        - iOS
+        - macOS
+        - Multiple platforms / 多个平台
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / 问题
+      description: Explain what you are trying to do and where you are blocked. 请说明目标和遇到阻碍的位置。
+    validations:
+      required: true
+  - type: textarea
+    id: attempted
+    attributes:
+      label: Steps already tried / 已尝试步骤
+      description: Include any sanitized error message. 可附上已经脱敏的错误信息。

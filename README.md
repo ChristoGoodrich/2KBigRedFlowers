@@ -25,17 +25,21 @@ your devices after you configure your own Supabase project.
 
 ## Downloads
 
-The current public release is
+The current multi-platform baseline is
 [`v1.0.0 Preview`](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.0).
+Android users should install the
+[`v1.0.1 Android Preview`](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.1)
+usability hotfix.
 
 | Platform | Package | Status |
 | --- | --- | --- |
 | Windows x64 | [Download installer](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.0/2KBigRedFlowers-1.0.0.Setup.exe) | Unsigned preview installer |
-| Android | [Download debug APK](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.0/2KBigRedFlowers-1.0.0-debug.apk) | Debug-signed sideload build |
+| Android | [Download debug APK](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.1/2KBigRedFlowers-1.0.1-debug.apk) | Latest debug-signed sideload hotfix |
 | macOS Apple Silicon | [Download internal-test archive](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.0/2KBigRedFlowers-darwin-arm64-1.0.0-unsigned.tar.gz) | Unsigned archive |
 | macOS Intel | [Download internal-test archive](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.0/2KBigRedFlowers-darwin-x64-1.0.0-unsigned.tar.gz) | Unsigned archive |
 | iOS | [Open the Xcode project](./ios/App/App.xcodeproj) | Build on macOS with Xcode and Apple Developer signing |
-| Checksums | [Download SHA-256 manifest](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.0/SHA256SUMS.txt) | Verify downloaded artifacts |
+| Android checksums | [Download hotfix SHA-256 manifest](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.1/SHA256SUMS.txt) | Verify the Android hotfix APK |
+| Baseline checksums | [Download v1.0.0 SHA-256 manifest](https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/download/v1.0.0/SHA256SUMS.txt) | Verify the Windows and macOS preview assets |
 
 The preview packages are intended for testing. The Windows and macOS packages
 are not commercially code-signed, and the Android APK uses a debug certificate.

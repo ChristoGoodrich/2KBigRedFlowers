@@ -1,14 +1,16 @@
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
+const pkg = require('../package.json');
 
 const root = path.resolve(__dirname, '..');
 const makeDir = path.join(root, 'out', 'make');
+const productVersion = `${pkg.productName}-${pkg.version}`;
 const files = [
-  path.join(makeDir, 'squirrel.windows', 'x64', '2KBigRedFlowers-1.0.0 Setup.exe'),
-  path.join(makeDir, 'android', '2KBigRedFlowers-1.0.0-debug.apk'),
-  path.join(makeDir, 'tar.gz', 'darwin', 'arm64', '2KBigRedFlowers-darwin-arm64-1.0.0-unsigned.tar.gz'),
-  path.join(makeDir, 'tar.gz', 'darwin', 'x64', '2KBigRedFlowers-darwin-x64-1.0.0-unsigned.tar.gz'),
+  path.join(makeDir, 'squirrel.windows', 'x64', `${productVersion} Setup.exe`),
+  path.join(makeDir, 'android', `${productVersion}-debug.apk`),
+  path.join(makeDir, 'tar.gz', 'darwin', 'arm64', `${pkg.productName}-darwin-arm64-${pkg.version}-unsigned.tar.gz`),
+  path.join(makeDir, 'tar.gz', 'darwin', 'x64', `${pkg.productName}-darwin-x64-${pkg.version}-unsigned.tar.gz`),
 ].filter(file => fs.existsSync(file));
 
 if (!files.length) {

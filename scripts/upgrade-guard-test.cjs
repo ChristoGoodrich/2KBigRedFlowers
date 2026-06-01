@@ -42,6 +42,30 @@ function checkCssVariables() {
   return { cssFiles: cssFiles.length, vars: defined.size };
 }
 
+function checkMobileLightTheme() {
+  const css = read('nba2k26-premium.css');
+  const labSkinIndex = css.indexOf('/* 2KLab reference dashboard skin */');
+  const lightGuardIndex = css.indexOf('/* Keep the late 2KLab skin readable when the resolved system theme is light. */');
+  assert(labSkinIndex > -1, '2KLab dashboard skin marker is missing');
+  assert(lightGuardIndex > labSkinIndex, 'Light-theme guard must load after the late 2KLab dashboard skin');
+
+  const guard = css.slice(lightGuardIndex);
+  const required = [
+    '--premium-bg-0: #f6f3ed;',
+    '--premium-text: #171512;',
+    '--text: var(--premium-text);',
+    '[data-theme="light"] body {',
+    '[data-theme="light"] .header {',
+    '[data-theme="light"] .account-bar-wrap {',
+    '@media (max-width: 560px) {',
+    'overflow: visible;',
+    'gap: 2px;\n    overflow: visible;',
+    'padding-inline: 8px;',
+  ];
+  required.forEach(rule => assert(guard.includes(rule), `Mobile light-theme guard is missing: ${rule}`));
+  return { rules: required.length };
+}
+
 function checkPwaAssets() {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const htmlRefs = [...html.matchAll(/(?:src|href)="(\.\/[^"]+)"/g)]
@@ -485,6 +509,7 @@ function checkSeoMeta() {
 
 const results = {
   css: checkCssVariables(),
+  mobileTheme: checkMobileLightTheme(),
   assets: checkPwaAssets(),
   seo: checkSeoMeta(),
   routes: checkRoutes(),
@@ -500,6 +525,7 @@ const results = {
 
 console.log(
   `upgrade guards ok: css ${results.css.cssFiles} files/${results.css.vars} vars, ` +
+  `${results.mobileTheme.rules} mobile light-theme rules, ` +
   `${results.assets.requiredRefs} required asset refs, ${results.assets.staticRefs} sw refs, ` +
   `${results.routes.routes} routes, ${results.playersSubview.subviews} player subviews, ` +
   `${results.compareRouting.compareRoutes} compare routes, ${results.contextBar.pages} context pages, ` +

@@ -1,0 +1,384 @@
+/* nba2k26-compare.css — Build Comparison page */
+
+/* ── SELECTOR BAR ────────────────────────────────── */
+.cmp-selectors {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px 0 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+.cmp-slot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 160px;
+  min-width: 130px;
+  max-width: 280px;
+}
+.cmp-selector {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+  font: 500 12px 'Inter', sans-serif;
+  cursor: pointer;
+  min-width: 0;
+}
+.cmp-selector:focus { outline: 2px solid var(--accent); }
+.cmp-remove-btn {
+  padding: 4px 8px;
+  border: 1px solid rgba(212,0,26,0.3);
+  background: rgba(212,0,26,0.08);
+  color: #D4001A;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.cmp-remove-btn:hover { background: rgba(212,0,26,0.22); }
+
+/* ── TABLE WRAPPER ───────────────────────────────── */
+.cmp-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cmp-table {
+  min-width: 480px;
+  width: 100%;
+  padding-bottom: 48px;
+}
+
+/* ── ROWS ────────────────────────────────────────── */
+.cmp-row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.1s;
+}
+.cmp-row:hover { background: rgba(255,255,255,0.02); }
+.cmp-row:last-child { border-bottom: none; }
+
+/* Sticky label column */
+.cmp-label-cell {
+  flex: 0 0 116px;
+  width: 116px;
+  padding: 7px 10px 7px 0;
+  font: 11px 'JetBrains Mono', monospace;
+  color: rgba(255,255,255,0.38);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  left: 0;
+  background: var(--bg);
+  z-index: 2;
+}
+.cmp-label-corner {
+  background: transparent !important;
+}
+
+/* Value columns */
+.cmp-value-cell {
+  flex: 1;
+  min-width: 150px;
+  padding: 7px 12px;
+  font: 13px 'JetBrains Mono', monospace;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(255,255,255,0.04);
+  word-break: break-word;
+}
+
+/* Winner highlight */
+.cmp-winner {
+  background: rgba(255,208,0,0.07);
+  color: #FFD000 !important;
+  font-weight: 600;
+}
+.cmp-winner-text {
+  color: #FFD000 !important;
+  font-weight: 700;
+}
+
+/* Win% cell with confidence interval */
+.cmp-wr {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.15;
+}
+.cmp-wr-point { font-size: 14px; font-weight: 600; }
+.cmp-wr-ci {
+  font-size: 10px;
+  color: var(--text-fade);
+  letter-spacing: 0.5px;
+  cursor: help;
+}
+.cmp-ci-tag {
+  font: 9px 'JetBrains Mono', monospace;
+  color: var(--text-fade);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-left: 6px;
+  letter-spacing: 1px;
+  cursor: help;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* ── SECTION HEADERS ─────────────────────────────── */
+.cmp-section-header {
+  padding: 14px 0 5px;
+  font: 700 9px 'JetBrains Mono', monospace;
+  letter-spacing: 3px;
+  color: var(--red);
+  border-bottom: 1px solid rgba(212,0,26,0.35);
+  margin-bottom: 1px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+/* ── BUILD HEADER CARD ROW ───────────────────────── */
+.cmp-header-row {
+  border-bottom: 2px solid rgba(255,255,255,0.07) !important;
+  margin-bottom: 2px;
+  align-items: flex-start;
+}
+.cmp-name-cell {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  padding: 14px 12px 12px;
+}
+
+/* Build card top: OVR circle + info column */
+.cmp-build-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.cmp-build-info-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* OVR circle */
+.cmp-ovr-circle {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-stencil);
+  font-size: 17px;
+  line-height: 1;
+  background: rgba(0,0,0,0.25);
+}
+.cmp-ovr-elite { color: #FFD000; border-color: #FFD000 !important; }
+.cmp-ovr-good  { color: #43d968; border-color: #43d968 !important; }
+.cmp-ovr-avg   { color: #4da6ff; border-color: #4da6ff !important; }
+.cmp-ovr-base  { color: rgba(255,255,255,0.4); }
+
+/* Build meta text */
+.cmp-build-link {
+  background: none;
+  border: none;
+  color: var(--text);
+  font: 700 14px var(--font-stencil);
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.cmp-build-link:hover { color: #FFD000; text-decoration: underline; }
+.cmp-build-meta {
+  font: 10px 'JetBrains Mono', monospace;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cmp-build-size { color: rgba(255,255,255,0.28); }
+
+/* Radar SVG */
+.cmp-radar-svg {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 4px auto 6px;
+}
+
+/* Stat strip (record / WR / games) */
+.cmp-stat-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+.cmp-stat-chip {
+  font: 700 10px 'JetBrains Mono', monospace;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+.cmp-no-games {
+  color: rgba(255,255,255,0.25) !important;
+  font-weight: 400 !important;
+}
+
+/* Form dots */
+.cmp-form-row {
+  display: flex;
+  align-items: center;
+}
+.cmp-form-wrap {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.cmp-form-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+}
+.cmp-form-w { background: #43d968; }
+.cmp-form-l { background: #D4001A; }
+
+/* ── ATTRIBUTE BARS ──────────────────────────────── */
+.cmp-attr-label { font-size: 10px; }
+.cmp-attr-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+}
+.cmp-bar-wrap {
+  flex: 1;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.07);
+  overflow: hidden;
+  min-width: 24px;
+}
+.cmp-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+.cmp-attr-val {
+  flex: 0 0 26px;
+  text-align: right;
+  font: 700 11px 'JetBrains Mono', monospace;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── BADGE TIER SUMMARY ──────────────────────────── */
+.cmp-badge-summary-row { align-items: flex-start; }
+.cmp-badge-summary-cell {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 8px 12px;
+}
+.cmp-tier-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font: 700 9px 'JetBrains Mono', monospace;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* ── BADGE PILLS ─────────────────────────────────── */
+.cmp-badges-row { align-items: flex-start; }
+.cmp-badges-cell {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 8px 12px;
+}
+.cmp-badge-pill {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 1px 1px 0 0;
+}
+.cmp-badge-tier {
+  padding: 3px 5px;
+  font: 700 8px 'Inter', sans-serif;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+}
+.cmp-badge-name {
+  padding: 3px 7px;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.72);
+  font: 500 10px 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+}
+.cmp-no-badges {
+  color: rgba(255,255,255,0.2);
+  font: 11px 'JetBrains Mono', monospace;
+  padding: 4px 0;
+}
+
+/* ── LIGHT THEME ─────────────────────────────────── */
+[data-theme="light"] .cmp-label-cell {
+  background: var(--bg);
+  color: rgba(0,0,0,0.38);
+}
+[data-theme="light"] .cmp-row {
+  border-bottom-color: rgba(0,0,0,0.05);
+}
+[data-theme="light"] .cmp-row:hover {
+  background: rgba(0,0,0,0.02);
+}
+[data-theme="light"] .cmp-value-cell {
+  border-left-color: rgba(0,0,0,0.05);
+}
+[data-theme="light"] .cmp-winner {
+  background: rgba(160,110,0,0.08);
+}
+[data-theme="light"] .cmp-winner-text { color: #7A5000 !important; }
+[data-theme="light"] .cmp-build-link  { color: #111; }
+[data-theme="light"] .cmp-build-link:hover { color: #7A5000; }
+[data-theme="light"] .cmp-build-meta  { color: rgba(0,0,0,0.42); }
+[data-theme="light"] .cmp-build-size  { color: rgba(0,0,0,0.28); }
+[data-theme="light"] .cmp-badge-name  { background: rgba(0,0,0,0.05); color: rgba(0,0,0,0.7); }
+[data-theme="light"] .cmp-bar-wrap    { background: rgba(0,0,0,0.08); }
+[data-theme="light"] .cmp-attr-val    { color: rgba(0,0,0,0.55); }
+[data-theme="light"] .cmp-no-badges   { color: rgba(0,0,0,0.2); }
+[data-theme="light"] .cmp-stat-chip   { background: #f5f5f5; }
+[data-theme="light"] .cmp-form-dot    { background: rgba(0,0,0,0.15); }
+[data-theme="light"] .cmp-ovr-circle  { background: rgba(0,0,0,0.04); }

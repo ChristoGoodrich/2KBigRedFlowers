@@ -1,0 +1,12 @@
+{
+  "name": "2KBigRedFlowers",
+  "short_name": "2KBRF",
+  "description": "NBA 2K26 build management, game tracking, and performance analytics",
+  "start_url": "./nba2k26-build-tracker.html",
+  "display": "standalone",
+  "theme_color": "#D4001A",
+  "background_color": "#0a0a0a",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

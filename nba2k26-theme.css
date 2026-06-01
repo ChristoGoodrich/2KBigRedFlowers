@@ -1,0 +1,189 @@
+:root {
+  /* === COLORS - DARK (default) === */
+  --bg: #0a0a0a;
+  --bg-elev: #141414;
+  --bg-soft: #101010;
+  --bg-card: #1a1a1a;
+  --bg-card-hover: #1f1f1f;
+  --border: #2a2a2a;
+  --border-hover: #3a3a3a;
+  --text: #f5f5f5;
+  --text-dim: #888;
+  --text-fade: #555;
+
+  --orange: #D4001A;
+  --orange-dim: #A50014;
+  --orange-glow: rgba(212, 0, 26, 0.45);
+  --orange-soft: rgba(212, 0, 26, 0.1);
+  --yellow: #ffcc00;
+  --yellow-soft: rgba(255, 204, 0, 0.08);
+  --green: #00ff88;
+  --green-soft: rgba(0, 255, 136, 0.08);
+  --red: #ff3355;
+  --red-soft: rgba(255, 51, 85, 0.08);
+  --blue: #3399ff;
+  --purple: #b14bff;
+
+  /* Surface tints adapt to theme (dark = white tint, light = black tint) */
+  --surface-tint-1: rgba(255, 255, 255, 0.02);
+  --surface-tint-2: rgba(255, 255, 255, 0.05);
+  --surface-tint-strong: rgba(0, 0, 0, 0.4);
+  --surface-tint-strong-2: rgba(0, 0, 0, 0.25);
+  --surface-tint-strong-3: rgba(0, 0, 0, 0.3);
+
+  /* Header background (semi-transparent, theme-aware) */
+  --header-bg: rgba(10, 10, 10, 0.85);
+
+  /* Subtle ambient glow (theme-aware) */
+  --ambient-glow-1: rgba(255, 91, 0, 0.08);
+  --ambient-glow-2: rgba(51, 153, 255, 0.05);
+
+  /* Tier badge colors (consistent across themes) */
+  --tier-legend: #ff3355;
+  --tier-hof: #b14bff;
+  --tier-gold: #ffcc00;
+  --tier-silver: #c0c0c0;
+  --tier-bronze: #cd7f32;
+
+  /* === SPACING SCALE === */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* === RADIUS === */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* === SHADOWS === */
+  --sh-1: 0 1px 2px var(--surface-tint-strong-3);
+  --sh-2: 0 4px 12px var(--surface-tint-strong);
+  --sh-3: 0 8px 24px rgba(0,0,0,0.5);
+  --sh-glow: 0 0 16px var(--orange-glow);
+
+  /* === TRANSITIONS === */
+  --t-fast: 0.12s ease;
+  --t-base: 0.2s ease;
+  --t-slow: 0.3s ease;
+
+  /* === TYPOGRAPHY === */
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-stencil: 'Archivo Black', sans-serif;
+
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+  /* Compatibility aliases used by newer sidecars and runtime score meters. */
+  --accent: var(--orange);
+  --bg-app: var(--bg);
+  --surface: var(--bg-card);
+  --surface-tint: var(--surface-tint-1);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-dim);
+  --text-muted: var(--text-fade);
+  --dq-score: var(--orange);
+  --score: var(--orange);
+  --wr-color: var(--orange);
+  --wr-pct: 0%;
+}
+[data-theme="light"] {
+  --bg: #f5f5f3;
+  --bg-elev: #ffffff;
+  --bg-soft: #f9f9f7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafaf8;
+  --border: #e0e0dc;
+  --border-hover: #c8c8c4;
+  --text: #1a1a1a;
+  --text-dim: #555;
+  --text-fade: #999;
+
+  --orange: #C0001A;
+  --orange-dim: #8A0012;
+  --orange-glow: rgba(192, 0, 26, 0.35);
+  --orange-soft: rgba(192, 0, 26, 0.07);
+  --yellow: #b8960a;
+  --yellow-soft: rgba(184, 150, 10, 0.08);
+  --green: #00995a;
+  --green-soft: rgba(0, 153, 90, 0.08);
+  --red: #dd2244;
+  --red-soft: rgba(221, 34, 68, 0.08);
+  --blue: #2277dd;
+  --purple: #8833cc;
+
+  /* Surface tints flip in light mode (use black tints) */
+  --surface-tint-1: rgba(0, 0, 0, 0.02);
+  --surface-tint-2: rgba(0, 0, 0, 0.04);
+  --surface-tint-strong: rgba(0, 0, 0, 0.05);
+  --surface-tint-strong-2: rgba(0, 0, 0, 0.04);
+  --surface-tint-strong-3: rgba(0, 0, 0, 0.06);
+
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --ambient-glow-1: rgba(224, 80, 0, 0.04);
+  --ambient-glow-2: rgba(34, 119, 221, 0.03);
+
+  --sh-1: 0 1px 2px rgba(0,0,0,0.06);
+  --sh-2: 0 4px 12px rgba(0,0,0,0.08);
+  --sh-3: 0 8px 24px rgba(0,0,0,0.12);
+
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme="light"] body::before {
+  opacity: 0.3;
+}
+[data-theme="light"] .header {
+  border-bottom-color: var(--border);
+  background: var(--header-bg);
+}
+[data-theme="light"] .modal-overlay { background: rgba(0, 0, 0, 0.45); }
+[data-theme="light"] .toast { background: var(--bg-card); color: var(--text); }
+[data-theme="light"] .dropdown-menu { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+/* All other theme variations are handled by CSS variables in :root and [data-theme="light"] */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden; /* clips horizontal overflow at viewport; also promotes overflow-y to auto (one scrollbar track — correct) */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  /* NO overflow-x:hidden here — applying it would CSS-promote overflow-y to auto,
+     creating a second scrollbar track behind every modal overlay. */
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--grain);
+  pointer-events: none;
+  opacity: 0.4;
+  z-index: 100;
+  mix-blend-mode: overlay;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, var(--orange-soft), transparent 60%),
+              radial-gradient(ellipse at bottom left, var(--ambient-glow-2), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+

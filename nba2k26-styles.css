@@ -1,0 +1,11 @@
+/* Compatibility stylesheet. Edit the layered nba2k26-*.css files instead. */
+@import url("./nba2k26-theme.css");
+@import url("./nba2k26-shell.css");
+@import url("./nba2k26-visualizations.css");
+@import url("./nba2k26-components.css");
+@import url("./nba2k26-modals-forms.css");
+@import url("./nba2k26-build-detail.css");
+@import url("./nba2k26-ocr-data.css");
+@import url("./nba2k26-scout-report.css");
+@import url("./nba2k26-readability.css");
+@import url("./nba2k26-beauty.css");

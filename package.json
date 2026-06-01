@@ -1,0 +1,48 @@
+{
+  "name": "2kbigredflowers",
+  "productName": "2KBigRedFlowers",
+  "version": "1.0.0",
+  "description": "NBA 2K26 build management, game tracking, and performance analytics",
+  "author": "2KBigRedFlowers",
+  "main": "desktop/main.cjs",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "test": "node scripts/test-all.cjs",
+    "stage": "node scripts/stage-web.cjs",
+    "icons:desktop": "node scripts/generate-desktop-icons.cjs",
+    "icons:native": "npx @capacitor/assets generate --ios --android --iconBackgroundColor=#0a0a0a --iconBackgroundColorDark=#0a0a0a --splashBackgroundColor=#0a0a0a --splashBackgroundColorDark=#0a0a0a",
+    "artifacts:checksums": "node scripts/write-artifact-manifest.cjs",
+    "desktop:forge": "npx -y node@22 node_modules/@electron-forge/cli/dist/electron-forge.js",
+    "desktop:start": "npm run stage && npm run desktop:forge -- start",
+    "desktop:package": "npm run stage && npm run icons:desktop && npm run desktop:forge -- package",
+    "desktop:make": "npm run stage && npm run icons:desktop && npm run desktop:forge -- make",
+    "desktop:make:win": "npm run stage && npm run icons:desktop && npm run desktop:forge -- make --platform=win32 --arch=x64 && npm run artifacts:checksums",
+    "desktop:make:mac": "npm run stage && npm run icons:desktop && npm run desktop:forge -- make --platform=darwin",
+    "desktop:make:mac:unsigned": "npm run stage && npm run icons:desktop && npm run desktop:forge -- package --platform=darwin --arch=arm64 && npm run desktop:forge -- package --platform=darwin --arch=x64 && node scripts/archive-mac-app.cjs && npm run artifacts:checksums",
+    "mobile:sync": "npm run stage && cap sync && npm run icons:native",
+    "android:add": "npm run stage && cap add android && npm run icons:native",
+    "android:sync": "npm run stage && cap sync android && npm run icons:native",
+    "android:apk": "npm run android:sync && node scripts/android-gradle.cjs assembleDebug && node scripts/copy-android-apk.cjs && npm run artifacts:checksums",
+    "ios:add": "npm run stage && cap add ios && npm run icons:native",
+    "ios:sync": "npm run stage && cap sync ios && npm run icons:native"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.3.4",
+    "@capacitor/core": "8.3.4",
+    "@capacitor/ios": "8.3.4",
+    "electron-squirrel-startup": "1.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "8.3.4",
+    "@electron-forge/cli": "7.11.2",
+    "@electron-forge/maker-dmg": "7.11.2",
+    "@electron-forge/maker-squirrel": "7.11.2",
+    "@electron-forge/maker-zip": "7.11.2",
+    "electron": "42.3.0",
+    "png2icons": "^2.0.1",
+    "sharp": "^0.34.5"
+  }
+}

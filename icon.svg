@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" rx="32" fill="#0a0a0a"/>
+  <g transform="translate(96,96)">
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(22.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(67.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(112.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(157.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(202.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(247.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(292.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#6A0010" transform="rotate(337.5) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(0) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(45) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(90) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(135) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(180) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(225) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(270) translate(0,-43)"/>
+    <ellipse rx="24" ry="48" fill="#D4001A" transform="rotate(315) translate(0,-43)"/>
+    <circle r="31" fill="#FFD000"/>
+    <circle r="21" fill="#F0A800"/>
+    <circle r="10" fill="#C07800"/>
+  </g>
+</svg>

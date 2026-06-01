@@ -1,0 +1,8 @@
+{
+  "appId": "com.bigredflowers.nba2k26tracker",
+  "appName": "2KBigRedFlowers",
+  "webDir": "dist/web",
+  "server": {
+    "androidScheme": "https"
+  }
+}

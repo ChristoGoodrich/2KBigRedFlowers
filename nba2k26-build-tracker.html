@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2KBigRedFlowers</title>
+<!-- BEGIN HEAD ASSETS -->
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#D4001A">
+<meta name="description" content="NBA 2K26 建模管理、比赛记录与深度数据分析。Create builds, log games, and read deep performance trends for NBA 2K26.">
+<meta name="author" content="2KBigRedFlowers">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="2KBigRedFlowers">
+<meta property="og:title" content="2KBigRedFlowers — NBA 2K26 Build & Performance Tracker">
+<meta property="og:description" content="NBA 2K26 建模管理、比赛记录与深度数据分析。Create builds, log games, and read deep performance trends.">
+<meta property="og:image" content="./og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="2KBigRedFlowers — NBA 2K26 Build & Performance Tracker">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="2KBigRedFlowers — NBA 2K26 Build & Performance Tracker">
+<meta name="twitter:description" content="NBA 2K26 建模管理、比赛记录与深度数据分析。">
+<meta name="twitter:image" content="./og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+<link rel="stylesheet" href="./nba2k26-theme.css">
+<link rel="stylesheet" href="./nba2k26-shell.css">
+<link rel="stylesheet" href="./nba2k26-visualizations.css">
+<link rel="stylesheet" href="./nba2k26-components.css">
+<link rel="stylesheet" href="./nba2k26-modals-forms.css">
+<link rel="stylesheet" href="./nba2k26-build-detail.css">
+<link rel="stylesheet" href="./nba2k26-game-detail.css">
+<link rel="stylesheet" href="./nba2k26-ocr-data.css">
+<link rel="stylesheet" href="./nba2k26-scout-report.css">
+<link rel="stylesheet" href="./nba2k26-readability.css">
+<link rel="stylesheet" href="./nba2k26-beauty.css">
+<link rel="stylesheet" href="./nba2k26-ultra.css">
+<link rel="stylesheet" href="./nba2k26-compare.css">
+<link rel="stylesheet" href="./nba2k26-opponent-intel.css">
+<link rel="stylesheet" href="./nba2k26-premium.css">
+<!-- END HEAD ASSETS -->
+<script>
+(function() {
+  var mode = localStorage.getItem('nba2k-theme-mode') || localStorage.getItem('nba2k-theme') || 'system';
+  var resolved = mode === 'system'
+    ? (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+    : mode;
+  document.documentElement.setAttribute('data-theme', resolved);
+  document.documentElement.setAttribute('data-theme-mode', mode);
+})();
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content" data-i18n="Skip to main content">Skip to main content</a>
+
+<!-- BEGIN SIDE FLORAL DECORATIONS -->
+<div class="brf-side brf-side-left" aria-hidden="true">
+  <img class="brf-floral-img" src="./nba2k26-floral.svg" alt="">
+</div>
+<div class="brf-side brf-side-right" aria-hidden="true">
+  <img class="brf-floral-img" src="./nba2k26-floral.svg" alt="">
+</div>
+<!-- END SIDE FLORAL DECORATIONS -->
+
+<!-- BEGIN APP HEADER -->
+<header class="header">
+  <div class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <g transform="translate(20,20)">
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(22.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(67.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(112.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(157.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(202.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(247.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(292.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(337.5) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(0) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(45) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(90) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(135) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(180) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(225) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(270) translate(0,-9)"/>
+          <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(315) translate(0,-9)"/>
+          <circle r="6.5" fill="#FFD000"/>
+          <circle r="4" fill="#F0A800"/>
+          <circle r="2" fill="#C07800"/>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">BIG<span>REDFLOWERS</span></div>
+      <div class="logo-sub">NBA 2K26 // 2KBIGREDFLOWERS</div>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Primary">
+    <button class="nav-btn active" data-view="overview" aria-current="page">Overview</button>
+    <button class="nav-btn" data-view="builds">Builds</button>
+    <button class="nav-btn" data-view="players">Players</button>
+    <button class="nav-btn" data-view="games">Games</button>
+    <button class="nav-btn" data-view="quality">Quality</button>
+    <button class="nav-btn" data-view="compare">Compare</button>
+    <div class="nav-divider"></div>
+    <div class="settings-wrap" id="settings-wrap">
+      <button class="nav-btn tool-btn" id="btn-settings-menu" type="button" aria-haspopup="true" aria-expanded="false">Settings</button>
+      <div class="settings-menu" id="settings-menu">
+        <button class="settings-item" id="settings-backup" type="button">
+          <span class="settings-item-main">Backup</span>
+          <span class="settings-item-sub">Import, export, or clear local data</span>
+        </button>
+        <div class="settings-item theme-settings" id="theme-settings">
+          <span class="settings-item-main">Theme</span>
+          <span class="settings-item-sub" id="theme-mode-label">Follow system appearance</span>
+          <div class="theme-choice" role="group" aria-label="Theme mode">
+            <button class="theme-choice-btn" type="button" data-theme-mode="system">System</button>
+            <button class="theme-choice-btn" type="button" data-theme-mode="dark">Dark</button>
+            <button class="theme-choice-btn" type="button" data-theme-mode="light">Light</button>
+          </div>
+        </div>
+        <div class="settings-item theme-settings" id="language-settings">
+          <span class="settings-item-main">Language</span>
+          <span class="settings-item-sub" id="language-mode-label">Chinese interface</span>
+          <div class="theme-choice" role="group" aria-label="Language">
+            <button class="lang-choice-btn" type="button" data-lang="zh">中文</button>
+            <button class="lang-choice-btn" type="button" data-lang="en">English</button>
+          </div>
+        </div>
+        <button class="settings-item" id="settings-ocr" type="button">
+          <span class="settings-item-main">OCR Settings</span>
+          <span class="settings-item-sub">Configure screenshot recognition</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END APP HEADER -->
+
+<!-- BEGIN ACCOUNT BAR -->
+<div class="account-bar-wrap" id="account-bar-wrap">
+  <div class="account-bar-empty">// loading account performance panel</div>
+</div>
+<!-- END ACCOUNT BAR -->
+
+<!-- BEGIN APP PAGES -->
+<main class="main" id="main-content" tabindex="-1">
+
+  <!-- BEGIN BUILDS LIST PAGE -->
+  <section class="page" id="page-builds">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">BUILD <span class="accent">LIBRARY</span></h1>
+        <div class="page-subtitle">// create, edit, duplicate, and open individual builds</div>
+      </div>
+    </div>
+    <div id="builds-container">
+      <div class="loading">LOADING</div>
+    </div>
+  </section>
+  <!-- END BUILDS LIST PAGE -->
+
+  <!-- BEGIN BUILD DETAIL PAGE -->
+  <section class="page" id="page-detail">
+    <button class="back-btn" onclick="showPage('builds')">Back to Builds</button>
+    <div id="detail-container"></div>
+  </section>
+  <!-- END BUILD DETAIL PAGE -->
+
+  <!-- BEGIN OVERVIEW PAGE -->
+  <section class="page active" id="page-overview">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">CAREER <span class="accent">OVERVIEW</span></h1>
+        <div class="page-subtitle">// all builds all modes combined</div>
+      </div>
+    </div>
+    <div id="overview-container">
+      <div class="loading">LOADING</div>
+    </div>
+  </section>
+  <!-- END OVERVIEW PAGE -->
+
+  <!-- BEGIN PLAYER DETAIL PAGE -->
+  <section class="page" id="page-player">
+    <div id="player-page-container"></div>
+  </section>
+  <!-- END PLAYER DETAIL PAGE -->
+
+  <!-- BEGIN PLAYERS PAGE -->
+  <section class="page" id="page-players">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">PLAYER <span class="accent">DIRECTORY</span></h1>
+        <div class="page-subtitle">// all players across all builds</div>
+      </div>
+    </div>
+    <div class="players-view-tabs">
+      <button class="pv-tab active" data-pv="directory" onclick="switchPlayersView('directory')">Players</button>
+      <button class="pv-tab" data-pv="intel" onclick="switchPlayersView('intel')">Intel</button>
+    </div>
+    <div id="players-container">
+      <div class="loading">LOADING</div>
+    </div>
+    <div id="intel-container" style="display:none;">
+      <div class="loading">LOADING</div>
+    </div>
+  </section>
+  <!-- END PLAYERS PAGE -->
+
+  <!-- BEGIN GAMES PAGE -->
+  <section class="page" id="page-games">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">ALL <span class="accent">GAMES</span></h1>
+        <div class="page-subtitle">// every recorded game across all builds</div>
+      </div>
+    </div>
+    <div id="all-games-container">
+      <div class="loading">LOADING</div>
+    </div>
+  </section>
+  <!-- END GAMES PAGE -->
+
+  <!-- BEGIN DATA QUALITY PAGE -->
+  <section class="page" id="page-quality">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">DATA <span class="accent">QUALITY</span></h1>
+        <div class="page-subtitle">// find broken links, missing fields, duplicate samples, and stat conflicts</div>
+      </div>
+    </div>
+    <div id="quality-container">
+      <div class="loading">LOADING</div>
+    </div>
+  </section>
+  <!-- END DATA QUALITY PAGE -->
+
+  <!-- BEGIN BUILD COMPARE PAGE -->
+  <section class="page" id="page-compare">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">BUILD <span class="accent">COMPARE</span></h1>
+        <div class="page-subtitle">// 建模对比台 — side-by-side analysis</div>
+      </div>
+    </div>
+    <div id="compare-container">
+      <div class="loading">LOADING</div>
+    </div>
+  </section>
+  <!-- END BUILD COMPARE PAGE -->
+
+
+</main>
+<!-- END APP PAGES -->
+
+
+<!-- BEGIN BUILD MODAL -->
+<div data-template-slot="build-modal"></div>
+<!-- END BUILD MODAL -->
+
+
+<!-- BEGIN GAME MODAL -->
+<div data-template-slot="game-modal"></div>
+<!-- END GAME MODAL -->
+
+
+<!-- BEGIN GAME DETAIL MODAL -->
+<div data-template-slot="game-detail-modal"></div>
+<!-- END GAME DETAIL MODAL -->
+
+
+<!-- BEGIN OCR PROCESSING MODAL -->
+<div data-template-slot="ocr-processing-modal"></div>
+<!-- END OCR PROCESSING MODAL -->
+
+
+<!-- BEGIN OCR SETTINGS MODAL -->
+<div data-template-slot="ocr-settings-modal"></div>
+<!-- END OCR SETTINGS MODAL -->
+
+
+<!-- BEGIN CUSTOM CONFIRM MODAL -->
+<div data-template-slot="confirm-modal"></div>
+<!-- END CUSTOM CONFIRM MODAL -->
+
+
+<!-- BEGIN DATA MENU MODAL -->
+<div data-template-slot="data-menu-modal"></div>
+<!-- END DATA MENU MODAL -->
+
+<!-- BEGIN TOAST ROOT -->
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+<!-- END TOAST ROOT -->
+
+<!-- BEGIN SCRIPT LOAD ORDER -->
+<script src="./nba2k26-scout-data.js" defer></script>
+<script src="./nba2k26-build-engine.js" defer></script>
+<script src="./nba2k26-badges.js" defer></script>
+<script src="./nba2k26-badge-editor.js" defer></script>
+<script src="./nba2k26-i18n.js" defer></script>
+<script src="./nba2k26-scout-report.js" defer></script>
+<script src="./nba2k26-storage.js" defer></script>
+<script src="./nba2k26-runtime-config.js" defer></script>
+<script src="./nba2k26-cloud-sync.js" defer></script>
+<script src="./nba2k26-game-analysis.js" defer></script>
+<script src="./nba2k26-advanced-analytics.js" defer></script>
+<script src="./nba2k26-visualizations.js" defer></script>
+<script src="./nba2k26-render-modules.js" defer></script>
+<script src="./nba2k26-performance-lab.js" defer></script>
+<script src="./nba2k26-game-panels.js" defer></script>
+<script src="./nba2k26-game-table.js" defer></script>
+<script src="./nba2k26-game-detail.js" defer></script>
+<script src="./nba2k26-player-profile-core.js" defer></script>
+<script src="./nba2k26-player-profiles.js" defer></script>
+<script src="./nba2k26-game-form.js" defer></script>
+<script src="./nba2k26-build-form.js" defer></script>
+<script src="./nba2k26-data-portability.js" defer></script>
+<script src="./nba2k26-data-quality.js" defer></script>
+<script src="./nba2k26-page-shell.js" defer></script>
+<script src="./nba2k26-build-detail.js" defer></script>
+<script src="./nba2k26-build-detail-panels.js" defer></script>
+<script src="./nba2k26-ui-core.js" defer></script>
+<script src="./nba2k26-build-template.js" defer></script>
+<script src="./nba2k26-game-template.js" defer></script>
+<script src="./nba2k26-ocr-templates.js" defer></script>
+<script src="./nba2k26-system-templates.js" defer></script>
+<script src="./nba2k26-html-templates.js" defer></script>
+<script src="./nba2k26-global-games.js" defer></script>
+<script src="./nba2k26-share-card.js" defer></script>
+<script src="./nba2k26-build-compare.js" defer></script>
+<script src="./nba2k26-opponent-intel.js" defer></script>
+<script src="./nba2k26-app-bootstrap.js" defer></script>
+<script src="./nba2k26-ovr-estimator.js" defer></script>
+<script src="./nba2k26-app-globals.js" defer></script>
+
+<!-- OCR engine (~139KB) is lazy-loaded on first scan intent; see nba2k26-ocr-lazy.js -->
+<script src="./nba2k26-ocr-lazy.js" defer></script>
+<script>
+// Deferred sidecar scripts all execute (in order) before DOMContentLoaded,
+// so bootstrap runs only after every module global is defined.
+document.addEventListener('DOMContentLoaded', function () {
+  bootstrapApp();
+  if ('serviceWorker' in navigator) {
+    const localHostnames = ['', 'localhost', '127.0.0.1', '::1'];
+    const useServiceWorker = location.protocol === 'https:' && !localHostnames.includes(location.hostname);
+    if (useServiceWorker) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(registration => registration.update())
+        .catch(() => {});
+    } else {
+      navigator.serviceWorker.getRegistrations()
+        .then(registrations => Promise.all(registrations.map(registration => registration.unregister())))
+        .then(() => window.caches ? caches.keys() : [])
+        .then(keys => Promise.all(keys.filter(key => key.startsWith('nba2k26-')).map(key => caches.delete(key))))
+        .catch(() => {});
+    }
+  }
+});
+</script>
+<!-- END SCRIPT LOAD ORDER -->
+<script src="./nba2k26-interactions.js" defer></script>
+</body>
+
+</html>

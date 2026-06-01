@@ -1,0 +1,11 @@
+node_modules/
+build/
+dist/
+out/
+packaged-*/
+.claude/
+icons/
+qa-*.png
+*.bak
+.DS_Store
+*.log

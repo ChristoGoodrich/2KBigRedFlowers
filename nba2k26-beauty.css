@@ -1,0 +1,673 @@
+/* Deep visual polish layer: premium sports analytics shell without touching app logic. */
+:root {
+  --bg: #050506;
+  --bg-elev: #0d0e10;
+  --bg-soft: #0a0b0d;
+  --bg-card: #111316;
+  --bg-card-hover: #171a1f;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(255, 255, 255, 0.22);
+  --text: #f7f5f2;
+  --text-dim: #b8b6b0;
+  --text-fade: #7c7b76;
+  --orange: #e21a2f;
+  --orange-dim: #9d0616;
+  --orange-glow: rgba(226, 26, 47, 0.42);
+  --orange-soft: rgba(226, 26, 47, 0.12);
+  --yellow: #f6c638;
+  --yellow-soft: rgba(246, 198, 56, 0.11);
+  --green: #43d968;
+  --green-soft: rgba(67, 217, 104, 0.1);
+  --red: #ff4058;
+  --red-soft: rgba(255, 64, 88, 0.1);
+  --blue: #62a7ff;
+  --purple: #a95bff;
+  --surface-tint-1: rgba(255, 255, 255, 0.035);
+  --surface-tint-2: rgba(255, 255, 255, 0.07);
+  --surface-tint-strong: rgba(0, 0, 0, 0.56);
+  --surface-tint-strong-2: rgba(0, 0, 0, 0.4);
+  --surface-tint-strong-3: rgba(0, 0, 0, 0.48);
+  --header-bg: rgba(5, 5, 6, 0.82);
+  --ambient-glow-1: rgba(226, 26, 47, 0.16);
+  --ambient-glow-2: rgba(246, 198, 56, 0.055);
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 10px;
+  --sh-1: 0 1px 0 rgba(255, 255, 255, 0.04), 0 14px 28px rgba(0, 0, 0, 0.22);
+  --sh-2: 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 50px rgba(0, 0, 0, 0.32);
+  --sh-3: 0 22px 70px rgba(0, 0, 0, 0.62);
+  --sh-glow: 0 0 0 1px rgba(226, 26, 47, 0.2), 0 18px 38px rgba(226, 26, 47, 0.22);
+}
+
+[data-theme="light"] {
+  --bg: #f4f1ec;
+  --bg-elev: #fffdf8;
+  --bg-soft: #f8f5f0;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f5ef;
+  --border: rgba(30, 25, 22, 0.14);
+  --border-hover: rgba(30, 25, 22, 0.26);
+  --text: #181512;
+  --text-dim: #57524b;
+  --text-fade: #837c72;
+  --orange: #c90b21;
+  --orange-dim: #900717;
+  --orange-glow: rgba(201, 11, 33, 0.28);
+  --orange-soft: rgba(201, 11, 33, 0.085);
+  --yellow: #a77d00;
+  --yellow-soft: rgba(167, 125, 0, 0.1);
+  --green: #118a45;
+  --green-soft: rgba(17, 138, 69, 0.085);
+  --red: #d9273e;
+  --red-soft: rgba(217, 39, 62, 0.08);
+  --surface-tint-1: rgba(12, 10, 8, 0.025);
+  --surface-tint-2: rgba(12, 10, 8, 0.055);
+  --header-bg: rgba(255, 253, 248, 0.84);
+  --ambient-glow-1: rgba(201, 11, 33, 0.055);
+  --ambient-glow-2: rgba(167, 125, 0, 0.05);
+  --sh-1: 0 1px 0 rgba(255, 255, 255, 0.9), 0 14px 28px rgba(30, 22, 12, 0.08);
+  --sh-2: 0 1px 0 rgba(255, 255, 255, 0.9), 0 18px 46px rgba(30, 22, 12, 0.12);
+  --sh-3: 0 24px 74px rgba(30, 22, 12, 0.18);
+}
+
+html {
+  scrollbar-color: var(--orange-dim) transparent;
+}
+
+body {
+  background:
+    linear-gradient(115deg, rgba(226, 26, 47, 0.08), transparent 26%),
+    radial-gradient(circle at 82% 4%, var(--ambient-glow-1), transparent 30%),
+    linear-gradient(180deg, #070708 0%, var(--bg) 44%, #030303 100%);
+}
+
+[data-theme="light"] body {
+  background:
+    linear-gradient(115deg, rgba(201, 11, 33, 0.06), transparent 28%),
+    radial-gradient(circle at 82% 4%, var(--ambient-glow-1), transparent 34%),
+    linear-gradient(180deg, #fffdf8 0%, var(--bg) 52%, #ece7de 100%);
+}
+
+body::after {
+  z-index: 0;
+  background:
+    linear-gradient(115deg, transparent 0 37%, rgba(226, 26, 47, 0.18) 37.1%, transparent 37.45% 57%, rgba(255, 255, 255, 0.055) 57.15%, transparent 57.45%),
+    radial-gradient(ellipse at top right, var(--orange-soft), transparent 58%),
+    radial-gradient(ellipse at bottom left, var(--ambient-glow-2), transparent 60%);
+}
+
+.header,
+.account-bar-wrap,
+.main,
+.toast {
+  position: relative;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 14px 34px;
+  border-bottom-color: rgba(226, 26, 47, 0.28);
+  background: linear-gradient(180deg, var(--header-bg), color-mix(in srgb, var(--header-bg) 74%, transparent));
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.28);
+}
+
+.logo-mark {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(226, 26, 47, 0.36);
+  border-radius: 8px;
+  background: radial-gradient(circle at 48% 45%, rgba(246, 198, 56, 0.12), transparent 42%), rgba(226, 26, 47, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 28px rgba(226, 26, 47, 0.16);
+}
+
+.logo-text {
+  font-family: var(--font-stencil);
+  font-size: 21px;
+  letter-spacing: 0;
+}
+
+.logo-sub {
+  color: var(--text-dim);
+  font-size: 10px;
+}
+
+.nav {
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.nav-btn,
+.nav-btn.tool-btn {
+  border-radius: 7px;
+  padding: 10px 14px;
+  font-weight: 700;
+  color: var(--text-dim);
+}
+
+.nav-btn:hover,
+.nav-btn.tool-btn:hover {
+  color: var(--text);
+  background: var(--surface-tint-2);
+}
+
+.nav-btn.active {
+  color: #fff;
+  border-color: rgba(226, 26, 47, 0.62);
+  background: linear-gradient(180deg, rgba(226, 26, 47, 0.3), rgba(226, 26, 47, 0.13));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 10px 26px rgba(226, 26, 47, 0.16);
+}
+
+[data-theme="light"] .nav-btn.active {
+  color: #fff;
+}
+
+.settings-menu,
+.modal,
+.account-bar-card,
+.home-dashboard,
+.home-panel,
+.home-kpi,
+.home-action-card,
+.home-next,
+.build-command,
+.build-command-card,
+.build-compare-panel,
+.build-compare-build,
+.build-compare-metric,
+.build-card,
+.performance-dashboard,
+.perf-kpi,
+.perf-panel,
+.analysis-drawer,
+.lab-panel,
+.lab-kpi,
+.detail-command,
+.detail-read-card,
+.decision-card,
+.season-insight-wrap,
+.season-insight-card,
+.save-feedback,
+.build-starter-panel,
+.detail-sidebar,
+.detail-tab-panel,
+.table-section,
+.viz-lab,
+.viz-panel,
+.scout-report,
+.postgame-panel,
+.postgame-summary,
+.form-group input,
+.form-group select,
+.form-group textarea {
+  box-shadow: var(--sh-1);
+}
+
+.settings-menu,
+.modal,
+.home-dashboard,
+.build-command,
+.detail-command,
+.viz-lab,
+.performance-dashboard {
+  background:
+    linear-gradient(135deg, var(--surface-tint-2), transparent 32%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-card) 92%, #fff 8%), var(--bg-card));
+}
+
+.account-bar-wrap {
+  position: sticky;
+  top: 75px;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.account-bar-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.account-bar {
+  padding: 11px 34px;
+  gap: 8px;
+}
+
+.account-bar-card,
+.home-kpi,
+.perf-kpi,
+.lab-kpi,
+.detail-read-card,
+.decision-card,
+.season-insight-card,
+.build-command-card,
+.build-card {
+  border-color: var(--border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
+    var(--bg-card);
+}
+
+.account-bar-card.primary,
+.home-kpi.primary,
+.perf-kpi.primary,
+.build-command-card.primary,
+.home-action-card.primary,
+.detail-read-card.good,
+.decision-card.good,
+.season-insight-card.good {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--orange-soft) 82%, transparent), transparent 62%),
+    var(--bg-card);
+}
+
+.account-bar-value,
+.home-kpi strong,
+.perf-value,
+.lab-kpi strong,
+.detail-read-card strong,
+.decision-card strong,
+.season-insight-card strong,
+.stat-mini-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.main {
+  max-width: 1480px;
+  padding: 34px;
+  z-index: 2;
+}
+
+.page-header,
+.workspace-header {
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+  border-bottom-color: rgba(226, 26, 47, 0.22);
+}
+
+.page-title,
+.workspace-title,
+.home-title,
+.build-command-title,
+.detail-command-title,
+.lab-title,
+.viz-title {
+  text-wrap: balance;
+}
+
+.page-title {
+  font-family: var(--font-body);
+  font-size: clamp(26px, 2.4vw, 34px);
+  font-weight: 900;
+  line-height: 1.45;
+  padding-top: 0.1em;
+  text-shadow: 0 10px 34px rgba(226, 26, 47, 0.16);
+}
+
+.accent,
+.page-title .accent,
+.home-kpi.primary strong,
+.perf-value,
+.stat-mini-value {
+  color: var(--orange);
+}
+
+.btn,
+.context-action,
+.tool-action,
+.back-btn,
+.card-action-btn,
+.filter-reset,
+.game-log-tab {
+  border-radius: 7px;
+  transition: transform var(--t-fast), border-color var(--t-fast), background var(--t-fast), color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.btn,
+.context-action.primary {
+  color: #fff;
+  background: linear-gradient(180deg, #ef263a, #b8071a);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 12px 28px rgba(226, 26, 47, 0.22);
+}
+
+.btn:hover,
+.context-action.primary:hover {
+  color: #111;
+  background: linear-gradient(180deg, #ffd85a, var(--yellow));
+  border-color: rgba(246, 198, 56, 0.82);
+  box-shadow: 0 14px 34px rgba(246, 198, 56, 0.2);
+}
+
+.modal-footer .btn:not(.btn-ghost) {
+  clip-path: none;
+  border-radius: 8px;
+  min-height: 40px;
+  padding: 10px 18px;
+}
+
+.context-action:not(.primary):hover,
+.tool-action:hover,
+.card-action-btn:hover,
+.home-action-card:hover,
+.build-command-card:hover,
+.build-card:hover,
+.home-row:hover,
+.perf-build-row:hover,
+.viz-rank-row[onclick]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--sh-2);
+}
+
+.build-card::before {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.build-card:hover::before {
+  transform: scaleX(1);
+}
+
+.build-position,
+.tag-primary,
+.postgame-grade-chip {
+  border-radius: 6px;
+  color: #fff;
+  background: linear-gradient(180deg, #ef263a, #b8071a);
+}
+
+.build-stats,
+.home-snapshot-grid,
+.perf-grid,
+.lab-kpi-grid,
+.detail-decision-strip,
+.season-insight-grid,
+.detail-command-grid,
+.viz-trend-grid {
+  gap: 12px;
+}
+
+.stat-mini,
+.build-card-foot,
+.home-row,
+.perf-build-row,
+.lab-lane,
+.lab-notes div,
+.viz-anchor-grid div,
+.viz-rank-row,
+.build-compare-pick,
+.save-feedback-metrics div {
+  border-color: var(--border);
+  background: var(--surface-tint-1);
+  border-radius: 7px;
+}
+
+.empty-state {
+  border: 1px dashed rgba(226, 26, 47, 0.34);
+  border-radius: 10px;
+  background:
+    linear-gradient(135deg, var(--orange-soft), transparent 48%),
+    var(--surface-tint-1);
+}
+
+.empty-state-icon {
+  color: color-mix(in srgb, var(--orange) 48%, var(--border));
+}
+
+.detail-top {
+  gap: 18px;
+}
+
+.detail-sidebar::before,
+.table-section::before {
+  background: linear-gradient(180deg, var(--orange), var(--yellow));
+}
+
+.detail-tabs {
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-tint-1);
+}
+
+.detail-tab {
+  border-radius: 7px;
+  background: transparent;
+}
+
+.detail-tab.active {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(226, 26, 47, 0.32), rgba(226, 26, 47, 0.14));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.table-wrap {
+  border-color: var(--border);
+  box-shadow: var(--sh-1);
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead {
+  background: linear-gradient(180deg, rgba(226, 26, 47, 0.13), rgba(255, 255, 255, 0.035));
+}
+
+th {
+  color: var(--text-dim);
+}
+
+td {
+  background: color-mix(in srgb, var(--bg-card) 78%, transparent);
+}
+
+tbody tr:hover td {
+  background: color-mix(in srgb, var(--orange-soft) 44%, var(--bg-card));
+}
+
+.viz-timeline {
+  background:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px) 0 0 / 20% 100%,
+    linear-gradient(to top, rgba(255, 255, 255, 0.07) 1px, transparent 1px) 0 0 / 100% 33%,
+    var(--surface-tint-1);
+}
+
+.viz-sparkline polyline {
+  filter: drop-shadow(0 0 8px var(--orange-glow));
+}
+
+.viz-track {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.085);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.76);
+}
+
+.modal {
+  border-color: rgba(226, 26, 47, 0.24);
+}
+
+.modal-header {
+  background: linear-gradient(180deg, var(--surface-tint-2), transparent);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: color-mix(in srgb, var(--bg) 88%, var(--bg-elev));
+  border-color: var(--border);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px var(--orange-soft), 0 0 0 1px rgba(226, 26, 47, 0.2);
+}
+
+.toast {
+  border-color: rgba(226, 26, 47, 0.32);
+  box-shadow: var(--sh-2);
+}
+
+.loading {
+  border-radius: 10px;
+  background: var(--surface-tint-1);
+}
+
+.brf-floral-img {
+  opacity: 0.42;
+  filter: drop-shadow(0 0 20px rgba(226, 26, 47, 0.24)) saturate(1.08);
+}
+
+::selection {
+  background: var(--orange);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--orange-dim) 54%, var(--border)), color-mix(in srgb, var(--border) 84%, var(--orange)));
+  border: 3px solid var(--bg);
+  border-radius: 999px;
+}
+
+@media (max-width: 1100px) {
+  .header {
+    align-items: flex-start;
+    gap: 14px;
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .account-bar-wrap {
+    top: 112px;
+  }
+
+  .account-bar {
+    display: flex;
+    overflow-x: auto;
+    padding-inline: 22px;
+    min-width: max-content;
+  }
+
+  .context-intro {
+    min-width: 220px;
+  }
+
+  .account-bar-card {
+    min-width: 150px;
+  }
+
+  .home-hero,
+  .detail-command,
+  .build-compare-head,
+  .perf-main,
+  .viz-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .viz-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .header {
+    padding: 14px 16px;
+  }
+
+  .logo {
+    gap: 11px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .main {
+    padding: 22px 16px 30px;
+  }
+
+  .account-bar-wrap {
+    top: 108px;
+  }
+
+  .page-header,
+  .workspace-header,
+  .perf-head,
+  .viz-head,
+  .season-insight-head,
+  .lab-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+
+  .home-action-grid,
+  .home-snapshot-grid,
+  .home-panel-grid,
+  .home-body-grid,
+  .analysis-shortcut-bar,
+  .build-command-grid,
+  .builds-grid,
+  .perf-grid,
+  .lab-kpi-grid,
+  .lab-section-grid,
+  .lab-games,
+  .detail-decision-strip,
+  .season-insight-grid,
+  .detail-command-grid,
+  .save-feedback,
+  .viz-trend-grid,
+  .viz-key-trend-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .build-card {
+    padding: 18px;
+  }
+
+  .modal-body,
+  .modal-header {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

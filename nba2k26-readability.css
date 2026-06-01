@@ -1,0 +1,330 @@
+/* Final typography pass: keep the 2K visual identity, but make dense UI text easier to read. */
+:root {
+  --font-body: Inter, "Segoe UI", "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", "Microsoft YaHei UI", monospace;
+  --text-dim: #b3b3b3;
+  --text-fade: #858585;
+}
+
+[data-theme="light"] {
+  --text-dim: #4f4f4f;
+  --text-fade: #6f6f6f;
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  opacity: 0.16;
+}
+
+[data-theme="light"] body::before {
+  opacity: 0.08;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.logo-sub,
+.page-subtitle,
+.workspace-sub,
+.context-kicker,
+.build-command-kicker,
+.detail-command-kicker,
+.form-group label,
+.form-hint,
+.postgame-summary-label,
+.settings-item-main,
+.settings-item-sub,
+.nav-btn,
+.tool-btn,
+.theme-choice-btn,
+.lang-choice-btn,
+.data-action-sub,
+.ocr-meta,
+.viz-kicker,
+.viz-sub,
+.viz-empty,
+.scout-player-archetype,
+.scout-meta-item,
+.scout-comp-desc,
+.scout-overall-desc {
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+.form-group label,
+.postgame-summary-label,
+.settings-item-main,
+.build-command-kicker,
+.detail-command-kicker,
+.context-kicker,
+.viz-kicker {
+  font-size: 11px;
+}
+
+.page-subtitle,
+.workspace-sub,
+.build-command-sub,
+.detail-command-copy,
+.save-feedback-copy,
+.postgame-summary-sub,
+.roster-hint,
+.data-action-sub,
+.ocr-tips,
+.setup-guide,
+.scout-comp-desc,
+.scout-overall-desc,
+.scout-notes {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  line-height: 1.55;
+}
+
+.btn,
+.tool-action,
+.context-action,
+.build-command-card strong,
+.detail-read-card strong {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.game-filter-bar input,
+.game-filter-bar select {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.page-title,
+.workspace-title,
+.modal-title,
+.postgame-summary-main,
+.build-command-title,
+.detail-command-title {
+  letter-spacing: 0;
+}
+
+.build-command-card span,
+.build-command-card small,
+.build-compare-pick span,
+.build-compare-pick small,
+.build-compare-metric span,
+.build-compare-build small,
+.build-card-status,
+.build-card-foot,
+.stat-mini-label,
+.detail-read-card span,
+.detail-read-card small,
+.decision-card span,
+.decision-card small,
+.season-insight-kicker,
+.season-insight-sample,
+.season-insight-card span,
+.season-insight-card small,
+.save-feedback-kicker,
+.save-feedback-metrics span,
+.save-feedback-metrics small,
+.recap-metric label,
+.detail-tab small,
+.month-stat,
+.badge-summary-label,
+.badge-summary-empty,
+.badge-cat-count,
+.badge-row-name .badge-row-sub,
+.auto-badge-summary,
+.threshold-hint,
+.badge-rec-kicker,
+.badge-rec-empty,
+.badge-rec-card span,
+.badge-rec-card small,
+.attr-detail-item,
+.game-log-tab,
+.game-step-label,
+.roster-entry-head,
+.roster-row input,
+.roster-table th,
+.roster-table td,
+.ocr-entry,
+.ocr-pick,
+.ocr-engine-label,
+.ocr-engine-tab,
+.ocr-status,
+.ocr-tips,
+.ocr-result-item,
+.ocr-result-item label,
+.ocr-result-item input,
+.ocr-result-warnings,
+.ocr-confidence,
+.ocr-meta,
+.ocr-apply-meta,
+.ocr-apply-chip,
+.data-action-sub,
+.toast,
+.loading,
+.scout-badge,
+.scout-player-archetype,
+.scout-meta-item,
+.scout-section-title,
+.scout-phys-label,
+.scout-attr-name,
+.scout-sw-item,
+.scout-comp-desc,
+.scout-overall-label,
+.scout-overall-desc,
+.scout-notes,
+.scout-print-btn,
+.scout-chip,
+.scout-kpi-label,
+.scout-kpi-sub,
+.scout-grade-head,
+.scout-table,
+.scout-table th,
+.scout-table td,
+.scout-priority-title,
+.scout-priority-sub,
+.scout-priority-impact,
+.scout-bullet,
+.scout-empty {
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.stat-mini-label,
+.recap-metric label,
+.detail-tab small,
+.badge-summary-label,
+.badge-cat-count,
+.badge-row-name .badge-row-sub,
+.threshold-hint,
+.badge-rec-kicker,
+.badge-rec-card span,
+.roster-entry-head,
+.ocr-engine-label,
+.ocr-result-item label,
+.ocr-meta,
+.ocr-apply-chip,
+.scout-badge,
+.scout-phys-label,
+.scout-kpi-label,
+.scout-table th {
+  font-size: 11px;
+}
+
+.build-command-card small,
+.build-compare-pick small,
+.build-compare-build small,
+.detail-read-card small,
+.decision-card small,
+.season-insight-card small,
+.save-feedback-metrics small,
+.badge-summary-empty,
+.badge-rec-empty,
+.badge-rec-card small,
+.game-log-tab,
+.game-step-label,
+.roster-row input,
+.ocr-entry,
+.ocr-pick,
+.ocr-engine-tab,
+.ocr-result-item,
+.ocr-result-item input,
+.ocr-result-warnings,
+.ocr-confidence,
+.data-action-sub,
+.scout-meta-item,
+.scout-attr-name,
+.scout-comp-desc,
+.scout-overall-desc,
+.scout-notes,
+.scout-print-btn,
+.scout-chip,
+.scout-kpi-sub,
+.scout-grade-head,
+.scout-table,
+.scout-priority-title,
+.scout-priority-sub,
+.scout-priority-impact,
+.scout-bullet,
+.scout-empty {
+  font-size: 12px;
+}
+
+.month-stat,
+.attr-detail-item,
+.roster-table th,
+.roster-table td,
+.ocr-status,
+.ocr-tips,
+.ocr-apply-meta,
+.scout-sw-item {
+  font-size: 13px;
+}
+
+.build-card-status,
+.build-command-card span,
+.build-compare-pick span,
+.build-compare-metric span,
+.detail-read-card span,
+.decision-card span,
+.season-insight-kicker,
+.season-insight-sample,
+.season-insight-card span,
+.save-feedback-kicker,
+.save-feedback-metrics span,
+.badge-summary-label,
+.badge-cat-count,
+.badge-rec-kicker,
+.badge-rec-card span,
+.scout-player-archetype,
+.scout-section-title,
+.scout-overall-label {
+  text-transform: uppercase;
+}
+
+.build-command-card small,
+.build-compare-pick small,
+.build-compare-build small,
+.detail-read-card small,
+.decision-card small,
+.season-insight-card small,
+.badge-row-name .badge-row-sub,
+.threshold-hint,
+.badge-rec-empty,
+.badge-rec-card small,
+.roster-hint,
+.ocr-entry,
+.ocr-status,
+.ocr-tips,
+.ocr-result-warnings,
+.data-action-sub,
+.scout-comp-desc,
+.scout-overall-desc,
+.scout-notes,
+.scout-bullet,
+.scout-empty {
+  color: var(--text-dim);
+}
+
+.scout-table td,
+.scout-priority-sub,
+.scout-priority-impact,
+.scout-kpi-sub {
+  color: var(--text-dim);
+}

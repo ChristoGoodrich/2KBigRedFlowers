@@ -16,6 +16,8 @@ const crypto = require('crypto');
 const root = path.resolve(__dirname, '..');
 const swPath = path.join(root, 'sw.js');
 const lockPath = path.join(__dirname, 'sw-cache.lock.json');
+const HASH_MODE = 'text-lf-v1';
+const TEXT_EXTENSIONS = new Set(['.css', '.html', '.js', '.json', '.svg']);
 
 const sw = fs.readFileSync(swPath, 'utf8');
 
@@ -34,9 +36,14 @@ if (missing.length) {
 
 const hash = crypto.createHash('sha256');
 for (const a of assets) {
+  const assetPath = path.join(root, a.replace(/^\.\//, ''));
+  const content = fs.readFileSync(assetPath);
+  const hashContent = TEXT_EXTENSIONS.has(path.extname(assetPath).toLowerCase())
+    ? Buffer.from(content.toString('utf8').replace(/\r\n/g, '\n'))
+    : content;
   hash.update(a);
   hash.update('\0');
-  hash.update(fs.readFileSync(path.join(root, a.replace(/^\.\//, ''))));
+  hash.update(hashContent);
   hash.update('\0');
 }
 const assetsHash = hash.digest('hex');
@@ -47,12 +54,14 @@ if (fs.existsSync(lockPath)) {
 }
 
 function writeLock(reason) {
-  fs.writeFileSync(lockPath, JSON.stringify({ version, assetsHash, assetCount: assets.length }, null, 2) + '\n');
+  fs.writeFileSync(lockPath, JSON.stringify({ version, hashMode: HASH_MODE, assetsHash, assetCount: assets.length }, null, 2) + '\n');
   console.log(`sw-cache guard ok: ${reason} — locked ${version} to ${assets.length} assets`);
 }
 
 if (!lock) {
   writeLock('bootstrapped lock');
+} else if (lock.hashMode !== HASH_MODE) {
+  writeLock(`migrated hash mode to ${HASH_MODE}`);
 } else if (lock.assetsHash === assetsHash) {
   console.log(`sw-cache guard ok: ${assets.length} cached assets unchanged since ${version}`);
 } else if (lock.version !== version) {

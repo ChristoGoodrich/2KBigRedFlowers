@@ -4,6 +4,9 @@
 *.cmd text eol=crlf
 *.ps1 text eol=crlf
 *.sh text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
 gradlew text eol=lf
 
 *.aar binary

@@ -68,8 +68,7 @@ function main() {
   const gradle = process.platform === 'win32' ? 'gradlew.bat' : './gradlew';
   const args = process.argv.slice(2);
 
-  console.log(`android gradle: JAVA_HOME=${env.JAVA_HOME}`);
-  console.log(`android gradle: ANDROID_HOME=${env.ANDROID_HOME}`);
+  console.log('android gradle: resolved local JDK and Android SDK toolchain');
 
   const command = process.platform === 'win32'
     ? (env.ComSpec || 'C:\\Windows\\System32\\cmd.exe')

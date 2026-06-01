@@ -5,9 +5,31 @@ const root = path.resolve(__dirname, '..');
 const htmlPath = path.join(root, 'nba2k26-build-tracker.html');
 const html = fs.readFileSync(htmlPath, 'utf8');
 
-const scriptRe = /<script(?:\s+src="([^"]+)")?[^>]*>([\s\S]*?)<\/script>/g;
 const cssHrefRe = /<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"/g;
 const idRe = /\bid="([^"]+)"/g;
+
+function extractScriptBlocks(source) {
+  const lowerSource = source.toLowerCase();
+  const blocks = [];
+  let cursor = 0;
+  while (cursor < source.length) {
+    const openStart = lowerSource.indexOf('<script', cursor);
+    if (openStart === -1) break;
+    const openEnd = source.indexOf('>', openStart);
+    const closeStart = lowerSource.indexOf('</script', openEnd + 1);
+    const closeEnd = source.indexOf('>', closeStart);
+    if (openEnd === -1 || closeStart === -1 || closeEnd === -1) {
+      throw new Error('Could not parse HTML script block');
+    }
+    const openTag = source.slice(openStart, openEnd + 1);
+    blocks.push({
+      src: openTag.match(/\bsrc\s*=\s*"([^"]+)"/i)?.[1],
+      code: source.slice(openEnd + 1, closeStart),
+    });
+    cursor = closeEnd + 1;
+  }
+  return blocks;
+}
 
 const localScripts = [];
 const localExternalScripts = [];
@@ -17,14 +39,14 @@ let structuralSurface = html;
 let combined = '';
 let match;
 
-while ((match = scriptRe.exec(html))) {
-  const src = match[1];
+for (const script of extractScriptBlocks(html)) {
+  const src = script.src;
   if (src && /^https?:\/\//i.test(src)) {
     remoteScripts.push(src);
     continue;
   }
 
-  let code = match[2] || '';
+  let code = script.code || '';
   let label = 'inline script';
   if (src) {
     const localPath = path.join(root, src.replace(/^\.\//, ''));
@@ -352,9 +374,32 @@ if (i18nCopyStart === -1 || i18nCopyEnd === -1) {
 
 const i18nCopySource = i18nSource.slice(i18nCopyStart, i18nCopyEnd);
 const i18nKeys = new Set();
-const i18nKeyRe = /^\s*(?:'((?:\\.|[^'])*)'|([A-Za-z_$][\w$]*))\s*:/gm;
-while ((match = i18nKeyRe.exec(i18nCopySource))) {
-  i18nKeys.add((match[1] || match[2]).replace(/\\'/g, "'"));
+
+function extractObjectKey(line) {
+  const source = line.trimStart();
+  const quote = source[0];
+  if (quote === "'" || quote === '"') {
+    let key = '';
+    for (let index = 1; index < source.length; index += 1) {
+      const char = source[index];
+      if (char === '\\' && index + 1 < source.length) {
+        const escaped = source[index + 1];
+        key += escaped === quote || escaped === '\\' ? escaped : `\\${escaped}`;
+        index += 1;
+      } else if (char === quote) {
+        return /^\s*:/.test(source.slice(index + 1)) ? key : null;
+      } else {
+        key += char;
+      }
+    }
+    return null;
+  }
+  return source.match(/^([A-Za-z_$][\w$]*)\s*:/)?.[1] || null;
+}
+
+for (const line of i18nCopySource.split(/\r?\n/)) {
+  const key = extractObjectKey(line);
+  if (key) i18nKeys.add(key);
 }
 
 const tCallRe = /\bt\(\s*(['"])((?:\\.|(?!\1).)*)\1\s*\)/g;

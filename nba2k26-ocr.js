@@ -173,11 +173,21 @@ const OCR = {
   },
 
   setStep(key, label, state) {
-    const existing = this.status.querySelector(`[data-step="${key}"]`);
-    const icon = state === 'done' ? 'OK' : state === 'err' ? 'ERR' : state === 'active' ? '...' : '-';
-    const html = `<div class="step ${state}" data-step="${key}"><span>${icon}</span><span>${label}</span></div>`;
-    if (existing) existing.outerHTML = html;
-    else this.status.insertAdjacentHTML('beforeend', html);
+    const normalizedState = ['done', 'err', 'active'].includes(state) ? state : '';
+    const existing = [...this.status.querySelectorAll('[data-step]')]
+      .find(step => step.dataset.step === key);
+    const icon = normalizedState === 'done' ? 'OK' : normalizedState === 'err' ? 'ERR' : normalizedState === 'active' ? '...' : '-';
+    const step = document.createElement('div');
+    step.classList.add('step');
+    if (normalizedState) step.classList.add(normalizedState);
+    step.dataset.step = key;
+    const iconEl = document.createElement('span');
+    iconEl.textContent = icon;
+    const labelEl = document.createElement('span');
+    labelEl.textContent = label;
+    step.append(iconEl, labelEl);
+    if (existing) existing.replaceWith(step);
+    else this.status.appendChild(step);
   },
 
   setProgress(pct) {

@@ -45,8 +45,7 @@ function checkCssVariables() {
 function checkPwaAssets() {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const htmlRefs = [...html.matchAll(/(?:src|href)="(\.\/[^"]+)"/g)]
-    .map(match => match[1])
-    .filter(ref => !ref.includes('fonts.googleapis.com') && !ref.includes('fonts.gstatic.com'));
+    .map(match => match[1]);
   const manifest = JSON.parse(read('manifest.json'));
   const manifestRefs = [
     manifest.start_url,

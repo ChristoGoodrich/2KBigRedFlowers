@@ -32,10 +32,32 @@ const copyStart = i18nSource.indexOf('const I18N_COPY = {');
 const copyEnd = i18nSource.indexOf('const I18N_PLACEHOLDERS', copyStart);
 const copySrc = i18nSource.slice(copyStart, copyEnd);
 const KEYS = new Set();
-const keyRe = /^\s*(?:'((?:\\.|[^'])*)'|"((?:\\.|[^"])*)"|([A-Za-z_$][\w$]*))\s*:/gm;
-let m;
-while ((m = keyRe.exec(copySrc))) {
-  KEYS.add((m[1] || m[2] || m[3]).replace(/\\'/g, "'").replace(/\\"/g, '"'));
+
+function extractObjectKey(line) {
+  const source = line.trimStart();
+  const quote = source[0];
+  if (quote === "'" || quote === '"') {
+    let key = '';
+    for (let index = 1; index < source.length; index += 1) {
+      const char = source[index];
+      if (char === '\\' && index + 1 < source.length) {
+        const escaped = source[index + 1];
+        key += escaped === quote || escaped === '\\' ? escaped : `\\${escaped}`;
+        index += 1;
+      } else if (char === quote) {
+        return /^\s*:/.test(source.slice(index + 1)) ? key : null;
+      } else {
+        key += char;
+      }
+    }
+    return null;
+  }
+  return source.match(/^([A-Za-z_$][\w$]*)\s*:/)?.[1] || null;
+}
+
+for (const line of copySrc.split(/\r?\n/)) {
+  const key = extractObjectKey(line);
+  if (key) KEYS.add(key);
 }
 
 // Stat abbreviations / scoreboard tokens kept in English by convention, plus a

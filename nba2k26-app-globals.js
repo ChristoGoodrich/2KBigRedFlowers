@@ -2293,6 +2293,17 @@ function closeAccountModal() {
   document.getElementById('account-modal')?.classList.remove('active');
 }
 
+function openAboutModal() {
+  lockPageScroll();
+  document.getElementById('about-modal')?.classList.add('active');
+  window.NBA2K26_APP_UPDATE?.hydrate();
+}
+
+function closeAboutModal() {
+  unlockPageScroll();
+  document.getElementById('about-modal')?.classList.remove('active');
+}
+
 function saveCloudConfig() {
   return window.NBA2K26_CLOUD_SYNC.configureFromInputs();
 }
@@ -2324,6 +2335,8 @@ function cloudSyncNow() {
 Object.assign(window, {
   openAccountModal,
   closeAccountModal,
+  openAboutModal,
+  closeAboutModal,
   saveCloudConfig,
   cloudSignUp,
   cloudSignIn,
@@ -2394,11 +2407,13 @@ function setupGlobalUi() {
     closeGameModal: () => closeGameModal(),
     closeOCRModal: () => closeOCRModal(),
     closeAccountModal: () => closeAccountModal(),
+    closeAboutModal: () => closeAboutModal(),
     closeDataModal: () => closeDataModal(),
     saveBuild: () => saveBuild(),
     saveGame: () => saveGame(),
     openDataModal: () => openDataModal(),
     openAccountModal: () => openAccountModal(),
+    openAboutModal: () => openAboutModal(),
     openBuildModal: () => openBuildModal(),
     openGameModal: () => openGameModal(),
     saveCloudConfig: () => saveCloudConfig(),

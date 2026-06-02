@@ -51,6 +51,11 @@ Build a local debug APK:
 npm run android:apk
 ```
 
+Run `npm version <version> --no-git-tag-version` before packaging. Native sync
+propagates that single `package.json` version into the staged web app, Android
+Gradle metadata, and the iOS Xcode project. Android and iOS build numbers use
+the monotonic `major * 10000 + minor * 100 + patch` form.
+
 The Gradle helper auto-detects the standard Windows JDK and Android SDK
 locations when a newly opened terminal has not loaded `JAVA_HOME` yet.
 

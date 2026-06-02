@@ -1,4 +1,4 @@
-const CACHE = 'nba2k26-v103';
+const CACHE = 'nba2k26-v107';
 const STATIC = [
   './nba2k26-build-tracker.html',
   './nba2k26-theme.css',
@@ -23,6 +23,7 @@ const STATIC = [
   './nba2k26-scout-report.js',
   './nba2k26-storage.js',
   './nba2k26-runtime-config.js',
+  './nba2k26-app-update.js',
   './nba2k26-cloud-sync.js',
   './nba2k26-game-analysis.js',
   './nba2k26-advanced-analytics.js',

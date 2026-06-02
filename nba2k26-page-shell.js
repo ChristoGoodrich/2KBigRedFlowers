@@ -52,6 +52,11 @@
     return page;
   }
 
+  function resetPageScroll() {
+    window.scrollTo(0, 0);
+    window.setTimeout(() => window.scrollTo(0, 0), 0);
+  }
+
   function updateMobileTitle(page) {
     const title = document.getElementById('mobile-app-title');
     if (!title) return;
@@ -74,6 +79,7 @@
     const target = document.getElementById('page-' + page);
     if (!target) return false;
     const navPage = navPageFor(page);
+    const pageChanged = document.querySelector('.page.active') !== target;
 
     document.querySelectorAll('.page').forEach(panel => panel.classList.remove('active'));
     target.classList.add('active');
@@ -92,6 +98,7 @@
       mobileMore.classList.toggle('active', navPage === 'quality' || navPage === 'compare');
     }
     updateMobileTitle(page);
+    if (pageChanged) resetPageScroll();
     return true;
   }
 
@@ -113,11 +120,13 @@
 
   function setupNavigation(deps) {
     const { showPage } = deps;
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     const mobileMore = document.getElementById('mobile-tab-more');
     const mobileMoreSheet = document.getElementById('mobile-more-sheet');
     const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
     const mobileMoreClose = document.getElementById('mobile-more-close');
     const mobileAccount = document.getElementById('mobile-more-account');
+    const mobileAbout = document.getElementById('mobile-more-about');
     const mobileSettings = document.getElementById('mobile-more-settings');
 
     const setMobileMoreOpen = open => {
@@ -148,6 +157,12 @@
       mobileAccount.addEventListener('click', () => {
         setMobileMoreOpen(false);
         window.setTimeout(() => window.openAccountModal?.(), 0);
+      });
+    }
+    if (mobileAbout) {
+      mobileAbout.addEventListener('click', () => {
+        setMobileMoreOpen(false);
+        window.setTimeout(() => window.openAboutModal?.(), 0);
       });
     }
     if (mobileSettings) {

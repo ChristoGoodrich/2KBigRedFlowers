@@ -12,6 +12,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GitHub community health files, issue forms, pull request template, Dependabot
   configuration, and CodeQL workflow.
 
+## [1.0.5] - 2026-06-02
+
+### Added
+
+- Added an in-app About center with the installed version, manual update check,
+  and release-notes link.
+- Added package-driven native version synchronization for Android, iOS, and
+  staged web builds.
+
+### Changed
+
+- Reworked mobile light mode into a HyperOS-inspired surface system with
+  cleaner spacing, softer panels, and consistent high-contrast controls.
+- Rebuilt the mobile player directory toolbar and console cards for one-glance
+  readability on narrow Android screens.
+
+### Fixed
+
+- Removed stale Android `versionName "1.0.1"` metadata from newer APK builds.
+- Reset scroll position when switching mobile pages or restoring a route so
+  page titles are not clipped after navigating from longer screens.
+
 ## [1.0.4] - 2026-06-02
 
 ### Added
@@ -77,7 +99,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Optional Supabase-backed cross-device sync while preserving local-first
   storage.
 
-[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.4...HEAD
+[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.5...HEAD
+[1.0.5]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.5
 [1.0.4]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.4
 [1.0.3]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.3
 [1.0.2]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.2

@@ -119,7 +119,7 @@
   }
 
   function setupSettingsMenu(deps) {
-    const { openAccountModal, openDataModal } = deps;
+    const { openAccountModal, openAboutModal, openDataModal } = deps;
     const wrap = document.getElementById('settings-wrap');
     const trigger = document.getElementById('btn-settings-menu');
     const menu = document.getElementById('settings-menu');
@@ -175,6 +175,13 @@
         return;
       }
 
+      if (item.id === 'settings-about') {
+        if (typeof openAboutModal === 'function') openAboutModal();
+        else document.getElementById('about-modal')?.classList.add('active');
+        close();
+        return;
+      }
+
       if (item.id === 'settings-ocr' && typeof window.openOCRSettings === 'function') {
         window.openOCRSettings();
         close();
@@ -191,6 +198,7 @@
       closeGameModal,
       closeOCRModal,
       closeAccountModal,
+      closeAboutModal,
       closeDataModal,
       saveBuild,
       saveGame,
@@ -198,7 +206,7 @@
       openGameModal,
     } = deps;
 
-    const MODAL_IDS = ['build-modal', 'game-modal', 'game-detail-modal', 'ocr-modal', 'ocr-settings-modal', 'account-modal', 'data-modal', 'confirm-modal'];
+    const MODAL_IDS = ['build-modal', 'game-modal', 'game-detail-modal', 'ocr-modal', 'ocr-settings-modal', 'account-modal', 'about-modal', 'data-modal', 'confirm-modal'];
     const anyModalOpen = () => MODAL_IDS.some(id => document.getElementById(id)?.classList.contains('active'));
 
     document.addEventListener('keydown', event => {
@@ -221,6 +229,10 @@
         }
         if (document.getElementById('account-modal').classList.contains('active')) {
           closeAccountModal();
+          return;
+        }
+        if (document.getElementById('about-modal').classList.contains('active')) {
+          closeAboutModal();
           return;
         }
         if (document.getElementById('game-detail-modal')?.classList.contains('active')) {
@@ -304,7 +316,7 @@
   }
 
   function setupModalOverlayClose(deps) {
-    const { closeBuildModal, closeGameModal, closeOCRModal, closeAccountModal, closeDataModal } = deps;
+    const { closeBuildModal, closeGameModal, closeOCRModal, closeAccountModal, closeAboutModal, closeDataModal } = deps;
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
       if (overlay.id === 'confirm-modal') return;
       overlay.addEventListener('click', event => {
@@ -315,6 +327,7 @@
           if (overlay.id === 'ocr-modal') closeOCRModal();
           if (overlay.id === 'ocr-settings-modal' && typeof window.closeOCRSettings === 'function') window.closeOCRSettings();
           if (overlay.id === 'account-modal') closeAccountModal();
+          if (overlay.id === 'about-modal') closeAboutModal();
           if (overlay.id === 'data-modal') closeDataModal();
         }
       });
@@ -326,7 +339,7 @@
   // restore focus. Watching the class avoids touching every open/close path,
   // and a stack handles nested modals (e.g. OCR opened over the game modal).
   function setupModalA11y() {
-    const MODAL_IDS = ['build-modal', 'game-modal', 'game-detail-modal', 'ocr-modal', 'ocr-settings-modal', 'account-modal', 'data-modal', 'confirm-modal'];
+    const MODAL_IDS = ['build-modal', 'game-modal', 'game-detail-modal', 'ocr-modal', 'ocr-settings-modal', 'account-modal', 'about-modal', 'data-modal', 'confirm-modal'];
     const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
     const stack = [];
     const openerFor = new WeakMap();

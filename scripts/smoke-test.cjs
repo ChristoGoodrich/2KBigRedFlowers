@@ -117,6 +117,7 @@ const expectedLocalExternalScripts = [
   './nba2k26-scout-report.js',
   './nba2k26-storage.js',
   './nba2k26-runtime-config.js',
+  './nba2k26-app-update.js',
   './nba2k26-cloud-sync.js',
   './nba2k26-game-analysis.js',
   './nba2k26-advanced-analytics.js',
@@ -277,7 +278,9 @@ const requiredTemplateSlots = [
   'ocr-processing-modal',
   'ocr-settings-modal',
   'confirm-modal',
-  'data-menu-modal'
+  'data-menu-modal',
+  'account-center-modal',
+  'about-app-modal',
 ];
 
 for (const slot of requiredTemplateSlots) {
@@ -294,7 +297,9 @@ const templatedModalIds = [
   'ocr-modal',
   'ocr-settings-modal',
   'confirm-modal',
-  'data-modal'
+  'data-modal',
+  'account-modal',
+  'about-modal',
 ];
 
 for (const id of templatedModalIds) {
@@ -320,6 +325,8 @@ const requiredBoundaries = [
   'OCR SETTINGS MODAL',
   'CUSTOM CONFIRM MODAL',
   'DATA MENU MODAL',
+  'ACCOUNT CENTER MODAL',
+  'ABOUT APP MODAL',
   'TOAST ROOT',
   'SCRIPT LOAD ORDER'
 ];

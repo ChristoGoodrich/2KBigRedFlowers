@@ -5,6 +5,7 @@ const root = path.resolve(__dirname, '..');
 const distRoot = path.resolve(root, 'dist');
 const webDir = path.resolve(distRoot, 'web');
 const lockPath = path.resolve(distRoot, '.stage-web.lock');
+const pkg = require(path.join(root, 'package.json'));
 
 if (!webDir.startsWith(distRoot + path.sep)) {
   throw new Error(`Refusing to stage outside dist: ${webDir}`);
@@ -68,6 +69,7 @@ try {
     "  'use strict';",
     '',
     '  window.NBA2K26_RUNTIME_CONFIG = Object.freeze({',
+    `    appVersion: ${JSON.stringify(pkg.version)},`,
     `    supabaseUrl: ${JSON.stringify(process.env.NBA2K26_SUPABASE_URL || '')},`,
     `    supabaseAnonKey: ${JSON.stringify(process.env.NBA2K26_SUPABASE_ANON_KEY || '')},`,
     '  });',

@@ -102,6 +102,7 @@ function checkMobileBottomTabs() {
     'mobile-more-sheet',
     'mobile-more-close',
     'mobile-more-account',
+    'mobile-more-about',
     'mobile-more-settings',
     'mobile-tab-more',
     'settings-menu-close',
@@ -120,9 +121,11 @@ function checkMobileBottomTabs() {
   ];
   cssRules.forEach(rule => assert(css.includes(rule), `Mobile navigation CSS is missing: ${rule}`));
   assert(pageShell.includes('window.closeMobileMoreMenu'), 'Mobile more menu close bridge is missing');
+  assert(pageShell.includes('if (pageChanged) resetPageScroll();'), 'Mobile page changes must reset the previous page scroll position');
+  assert(pageShell.includes("history.scrollRestoration = 'manual'"), 'Route restoration must not reuse the prior mobile scroll offset');
   assert(pageShell.includes("mobileMore.classList.toggle('active', navPage === 'quality' || navPage === 'compare')"), 'Overflow page state must highlight More');
   assert(uiCore.includes("const mobileBackdrop = document.getElementById('mobile-sheet-backdrop')"), 'Mobile settings drawer must share the backdrop');
-  return { tabs: 5, overflowItems: 4 };
+  return { tabs: 5, overflowItems: 5 };
 }
 
 function checkAccountCenter() {
@@ -152,6 +155,53 @@ function checkAccountCenter() {
   assert(cloudSync.includes("authForm.hidden = status.signedIn"), 'Account center must hide auth form after sign-in');
   assert(cloudSync.includes("sessionPanel.hidden = !status.signedIn"), 'Account center must show session panel after sign-in');
   return { states: 2 };
+}
+
+function checkAboutUpdateCenter() {
+  const pkg = JSON.parse(read('package.json'));
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const templates = read('nba2k26-system-templates.js');
+  const htmlTemplates = read('nba2k26-html-templates.js');
+  const pageShell = read('nba2k26-page-shell.js');
+  const uiCore = read('nba2k26-ui-core.js');
+  const appGlobals = read('nba2k26-app-globals.js');
+  const runtimeConfig = read('nba2k26-runtime-config.js');
+  const stageWeb = read('scripts/stage-web.cjs');
+  const androidGradle = read('android/app/build.gradle');
+  const iosProject = read('ios/App/App.xcodeproj/project.pbxproj');
+  const syncNativeVersion = read('scripts/sync-native-version.cjs');
+  const appUpdate = read('nba2k26-app-update.js');
+
+  [
+    'id="settings-about"',
+    'id="mobile-more-about"',
+    'data-template-slot="about-app-modal"',
+    'src="./nba2k26-app-update.js"',
+  ].forEach(rule => assert(html.includes(rule), `About/update shell is missing: ${rule}`));
+  [
+    'registry.aboutAppModal',
+    'id="about-modal"',
+    'id="about-version"',
+    'id="about-check-updates"',
+    'id="about-update-status"',
+  ].forEach(rule => assert(templates.includes(rule), `About/update template is missing: ${rule}`));
+  assert(htmlTemplates.includes("['about-app-modal', 'aboutAppModal']"), 'About app template is not injected');
+  assert(pageShell.includes("document.getElementById('mobile-more-about')"), 'Mobile About entry is not wired');
+  assert(uiCore.includes("if (item.id === 'settings-about')"), 'Settings About entry is not wired');
+  assert(appGlobals.includes('function openAboutModal()'), 'About modal open helper is missing');
+  assert(runtimeConfig.includes(`appVersion: '${pkg.version}'`), 'Browser runtime config version must match package.json');
+  assert(stageWeb.includes('appVersion: ${JSON.stringify(pkg.version)}'), 'Staged runtime config must derive its version from package.json');
+  assert(androidGradle.includes("new groovy.json.JsonSlurper().parse(file('../../package.json'))"), 'Android Gradle must derive its version from package.json');
+  assert(androidGradle.includes('versionCode appVersionCode'), 'Android Gradle versionCode must be derived from semver');
+  assert(androidGradle.includes('versionName appVersion'), 'Android Gradle versionName must be derived from semver');
+  assert(pkg.scripts['native:version'] === 'node scripts/sync-native-version.cjs', 'Native version sync script is not exposed');
+  assert(pkg.scripts['android:sync'].startsWith('npm run native:version &&'), 'Android sync must refresh native versions first');
+  assert(pkg.scripts['ios:sync'].startsWith('npm run native:version &&'), 'iOS sync must refresh native versions first');
+  assert(syncNativeVersion.includes('MARKETING_VERSION'), 'iOS marketing-version synchronization is missing');
+  assert(![...iosProject.matchAll(/MARKETING_VERSION = ([^;]+);/g)].some(match => match[1] !== pkg.version), 'iOS MARKETING_VERSION must match package.json');
+  assert(appUpdate.includes('https://api.github.com/repos/ChristoGoodrich/2KBigRedFlowers/releases?per_page=12'), 'Update checker must read GitHub releases');
+  assert(appUpdate.includes('compareVersions'), 'Update checker semver comparison is missing');
+  return { version: pkg.version };
 }
 
 function checkPwaAssets() {
@@ -601,6 +651,7 @@ const results = {
   mobileNative: checkMobileNativeTheme(),
   mobileTabs: checkMobileBottomTabs(),
   accountCenter: checkAccountCenter(),
+  aboutUpdate: checkAboutUpdateCenter(),
   assets: checkPwaAssets(),
   seo: checkSeoMeta(),
   routes: checkRoutes(),
@@ -620,6 +671,7 @@ console.log(
   `${results.mobileNative.rules} native mobile rules, ` +
   `${results.mobileTabs.tabs} mobile tabs/${results.mobileTabs.overflowItems} overflow items, ` +
   `${results.accountCenter.states} account states, ` +
+  `about/update v${results.aboutUpdate.version}, ` +
   `${results.assets.requiredRefs} required asset refs, ${results.assets.staticRefs} sw refs, ` +
   `${results.routes.routes} routes, ${results.playersSubview.subviews} player subviews, ` +
   `${results.compareRouting.compareRoutes} compare routes, ${results.contextBar.pages} context pages, ` +

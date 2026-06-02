@@ -4,6 +4,7 @@
   'use strict';
 
   window.NBA2K26_RUNTIME_CONFIG = Object.freeze({
+    appVersion: '1.0.5',
     supabaseUrl: '',
     supabaseAnonKey: '',
   });

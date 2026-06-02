@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+def packageJson = new groovy.json.JsonSlurper().parse(file('../../package.json'))
+def appVersion = packageJson.version.toString()
+def appVersionParts = appVersion.tokenize('.').collect { it.toInteger() }
+def appVersionCode = (appVersionParts[0] * 10000) + (appVersionParts[1] * 100) + appVersionParts[2]
+
 android {
     namespace = "com.bigredflowers.nba2k26tracker"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -7,8 +12,8 @@ android {
         applicationId "com.bigredflowers.nba2k26tracker"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "1.0.1"
+        versionCode appVersionCode
+        versionName appVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

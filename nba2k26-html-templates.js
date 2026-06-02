@@ -12,6 +12,7 @@
     ['confirm-modal', 'confirmModal'],
     ['data-menu-modal', 'dataMenuModal'],
     ['account-center-modal', 'accountCenterModal'],
+    ['about-app-modal', 'aboutAppModal'],
   ];
 
   function injectTemplate(slotName, html) {

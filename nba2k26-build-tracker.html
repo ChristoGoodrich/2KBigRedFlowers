@@ -121,6 +121,10 @@
           <span class="settings-item-main">Account</span>
           <span class="settings-item-sub">Sign in, sync, and manage your cloud account</span>
         </button>
+        <button class="settings-item" id="settings-about" type="button">
+          <span class="settings-item-main">About</span>
+          <span class="settings-item-sub">Version details and updates</span>
+        </button>
         <button class="settings-item" id="settings-backup" type="button">
           <span class="settings-item-main">Backup</span>
           <span class="settings-item-sub">Import, export, or clear local data</span>
@@ -321,6 +325,13 @@
         <small class="mobile-more-item-sub">Sign in and manage cloud sync</small>
       </span>
     </button>
+    <button class="mobile-more-item" id="mobile-more-about" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM12 10v6M12 7h.01"/></svg>
+      <span>
+        <strong class="mobile-more-item-main">About</strong>
+        <small class="mobile-more-item-sub">Version details and updates</small>
+      </span>
+    </button>
     <button class="mobile-more-item" id="mobile-more-settings" type="button">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM19 12l2-1-2-3-2 .5-1.5-1L15 5h-6L8.5 7.5 7 8.5 5 8l-2 3 2 1v2l-2 1 2 3 2-.5 1.5 1L9 21h6l.5-2.5 1.5-1 2 .5 2-3-2-1v-2Z"/></svg>
       <span>
@@ -394,6 +405,10 @@
 <div data-template-slot="account-center-modal"></div>
 <!-- END ACCOUNT CENTER MODAL -->
 
+<!-- BEGIN ABOUT APP MODAL -->
+<div data-template-slot="about-app-modal"></div>
+<!-- END ABOUT APP MODAL -->
+
 <!-- BEGIN TOAST ROOT -->
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 <!-- END TOAST ROOT -->
@@ -407,6 +422,7 @@
 <script src="./nba2k26-scout-report.js" defer></script>
 <script src="./nba2k26-storage.js" defer></script>
 <script src="./nba2k26-runtime-config.js" defer></script>
+<script src="./nba2k26-app-update.js" defer></script>
 <script src="./nba2k26-cloud-sync.js" defer></script>
 <script src="./nba2k26-game-analysis.js" defer></script>
 <script src="./nba2k26-advanced-analytics.js" defer></script>

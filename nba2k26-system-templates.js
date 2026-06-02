@@ -163,4 +163,34 @@
     </div>
   </div>
 </div>`.trim();
+
+  registry.aboutAppModal = `
+<div class="modal-overlay" id="about-modal">
+  <div class="modal about-modal" role="dialog" aria-modal="true" aria-labelledby="about-modal-title">
+    <div class="modal-header">
+      <div class="modal-title" id="about-modal-title">About</div>
+      <button class="modal-close" type="button" onclick="closeAboutModal()" aria-label="Close">x</button>
+    </div>
+    <div class="modal-body about-center">
+      <div class="about-hero">
+        <div class="about-flower" aria-hidden="true">
+          <span></span>
+        </div>
+        <div>
+          <div class="about-product">2KBigRedFlowers</div>
+          <div class="about-copy">NBA 2K26 build and performance tracker</div>
+        </div>
+      </div>
+      <div class="about-version-row">
+        <span>Current version</span>
+        <strong id="about-version">v0.0.0</strong>
+      </div>
+      <button class="btn about-update-button" id="about-check-updates" type="button" onclick="NBA2K26_APP_UPDATE.checkForUpdates()">Check for updates</button>
+      <div class="about-update-status" id="about-update-status" role="status" aria-live="polite">
+        <span>Tap the button to check GitHub releases.</span>
+      </div>
+      <a class="about-release-link" href="https://github.com/ChristoGoodrich/2KBigRedFlowers/releases" target="_blank" rel="noopener noreferrer">Open release notes</a>
+    </div>
+  </div>
+</div>`.trim();
 })(window);

@@ -1,7 +1,7 @@
 {
   "name": "2kbigredflowers",
   "productName": "2KBigRedFlowers",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "NBA 2K26 build management, game tracking, and performance analytics",
   "author": "2KBigRedFlowers",
   "main": "desktop/main.cjs",
@@ -11,6 +11,7 @@
   "scripts": {
     "test": "node scripts/test-all.cjs",
     "stage": "node scripts/stage-web.cjs",
+    "native:version": "node scripts/sync-native-version.cjs",
     "icons:desktop": "node scripts/generate-desktop-icons.cjs",
     "icons:native": "npx @capacitor/assets generate --ios --android --iconBackgroundColor=#0a0a0a --iconBackgroundColorDark=#0a0a0a --splashBackgroundColor=#0a0a0a --splashBackgroundColorDark=#0a0a0a",
     "artifacts:checksums": "node scripts/write-artifact-manifest.cjs",
@@ -21,12 +22,12 @@
     "desktop:make:win": "npm run stage && npm run icons:desktop && npm run desktop:forge -- make --platform=win32 --arch=x64 && npm run artifacts:checksums",
     "desktop:make:mac": "npm run stage && npm run icons:desktop && npm run desktop:forge -- make --platform=darwin",
     "desktop:make:mac:unsigned": "npm run stage && npm run icons:desktop && npm run desktop:forge -- package --platform=darwin --arch=arm64 && npm run desktop:forge -- package --platform=darwin --arch=x64 && node scripts/archive-mac-app.cjs && npm run artifacts:checksums",
-    "mobile:sync": "npm run stage && cap sync && npm run icons:native",
-    "android:add": "npm run stage && cap add android && npm run icons:native",
-    "android:sync": "npm run stage && cap sync android && npm run icons:native",
+    "mobile:sync": "npm run native:version && npm run stage && cap sync && npm run icons:native",
+    "android:add": "npm run native:version && npm run stage && cap add android && npm run icons:native",
+    "android:sync": "npm run native:version && npm run stage && cap sync android && npm run icons:native",
     "android:apk": "npm run android:sync && node scripts/android-gradle.cjs assembleDebug && node scripts/copy-android-apk.cjs && npm run artifacts:checksums",
-    "ios:add": "npm run stage && cap add ios && npm run icons:native",
-    "ios:sync": "npm run stage && cap sync ios && npm run icons:native"
+    "ios:add": "npm run native:version && npm run stage && cap add ios && npm run icons:native",
+    "ios:sync": "npm run native:version && npm run stage && cap sync ios && npm run icons:native"
   },
   "dependencies": {
     "@capacitor/android": "8.3.4",

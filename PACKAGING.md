@@ -54,7 +54,7 @@ npm run android:apk
 The Gradle helper auto-detects the standard Windows JDK and Android SDK
 locations when a newly opened terminal has not loaded `JAVA_HOME` yet.
 
-The APK is copied to `out/make/android/2KBigRedFlowers-1.0.0-debug.apk`.
+The APK is copied to `out/make/android/2KBigRedFlowers-<version>-debug.apk`.
 For Play Store delivery, open `android/` in Android Studio and create a signed
 release App Bundle.
 

@@ -123,12 +123,17 @@
     const wrap = document.getElementById('settings-wrap');
     const trigger = document.getElementById('btn-settings-menu');
     const menu = document.getElementById('settings-menu');
+    const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
+    const mobileClose = document.getElementById('settings-menu-close');
     const theme = document.getElementById('btn-theme-toggle');
     if (!wrap || !trigger || !menu) return;
 
     const close = () => {
       wrap.classList.remove('open');
       trigger.setAttribute('aria-expanded', 'false');
+      if (mobileBackdrop && !document.getElementById('mobile-more-sheet')?.classList.contains('open')) {
+        mobileBackdrop.hidden = true;
+      }
     };
     window.closeSettingsMenu = close;
     const toggle = event => {
@@ -136,9 +141,14 @@
       const open = !wrap.classList.contains('open');
       wrap.classList.toggle('open', open);
       trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (mobileBackdrop && window.matchMedia?.('(max-width: 820px)').matches) {
+        mobileBackdrop.hidden = !open;
+      }
     };
 
     trigger.addEventListener('click', toggle);
+    if (mobileClose) mobileClose.addEventListener('click', close);
+    if (mobileBackdrop) mobileBackdrop.addEventListener('click', close);
     document.addEventListener('click', event => {
       if (!wrap.contains(event.target)) close();
     });

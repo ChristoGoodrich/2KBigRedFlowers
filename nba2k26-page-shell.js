@@ -55,18 +55,23 @@
   function setActiveShellPage(page) {
     const target = document.getElementById('page-' + page);
     if (!target) return false;
+    const navPage = navPageFor(page);
 
     document.querySelectorAll('.page').forEach(panel => panel.classList.remove('active'));
     target.classList.add('active');
 
-    document.querySelectorAll('.nav-btn').forEach(button => {
+    document.querySelectorAll('.nav-btn[data-view], .mobile-tab-btn[data-view], .mobile-more-item[data-view]').forEach(button => {
       button.classList.remove('active');
       button.removeAttribute('aria-current');
     });
-    const nav = document.querySelector(`.nav-btn[data-view="${navPageFor(page)}"]`);
-    if (nav) {
-      nav.classList.add('active');
-      nav.setAttribute('aria-current', 'page');
+    document.querySelectorAll(`.nav-btn[data-view="${navPage}"], .mobile-tab-btn[data-view="${navPage}"], .mobile-more-item[data-view="${navPage}"]`).forEach(button => {
+      button.classList.add('active');
+      button.setAttribute('aria-current', 'page');
+    });
+
+    const mobileMore = document.getElementById('mobile-tab-more');
+    if (mobileMore) {
+      mobileMore.classList.toggle('active', navPage === 'quality' || navPage === 'compare');
     }
     return true;
   }
@@ -89,10 +94,44 @@
 
   function setupNavigation(deps) {
     const { showPage } = deps;
-    document.querySelectorAll('.nav-btn').forEach(button => {
+    const mobileMore = document.getElementById('mobile-tab-more');
+    const mobileMoreSheet = document.getElementById('mobile-more-sheet');
+    const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
+    const mobileMoreClose = document.getElementById('mobile-more-close');
+    const mobileSettings = document.getElementById('mobile-more-settings');
+
+    const setMobileMoreOpen = open => {
+      if (!mobileMore || !mobileMoreSheet) return;
+      mobileMore.classList.toggle('open', open);
+      mobileMore.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileMoreSheet.classList.toggle('open', open);
+      mobileMoreSheet.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if (mobileBackdrop) mobileBackdrop.hidden = !open;
+    };
+    window.closeMobileMoreMenu = () => setMobileMoreOpen(false);
+
+    document.querySelectorAll('.nav-btn[data-view], .mobile-tab-btn[data-view], .mobile-more-item[data-view]').forEach(button => {
       button.addEventListener('click', () => {
-        if (button.dataset.view) showPage(button.dataset.view);
+        setMobileMoreOpen(false);
+        showPage(button.dataset.view);
       });
+    });
+    if (mobileMore) {
+      mobileMore.addEventListener('click', () => {
+        if (typeof window.closeSettingsMenu === 'function') window.closeSettingsMenu();
+        setMobileMoreOpen(!mobileMoreSheet.classList.contains('open'));
+      });
+    }
+    if (mobileMoreClose) mobileMoreClose.addEventListener('click', () => setMobileMoreOpen(false));
+    if (mobileBackdrop) mobileBackdrop.addEventListener('click', () => setMobileMoreOpen(false));
+    if (mobileSettings) {
+      mobileSettings.addEventListener('click', () => {
+        setMobileMoreOpen(false);
+        window.setTimeout(() => document.getElementById('btn-settings-menu')?.click(), 0);
+      });
+    }
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setMobileMoreOpen(false);
     });
 
     const logo = document.querySelector('.logo');

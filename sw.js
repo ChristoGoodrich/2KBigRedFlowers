@@ -1,4 +1,4 @@
-const CACHE = 'nba2k26-v92';
+const CACHE = 'nba2k26-v97';
 const STATIC = [
   './nba2k26-build-tracker.html',
   './nba2k26-theme.css',

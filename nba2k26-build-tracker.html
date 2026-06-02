@@ -99,17 +99,23 @@
       <div class="logo-sub">NBA 2K26 // 2KBIGREDFLOWERS</div>
     </div>
   </div>
-  <nav class="nav" aria-label="Primary">
-    <button class="nav-btn active" data-view="overview" aria-current="page">Overview</button>
-    <button class="nav-btn" data-view="builds">Builds</button>
-    <button class="nav-btn" data-view="players">Players</button>
-    <button class="nav-btn" data-view="games">Games</button>
-    <button class="nav-btn" data-view="quality">Quality</button>
-    <button class="nav-btn" data-view="compare">Compare</button>
+  <div class="header-tools">
+    <nav class="nav desktop-nav" aria-label="Primary">
+      <button class="nav-btn active" data-view="overview" aria-current="page">Overview</button>
+      <button class="nav-btn" data-view="builds">Builds</button>
+      <button class="nav-btn" data-view="players">Players</button>
+      <button class="nav-btn" data-view="games">Games</button>
+      <button class="nav-btn" data-view="quality">Quality</button>
+      <button class="nav-btn" data-view="compare">Compare</button>
+    </nav>
     <div class="nav-divider"></div>
     <div class="settings-wrap" id="settings-wrap">
       <button class="nav-btn tool-btn" id="btn-settings-menu" type="button" aria-haspopup="true" aria-expanded="false">Settings</button>
       <div class="settings-menu" id="settings-menu">
+        <div class="settings-menu-head">
+          <span class="settings-menu-title">Settings</span>
+          <button class="settings-menu-close" id="settings-menu-close" type="button" aria-label="Close settings">Close</button>
+        </div>
         <button class="settings-item" id="settings-backup" type="button">
           <span class="settings-item-main">Backup</span>
           <span class="settings-item-sub">Import, export, or clear local data</span>
@@ -137,7 +143,7 @@
         </button>
       </div>
     </div>
-  </nav>
+  </div>
 </header>
 <!-- END APP HEADER -->
 
@@ -257,6 +263,63 @@
 
 </main>
 <!-- END APP PAGES -->
+
+<!-- BEGIN MOBILE NAVIGATION -->
+<button class="mobile-sheet-backdrop" id="mobile-sheet-backdrop" type="button" aria-label="Close menu" hidden></button>
+
+<section class="mobile-more-sheet" id="mobile-more-sheet" aria-label="More navigation" aria-hidden="true">
+  <div class="mobile-sheet-head">
+    <span class="mobile-sheet-title">More</span>
+    <button class="mobile-sheet-close" id="mobile-more-close" type="button" aria-label="Close menu">Close</button>
+  </div>
+  <div class="mobile-more-list">
+    <button class="mobile-more-item" type="button" data-view="quality">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8M8 13h5M17 13h-1M8 16h8"/></svg>
+      <span>
+        <strong class="mobile-more-item-main">Quality</strong>
+        <small class="mobile-more-item-sub">Review data quality</small>
+      </span>
+    </button>
+    <button class="mobile-more-item" type="button" data-view="compare">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v16M16 4v16M4 8h8M12 16h8"/></svg>
+      <span>
+        <strong class="mobile-more-item-main">Compare</strong>
+        <small class="mobile-more-item-sub">Compare saved builds</small>
+      </span>
+    </button>
+    <button class="mobile-more-item" id="mobile-more-settings" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM19 12l2-1-2-3-2 .5-1.5-1L15 5h-6L8.5 7.5 7 8.5 5 8l-2 3 2 1v2l-2 1 2 3 2-.5 1.5 1L9 21h6l.5-2.5 1.5-1 2 .5 2-3-2-1v-2Z"/></svg>
+      <span>
+        <strong class="mobile-more-item-main">Settings</strong>
+        <small class="mobile-more-item-sub">Backup, theme, language, and OCR</small>
+      </span>
+    </button>
+  </div>
+</section>
+
+<nav class="mobile-tab-bar" aria-label="Primary mobile navigation">
+  <button class="mobile-tab-btn active" type="button" data-view="overview" aria-current="page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5v-6H9v6H4Z"/></svg>
+    <span class="mobile-tab-label">Overview</span>
+  </button>
+  <button class="mobile-tab-btn" type="button" data-view="builds">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14v14H5zM8 9h8M8 13h8M8 16h5"/></svg>
+    <span class="mobile-tab-label">Builds</span>
+  </button>
+  <button class="mobile-tab-btn" type="button" data-view="players">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 20c.8-3.2 3.5-5 8-5s7.2 1.8 8 5"/></svg>
+    <span class="mobile-tab-label">Players</span>
+  </button>
+  <button class="mobile-tab-btn" type="button" data-view="games">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18ZM8 5.5c3 2 5 2 8 0M8 18.5c3-2 5-2 8 0M3.5 12h17M12 3c-2.2 3-2.2 15 0 18"/></svg>
+    <span class="mobile-tab-label">Games</span>
+  </button>
+  <button class="mobile-tab-btn mobile-tab-more" id="mobile-tab-more" type="button" aria-controls="mobile-more-sheet" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h.01M12 12h.01M19 12h.01"/></svg>
+    <span class="mobile-tab-label">More</span>
+  </button>
+</nav>
+<!-- END MOBILE NAVIGATION -->
 
 
 <!-- BEGIN BUILD MODAL -->

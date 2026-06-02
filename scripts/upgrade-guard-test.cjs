@@ -43,7 +43,7 @@ function checkCssVariables() {
 }
 
 function checkMobileLightTheme() {
-  const css = read('nba2k26-premium.css');
+  const css = read('nba2k26-premium.css').replace(/\r\n/g, '\n');
   const labSkinIndex = css.indexOf('/* 2KLab reference dashboard skin */');
   const lightGuardIndex = css.indexOf('/* Keep the late 2KLab skin readable when the resolved system theme is light. */');
   assert(labSkinIndex > -1, '2KLab dashboard skin marker is missing');
@@ -61,9 +61,41 @@ function checkMobileLightTheme() {
     'overflow: visible;',
     'gap: 2px;\n    overflow: visible;',
     'padding-inline: 8px;',
+    '[data-theme="light"] .mobile-tab-bar {',
+    '[data-theme="light"] .mobile-more-sheet,',
   ];
   required.forEach(rule => assert(guard.includes(rule), `Mobile light-theme guard is missing: ${rule}`));
   return { rules: required.length };
+}
+
+function checkMobileBottomTabs() {
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const css = read('nba2k26-premium.css');
+  const pageShell = read('nba2k26-page-shell.js');
+  const uiCore = read('nba2k26-ui-core.js');
+  const requiredIds = [
+    'mobile-sheet-backdrop',
+    'mobile-more-sheet',
+    'mobile-more-close',
+    'mobile-more-settings',
+    'mobile-tab-more',
+    'settings-menu-close',
+  ];
+  requiredIds.forEach(id => assert(html.includes(`id="${id}"`), `Mobile navigation is missing #${id}`));
+
+  const cssRules = [
+    '.mobile-tab-bar {',
+    'grid-template-columns: repeat(5, minmax(0, 1fr));',
+    'bottom: calc(76px + env(safe-area-inset-bottom, 0px));',
+    'position: static;\n    min-height: 0;\n    height: 0;',
+    '.header .logo {\n    display: none;',
+    '-webkit-backdrop-filter: none !important;',
+  ];
+  cssRules.forEach(rule => assert(css.includes(rule), `Mobile navigation CSS is missing: ${rule}`));
+  assert(pageShell.includes('window.closeMobileMoreMenu'), 'Mobile more menu close bridge is missing');
+  assert(pageShell.includes("mobileMore.classList.toggle('active', navPage === 'quality' || navPage === 'compare')"), 'Overflow page state must highlight More');
+  assert(uiCore.includes("const mobileBackdrop = document.getElementById('mobile-sheet-backdrop')"), 'Mobile settings drawer must share the backdrop');
+  return { tabs: 5, overflowItems: 3 };
 }
 
 function checkPwaAssets() {
@@ -510,6 +542,7 @@ function checkSeoMeta() {
 const results = {
   css: checkCssVariables(),
   mobileTheme: checkMobileLightTheme(),
+  mobileTabs: checkMobileBottomTabs(),
   assets: checkPwaAssets(),
   seo: checkSeoMeta(),
   routes: checkRoutes(),
@@ -526,6 +559,7 @@ const results = {
 console.log(
   `upgrade guards ok: css ${results.css.cssFiles} files/${results.css.vars} vars, ` +
   `${results.mobileTheme.rules} mobile light-theme rules, ` +
+  `${results.mobileTabs.tabs} mobile tabs/${results.mobileTabs.overflowItems} overflow items, ` +
   `${results.assets.requiredRefs} required asset refs, ${results.assets.staticRefs} sw refs, ` +
   `${results.routes.routes} routes, ${results.playersSubview.subviews} player subviews, ` +
   `${results.compareRouting.compareRoutes} compare routes, ${results.contextBar.pages} context pages, ` +

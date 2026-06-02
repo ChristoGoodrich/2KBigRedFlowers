@@ -12,6 +12,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GitHub community health files, issue forms, pull request template, Dependabot
   configuration, and CodeQL workflow.
 
+## [1.0.2] - 2026-06-02
+
+### Added
+
+- Replaced the narrow-screen header navigation with a five-item mobile bottom
+  tab bar and a More drawer for secondary destinations.
+- Added regression guards for the mobile tab bar and overflow menu.
+
+### Fixed
+
+- Removed the fixed mobile brand header so content begins at the top of the
+  native app viewport.
+- Kept mobile Settings reachable from the More drawer after removing the
+  visible header.
+
 ## [1.0.1] - 2026-06-01
 
 ### Fixed
@@ -33,6 +48,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Optional Supabase-backed cross-device sync while preserving local-first
   storage.
 
-[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.0

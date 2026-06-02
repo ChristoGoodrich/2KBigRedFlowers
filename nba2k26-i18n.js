@@ -9,7 +9,15 @@ const I18N_COPY = {
   appSub: ['NBA 2K26 // THE CITY ARCHIVE', 'NBA 2K26 // 城市档案'],
   Overview: ['Overview', '总览'],
   Builds: ['Builds', '建模'],
+  More: ['More', '更多'],
   Settings: ['Settings', '设置'],
+  'Close menu': ['Close menu', '关闭菜单'],
+  'Close settings': ['Close settings', '关闭设置'],
+  'More navigation': ['More navigation', '更多导航'],
+  'Primary mobile navigation': ['Primary mobile navigation', '移动端主导航'],
+  'Review data quality': ['Review data quality', '检查数据质量'],
+  'Compare saved builds': ['Compare saved builds', '对比已保存建模'],
+  'Backup, theme, language, and OCR': ['Backup, theme, language, and OCR', '备份、主题、语言与 OCR'],
   Backup: ['Backup', '备份'],
   'Import, export, or clear local data': ['Import, export, or clear local data', '导入、导出或清空本地数据'],
   'Current database': ['Current database', '当前数据库'],
@@ -1726,7 +1734,9 @@ function updateStaticBilingualLabels(root = document) {
   });
 
   const textSelectors = [
-    '.nav-btn', '.pv-tab', '.settings-item-main', '.settings-item-sub', '.theme-choice-btn', '.lang-choice-btn',
+    '.nav-btn', '.mobile-tab-label', '.mobile-sheet-title', '.mobile-sheet-close', '.mobile-more-item-main',
+    '.mobile-more-item-sub', '.settings-menu-title', '.settings-menu-close',
+    '.pv-tab', '.settings-item-main', '.settings-item-sub', '.theme-choice-btn', '.lang-choice-btn',
     '.logo-text', '.logo-sub', '.account-bar-empty', '.page-title', '.page-subtitle', '.back-btn',
     '.modal-title', '.modal-close', '.build-tab', '.form-section-title',
     '.form-hint', '.form-group label', '.attr-row label', '.attr-section-sub', '.inline-action',

@@ -208,20 +208,20 @@
                 onclick="openGameFromGlobalList('${gameIdSafe}','${buildIdSafe}')"
                 style="cursor:pointer;"
                 title="${t('Click to edit')}">
-        <td class="gp-td-date">${esc(game.date || '–')}</td>
-        <td class="gp-td-build" onclick="event.stopPropagation();openBuildDetail('${buildIdSafe}')" title="${t('Open build detail')}">
+        <td class="gp-td-date" data-label="${t('Date')}">${esc(game.date || '–')}</td>
+        <td class="gp-td-build" data-label="${t('Build')}" onclick="event.stopPropagation();openBuildDetail('${buildIdSafe}')" title="${t('Open build detail')}">
           <span class="gp-build-pill" style="background:${color}22;border:1px solid ${color}88;color:${color};cursor:pointer;">${esc(buildName)}</span>
         </td>
-        <td>${esc(game.mode || '–')}</td>
-        <td class="${rCls}" style="font-weight:800;text-align:center;">${esc(game.result)}</td>
-        <td style="text-align:center;">${game.pts ?? 0}</td>
-        <td style="text-align:center;">${game.reb ?? 0}</td>
-        <td style="text-align:center;">${game.ast ?? 0}</td>
-        <td style="text-align:center;">${game.stl ?? 0}</td>
-        <td style="text-align:center;">${game.blk ?? 0}</td>
-        <td style="text-align:center;" class="${pmCls}">${pmStr}</td>
-        <td style="text-align:center;">${fgPctStr}</td>
-        <td style="text-align:center;font-family:var(--font-mono);font-size:11px;">${esc(score)}</td>
+        <td data-label="${t('Mode')}">${esc(game.mode || '–')}</td>
+        <td data-label="W/L" class="${rCls}" style="font-weight:800;text-align:center;">${esc(game.result)}</td>
+        <td data-label="PTS" style="text-align:center;">${game.pts ?? 0}</td>
+        <td data-label="REB" style="text-align:center;">${game.reb ?? 0}</td>
+        <td data-label="AST" style="text-align:center;">${game.ast ?? 0}</td>
+        <td data-label="STL" style="text-align:center;">${game.stl ?? 0}</td>
+        <td data-label="BLK" style="text-align:center;">${game.blk ?? 0}</td>
+        <td data-label="+/-" style="text-align:center;" class="${pmCls}">${pmStr}</td>
+        <td data-label="FG%" style="text-align:center;">${fgPctStr}</td>
+        <td data-label="${t('Score')}" style="text-align:center;font-family:var(--font-mono);font-size:11px;">${esc(score)}</td>
       </tr>`;
     }).join('');
 

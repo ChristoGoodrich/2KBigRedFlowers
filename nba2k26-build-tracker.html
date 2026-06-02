@@ -41,6 +41,7 @@
 <link rel="stylesheet" href="./nba2k26-compare.css">
 <link rel="stylesheet" href="./nba2k26-opponent-intel.css">
 <link rel="stylesheet" href="./nba2k26-premium.css">
+<link rel="stylesheet" href="./nba2k26-mobile.css">
 <!-- END HEAD ASSETS -->
 <script>
 (function() {
@@ -116,6 +117,10 @@
           <span class="settings-menu-title">Settings</span>
           <button class="settings-menu-close" id="settings-menu-close" type="button" aria-label="Close settings">Close</button>
         </div>
+        <button class="settings-item" id="settings-account" type="button">
+          <span class="settings-item-main">Account</span>
+          <span class="settings-item-sub">Sign in, sync, and manage your cloud account</span>
+        </button>
         <button class="settings-item" id="settings-backup" type="button">
           <span class="settings-item-main">Backup</span>
           <span class="settings-item-sub">Import, export, or clear local data</span>
@@ -146,6 +151,28 @@
   </div>
 </header>
 <!-- END APP HEADER -->
+
+<!-- BEGIN MOBILE APP HEADER -->
+<header class="mobile-app-head" aria-label="Current page">
+  <strong class="mobile-app-title" id="mobile-app-title" data-i18n="Overview">Overview</strong>
+  <span class="mobile-app-mark" aria-hidden="true">
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(20,20)">
+        <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(22.5) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(67.5) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(112.5) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#8B0015" transform="rotate(157.5) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(0) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(45) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(90) translate(0,-9)"/>
+        <ellipse rx="5" ry="10" fill="#D4001A" transform="rotate(135) translate(0,-9)"/>
+        <circle r="6.5" fill="#FFD000"/>
+        <circle r="3" fill="#C07800"/>
+      </g>
+    </svg>
+  </span>
+</header>
+<!-- END MOBILE APP HEADER -->
 
 <!-- BEGIN ACCOUNT BAR -->
 <div class="account-bar-wrap" id="account-bar-wrap">
@@ -287,6 +314,13 @@
         <small class="mobile-more-item-sub">Compare saved builds</small>
       </span>
     </button>
+    <button class="mobile-more-item" id="mobile-more-account" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM4 20c.8-3.2 3.5-5 8-5s7.2 1.8 8 5"/></svg>
+      <span>
+        <strong class="mobile-more-item-main">Account</strong>
+        <small class="mobile-more-item-sub">Sign in and manage cloud sync</small>
+      </span>
+    </button>
     <button class="mobile-more-item" id="mobile-more-settings" type="button">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM19 12l2-1-2-3-2 .5-1.5-1L15 5h-6L8.5 7.5 7 8.5 5 8l-2 3 2 1v2l-2 1 2 3 2-.5 1.5 1L9 21h6l.5-2.5 1.5-1 2 .5 2-3-2-1v-2Z"/></svg>
       <span>
@@ -355,6 +389,10 @@
 <!-- BEGIN DATA MENU MODAL -->
 <div data-template-slot="data-menu-modal"></div>
 <!-- END DATA MENU MODAL -->
+
+<!-- BEGIN ACCOUNT CENTER MODAL -->
+<div data-template-slot="account-center-modal"></div>
+<!-- END ACCOUNT CENTER MODAL -->
 
 <!-- BEGIN TOAST ROOT -->
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>

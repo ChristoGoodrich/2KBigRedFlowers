@@ -68,6 +68,30 @@ function checkMobileLightTheme() {
   return { rules: required.length };
 }
 
+function checkMobileNativeTheme() {
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const css = read('nba2k26-mobile.css').replace(/\r\n/g, '\n');
+  const pageShell = read('nba2k26-page-shell.js');
+  const required = [
+    '.mobile-app-head,',
+    '.mobile-first-run-summary,',
+    '.mobile-first-run-title {',
+    '@media (max-width: 820px) {',
+    '.page-header,',
+    '.mobile-first-run-summary {',
+    '.first-run-actions {',
+    '#all-games-table .gp-row {',
+    '[data-theme="light"] body {',
+    'background: #f5f7fa;',
+    '[data-theme="light"] .mobile-tab-btn.active {',
+  ];
+  assert(html.includes('href="./nba2k26-mobile.css"'), 'Mobile stylesheet must load after the premium desktop skin');
+  assert(html.includes('id="mobile-app-title"'), 'Mobile page title is missing');
+  assert(pageShell.includes('function updateMobileTitle(page)'), 'Mobile page title updater is missing');
+  required.forEach(rule => assert(css.includes(rule), `Native mobile theme is missing: ${rule}`));
+  return { rules: required.length };
+}
+
 function checkMobileBottomTabs() {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const css = read('nba2k26-premium.css');
@@ -77,6 +101,7 @@ function checkMobileBottomTabs() {
     'mobile-sheet-backdrop',
     'mobile-more-sheet',
     'mobile-more-close',
+    'mobile-more-account',
     'mobile-more-settings',
     'mobile-tab-more',
     'settings-menu-close',
@@ -91,12 +116,42 @@ function checkMobileBottomTabs() {
     '.header .logo {\n    display: none;',
     '-webkit-backdrop-filter: none !important;',
     '.account-bar-wrap {\n    display: none;',
+    '.modal-overlay {\n    z-index: 250;',
   ];
   cssRules.forEach(rule => assert(css.includes(rule), `Mobile navigation CSS is missing: ${rule}`));
   assert(pageShell.includes('window.closeMobileMoreMenu'), 'Mobile more menu close bridge is missing');
   assert(pageShell.includes("mobileMore.classList.toggle('active', navPage === 'quality' || navPage === 'compare')"), 'Overflow page state must highlight More');
   assert(uiCore.includes("const mobileBackdrop = document.getElementById('mobile-sheet-backdrop')"), 'Mobile settings drawer must share the backdrop');
-  return { tabs: 5, overflowItems: 3 };
+  return { tabs: 5, overflowItems: 4 };
+}
+
+function checkAccountCenter() {
+  const html = fs.readFileSync(htmlPath, 'utf8');
+  const templates = read('nba2k26-system-templates.js');
+  const htmlTemplates = read('nba2k26-html-templates.js');
+  const uiCore = read('nba2k26-ui-core.js');
+  const cloudSync = read('nba2k26-cloud-sync.js');
+  const dataMenuStart = templates.indexOf('registry.dataMenuModal');
+  const accountCenterStart = templates.indexOf('registry.accountCenterModal');
+  const dataMenu = templates.slice(dataMenuStart, accountCenterStart);
+  const accountCenter = templates.slice(accountCenterStart);
+
+  assert(html.includes('id="settings-account"'), 'Settings menu is missing the standalone account entry');
+  assert(html.includes('data-template-slot="account-center-modal"'), 'Account center template slot is missing');
+  assert(htmlTemplates.includes("['account-center-modal', 'accountCenterModal']"), 'Account center template is not injected');
+  assert(!dataMenu.includes('cloud-sync-panel'), 'Data Backup must not contain cloud account controls');
+  [
+    'id="account-modal"',
+    'id="cloud-auth-form"',
+    'id="cloud-session-panel"',
+    'id="cloud-account-chip"',
+    'data-cloud-auth-action',
+    'data-cloud-session-action',
+  ].forEach(rule => assert(accountCenter.includes(rule), `Account center is missing: ${rule}`));
+  assert(uiCore.includes("if (item.id === 'settings-account')"), 'Settings account entry is not wired');
+  assert(cloudSync.includes("authForm.hidden = status.signedIn"), 'Account center must hide auth form after sign-in');
+  assert(cloudSync.includes("sessionPanel.hidden = !status.signedIn"), 'Account center must show session panel after sign-in');
+  return { states: 2 };
 }
 
 function checkPwaAssets() {
@@ -543,7 +598,9 @@ function checkSeoMeta() {
 const results = {
   css: checkCssVariables(),
   mobileTheme: checkMobileLightTheme(),
+  mobileNative: checkMobileNativeTheme(),
   mobileTabs: checkMobileBottomTabs(),
+  accountCenter: checkAccountCenter(),
   assets: checkPwaAssets(),
   seo: checkSeoMeta(),
   routes: checkRoutes(),
@@ -560,7 +617,9 @@ const results = {
 console.log(
   `upgrade guards ok: css ${results.css.cssFiles} files/${results.css.vars} vars, ` +
   `${results.mobileTheme.rules} mobile light-theme rules, ` +
+  `${results.mobileNative.rules} native mobile rules, ` +
   `${results.mobileTabs.tabs} mobile tabs/${results.mobileTabs.overflowItems} overflow items, ` +
+  `${results.accountCenter.states} account states, ` +
   `${results.assets.requiredRefs} required asset refs, ${results.assets.staticRefs} sw refs, ` +
   `${results.routes.routes} routes, ${results.playersSubview.subviews} player subviews, ` +
   `${results.compareRouting.compareRoutes} compare routes, ${results.contextBar.pages} context pages, ` +

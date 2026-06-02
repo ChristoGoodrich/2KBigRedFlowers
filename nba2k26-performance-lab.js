@@ -30,8 +30,14 @@
         c.innerHTML = `
           <section class="first-run">
             <div class="first-run-badge">NBA 2K26</div>
+            <div class="mobile-first-run-summary">
+              <span>${t('Career record')}</span>
+              <strong>0W - 0L</strong>
+              <small>${t('No games recorded yet')}</small>
+            </div>
             <h2 class="first-run-title">${t('Welcome to your build tracker')}</h2>
             <p class="first-run-lead">${t('Track every build, log your games, and see which setup actually wins.')}</p>
+            <h2 class="mobile-first-run-title">${t('Start here')}</h2>
             <ol class="first-run-steps">
               <li><span class="frs-num">1</span><div><strong>${t('Create a build')}</strong><small>${t('Add your position, attributes, and badges.')}</small></div></li>
               <li><span class="frs-num">2</span><div><strong>${t('Log your games')}</strong><small>${t('Enter the box score after each game — or scan a screenshot.')}</small></div></li>
@@ -322,10 +328,10 @@
           const build = buildById(game.buildId);
           return `
             <tr class="clickable-row" onclick="openBuildDetail('${escapeAttr(game.buildId)}')">
-              <td>${escapeHtml(game.date || '-')}</td><td>${escapeHtml(game.opponent || '-')}</td><td>${escapeHtml(game.mode || '-')}</td>
-              <td class="${game.result === 'W' ? 'result-w' : 'result-l'}">${escapeHtml(game.result || '-')}</td>
-              <td>${escapeHtml(game.scoreOwn != null && game.scoreOpp != null ? `${game.scoreOwn}-${game.scoreOpp}` : '-')}</td>
-              <td>${game.pts || 0}</td><td>${game.reb || 0}</td><td>${game.ast || 0}</td><td>${escapeHtml(game.grade || '-')}</td><td>${build ? escapeHtml(build.name) : '-'}</td>
+              <td data-label="${t('Date')}">${escapeHtml(game.date || '-')}</td><td data-label="${t('Opponent')}">${escapeHtml(game.opponent || '-')}</td><td data-label="${t('Mode')}">${escapeHtml(game.mode || '-')}</td>
+              <td data-label="${t('Result')}" class="${game.result === 'W' ? 'result-w' : 'result-l'}">${escapeHtml(game.result || '-')}</td>
+              <td data-label="${t('Score')}">${escapeHtml(game.scoreOwn != null && game.scoreOpp != null ? `${game.scoreOwn}-${game.scoreOpp}` : '-')}</td>
+              <td data-label="${t('PTS')}">${game.pts || 0}</td><td data-label="${t('REB')}">${game.reb || 0}</td><td data-label="${t('AST')}">${game.ast || 0}</td><td data-label="${t('Grade')}">${escapeHtml(game.grade || '-')}</td><td data-label="${t('Build')}">${build ? escapeHtml(build.name) : '-'}</td>
             </tr>`;
         }).join('') : `<tr><td colspan="10" class="lab-ref-empty-row">${t('No games logged yet. Create a build, then add the first game sample.')}</td></tr>`;
         const quickLogAction = actionBuild ? `quickLogGame('${escapeAttr(actionBuild.id)}')` : 'showPage(\'builds\')';

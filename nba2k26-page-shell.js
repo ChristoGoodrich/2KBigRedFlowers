@@ -52,6 +52,24 @@
     return page;
   }
 
+  function updateMobileTitle(page) {
+    const title = document.getElementById('mobile-app-title');
+    if (!title) return;
+    const labels = {
+      overview: 'Overview',
+      builds: 'Builds',
+      detail: 'Build Detail',
+      players: 'Players',
+      player: 'Player Profile',
+      games: 'Games',
+      quality: 'Data Quality',
+      compare: 'Compare Builds',
+    };
+    const text = labels[page] || labels.overview;
+    title.setAttribute('data-i18n', text);
+    title.textContent = text;
+  }
+
   function setActiveShellPage(page) {
     const target = document.getElementById('page-' + page);
     if (!target) return false;
@@ -73,6 +91,7 @@
     if (mobileMore) {
       mobileMore.classList.toggle('active', navPage === 'quality' || navPage === 'compare');
     }
+    updateMobileTitle(page);
     return true;
   }
 
@@ -98,6 +117,7 @@
     const mobileMoreSheet = document.getElementById('mobile-more-sheet');
     const mobileBackdrop = document.getElementById('mobile-sheet-backdrop');
     const mobileMoreClose = document.getElementById('mobile-more-close');
+    const mobileAccount = document.getElementById('mobile-more-account');
     const mobileSettings = document.getElementById('mobile-more-settings');
 
     const setMobileMoreOpen = open => {
@@ -124,6 +144,12 @@
     }
     if (mobileMoreClose) mobileMoreClose.addEventListener('click', () => setMobileMoreOpen(false));
     if (mobileBackdrop) mobileBackdrop.addEventListener('click', () => setMobileMoreOpen(false));
+    if (mobileAccount) {
+      mobileAccount.addEventListener('click', () => {
+        setMobileMoreOpen(false);
+        window.setTimeout(() => window.openAccountModal?.(), 0);
+      });
+    }
     if (mobileSettings) {
       mobileSettings.addEventListener('click', () => {
         setMobileMoreOpen(false);

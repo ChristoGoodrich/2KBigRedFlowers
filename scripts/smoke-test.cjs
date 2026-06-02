@@ -104,7 +104,8 @@ const expectedCssLinks = [
   './nba2k26-ultra.css',
   './nba2k26-compare.css',
   './nba2k26-opponent-intel.css',
-  './nba2k26-premium.css'
+  './nba2k26-premium.css',
+  './nba2k26-mobile.css'
 ];
 
 const expectedLocalExternalScripts = [

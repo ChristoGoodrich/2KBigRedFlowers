@@ -12,6 +12,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GitHub community health files, issue forms, pull request template, Dependabot
   configuration, and CodeQL workflow.
 
+## [1.0.4] - 2026-06-02
+
+### Added
+
+- Added a standalone Account Center for sign-in, registration, sync status,
+  cloud configuration, and manual recovery tools.
+- Added a dedicated mobile presentation layer with compact page titles and
+  native-style light-mode surfaces.
+
+### Changed
+
+- Rebuilt the narrow-screen first-run overview into a mobile-first summary,
+  action, and onboarding flow.
+- Converted narrow-screen game records into readable card-style rows.
+- Kept Data Backup focused on import, export, and local-data maintenance.
+
+### Fixed
+
+- Restored clear contrast across mobile light mode.
+- Kept mobile modal sheets above the bottom tab bar.
+
 ## [1.0.3] - 2026-06-02
 
 ### Fixed
@@ -56,7 +77,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Optional Supabase-backed cross-device sync while preserving local-first
   storage.
 
-[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.3...HEAD
+[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.4...HEAD
+[1.0.4]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.4
 [1.0.3]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.3
 [1.0.2]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.1

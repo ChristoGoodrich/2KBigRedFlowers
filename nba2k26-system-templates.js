@@ -59,31 +59,83 @@
         </div>
       </label>
       <input type="file" id="import-file-modal" accept="application/json" class="hidden">
+      <div class="data-action danger" onclick="clearAllData()">
+        <div class="data-action-icon">DEL</div>
+        <div>
+          <div class="data-action-title">Clear All Data</div>
+          <div class="data-action-sub">// Cannot be undone. Export a backup first.</div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:12px;background:rgba(0,0,0,0.4);border-left:3px solid var(--yellow);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);line-height:1.6;" id="data-stats">
+        <!-- filled by JS -->
+      </div>
+    </div>
+  </div>
+</div>`.trim();
+
+  registry.accountCenterModal = `
+<div class="modal-overlay" id="account-modal">
+  <div class="modal account-modal" role="dialog" aria-modal="true" aria-labelledby="account-modal-title">
+    <div class="modal-header">
+      <div class="modal-title" id="account-modal-title">Account Center</div>
+      <button class="modal-close" type="button" onclick="closeAccountModal()" aria-label="Close">x</button>
+    </div>
+    <div class="modal-body account-center">
+      <div class="account-center-hero">
+        <div class="account-center-icon" aria-hidden="true">
+          <span></span>
+        </div>
+        <div>
+          <div class="account-center-kicker">CLOUD ACCOUNT</div>
+          <div class="account-center-title" id="cloud-account-title">Protect your tracker data</div>
+          <div class="account-center-copy" id="cloud-account-description">Your tracker remains usable offline. Sign in to sync progress across devices.</div>
+        </div>
+        <div class="cloud-account-chip" id="cloud-account-chip">Not connected</div>
+      </div>
+
       <div class="cloud-sync-panel">
         <div class="cloud-sync-head">
           <div>
             <div class="data-action-title">Cloud Sync</div>
             <div class="data-action-sub" id="cloud-sync-status">// Not configured</div>
           </div>
-          <button class="btn cloud-mini-btn" type="button" data-cloud-action onclick="cloudSyncNow()">Sync Now</button>
+          <button class="btn cloud-mini-btn" type="button" data-cloud-action data-cloud-session-action onclick="cloudSyncNow()">Sync Now</button>
         </div>
         <div class="cloud-account-state" id="cloud-sync-message" role="status" aria-live="polite">
           Open Advanced setup once, add your Supabase connection, then sign in with your cloud account.
         </div>
-        <div class="cloud-sync-grid">
-          <label class="cloud-field">
-            <span>Email</span>
-            <input id="cloud-email" type="email" autocomplete="email" placeholder="you@example.com">
-          </label>
-          <label class="cloud-field">
-            <span>Password</span>
-            <input id="cloud-password" type="password" autocomplete="current-password" placeholder="minimum 6 characters">
-          </label>
+
+        <div class="cloud-auth-form" id="cloud-auth-form">
+          <div class="cloud-sync-grid">
+            <label class="cloud-field">
+              <span>Email</span>
+              <input id="cloud-email" type="email" autocomplete="email" placeholder="you@example.com">
+            </label>
+            <label class="cloud-field">
+              <span>Password</span>
+              <input id="cloud-password" type="password" autocomplete="current-password" placeholder="minimum 6 characters">
+            </label>
+          </div>
+          <div class="cloud-sync-actions">
+            <button class="btn" type="button" data-cloud-action data-cloud-auth-action onclick="cloudSignIn()">Sign In</button>
+            <button class="btn btn-ghost" type="button" data-cloud-action data-cloud-auth-action onclick="cloudSignUp()">Create Account</button>
+          </div>
         </div>
-        <div class="cloud-sync-actions">
-          <button class="btn" type="button" data-cloud-action onclick="cloudSignIn()">Sign In</button>
-          <button class="btn btn-ghost" type="button" data-cloud-action onclick="cloudSignUp()">Create Account</button>
+
+        <div class="cloud-session-panel" id="cloud-session-panel" hidden>
+          <div class="cloud-session-row">
+            <div>
+              <div class="cloud-session-label">Signed in as</div>
+              <div class="cloud-session-email" id="cloud-session-email">-</div>
+            </div>
+            <div class="cloud-session-badge">Automatic sync active</div>
+          </div>
+          <div class="cloud-session-note">Your tracker remains usable offline. Signed-in changes sync automatically.</div>
+          <div class="cloud-sync-actions">
+            <button class="btn btn-ghost" type="button" data-cloud-action data-cloud-session-action onclick="cloudSignOut()">Sign Out</button>
+          </div>
         </div>
+
         <details class="cloud-advanced" id="cloud-advanced">
           <summary>Advanced setup</summary>
           <div class="cloud-setup-note">
@@ -99,23 +151,14 @@
               <input id="cloud-supabase-key" type="password" autocomplete="off" placeholder="public anon key">
             </label>
           </div>
+          <div class="cloud-setup-note">Manual recovery tools</div>
+          <div class="cloud-setup-note">Use these only when moving data between devices or recovering a local copy.</div>
           <div class="cloud-sync-actions">
             <button class="btn btn-ghost" type="button" data-cloud-action onclick="saveCloudConfig()">Save Setup</button>
-            <button class="btn btn-ghost" type="button" data-cloud-action onclick="pushLocalToCloud()">Upload Local</button>
-            <button class="btn btn-ghost" type="button" data-cloud-action onclick="pullCloudToLocal()">Pull Cloud</button>
-            <button class="btn btn-ghost" type="button" data-cloud-action onclick="cloudSignOut()">Sign Out</button>
+            <button class="btn btn-ghost" type="button" data-cloud-action data-cloud-session-action onclick="pushLocalToCloud()">Upload Local</button>
+            <button class="btn btn-ghost" type="button" data-cloud-action data-cloud-session-action onclick="pullCloudToLocal()">Pull Cloud</button>
           </div>
         </details>
-      </div>
-      <div class="data-action danger" onclick="clearAllData()">
-        <div class="data-action-icon">DEL</div>
-        <div>
-          <div class="data-action-title">Clear All Data</div>
-          <div class="data-action-sub">// Cannot be undone. Export a backup first.</div>
-        </div>
-      </div>
-      <div style="margin-top:16px;padding:12px;background:rgba(0,0,0,0.4);border-left:3px solid var(--yellow);font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);line-height:1.6;" id="data-stats">
-        <!-- filled by JS -->
       </div>
     </div>
   </div>

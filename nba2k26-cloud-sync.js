@@ -71,6 +71,7 @@
     const buttons = document.querySelectorAll('[data-cloud-action]');
     buttons.forEach(button => {
       button.disabled = !!isBusy;
+      button.setAttribute('aria-busy', isBusy ? 'true' : 'false');
       if (isBusy && (button.textContent === label || button.textContent === translatedLabel)) {
         button.dataset.busyLabel = translatedLabel;
       }
@@ -228,7 +229,8 @@
     return runCloudAction('Sign out', async () => {
       const supabase = await getClient();
       if (!supabase) throw new Error('Cloud setup is not configured.');
-      await supabase.auth.signOut();
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
       setStatus({ signedIn: false, email: '' });
       notify('Signed out of cloud sync');
     });
@@ -354,16 +356,45 @@
 
   function renderStatus() {
     const el = document.getElementById('cloud-sync-status');
-    if (!el) return;
     const bits = [];
     if (!status.configured) bits.push(translate('Setup needed'));
     else if (!status.signedIn) bits.push(translate('Ready to sign in'));
     else bits.push(status.email ? `${translate('Connected')}: ${status.email}` : translate('Connected'));
     if (status.syncing) bits.push(translate('Syncing now'));
     if (status.lastSyncAt) bits.push(`${translate('Last sync')} ${new Date(status.lastSyncAt).toLocaleString()}`);
-    el.textContent = `// ${bits.join(' / ')}`;
-    el.classList.toggle('ok', status.configured && status.signedIn);
-    el.classList.toggle('err', status.configured && !status.signedIn);
+    if (el) {
+      el.textContent = `// ${bits.join(' / ')}`;
+      el.classList.toggle('ok', status.configured && status.signedIn);
+      el.classList.toggle('err', status.configured && !status.signedIn);
+    }
+
+    const authForm = document.getElementById('cloud-auth-form');
+    const sessionPanel = document.getElementById('cloud-session-panel');
+    const sessionEmail = document.getElementById('cloud-session-email');
+    const chip = document.getElementById('cloud-account-chip');
+    const title = document.getElementById('cloud-account-title');
+    const description = document.getElementById('cloud-account-description');
+    if (authForm) authForm.hidden = status.signedIn;
+    if (sessionPanel) sessionPanel.hidden = !status.signedIn;
+    if (sessionEmail) sessionEmail.textContent = status.email || '-';
+    if (chip) {
+      chip.textContent = translate(status.signedIn ? 'Connected' : status.configured ? 'Sign in required' : 'Not connected');
+      chip.classList.toggle('ok', status.signedIn);
+      chip.classList.toggle('warn', !status.signedIn);
+    }
+    if (title) title.textContent = translate(status.signedIn ? 'Account connected' : 'Protect your tracker data');
+    if (description) {
+      description.textContent = translate(status.signedIn
+        ? 'Your tracker remains usable offline. Signed-in changes sync automatically.'
+        : 'Your tracker remains usable offline. Sign in to sync progress across devices.');
+    }
+
+    document.querySelectorAll('[data-cloud-auth-action]').forEach(button => {
+      button.disabled = status.syncing || status.signedIn;
+    });
+    document.querySelectorAll('[data-cloud-session-action]').forEach(button => {
+      button.disabled = status.syncing || !status.signedIn;
+    });
   }
 
   async function hydrateCloudPanel() {
@@ -400,5 +431,6 @@
     syncDelete,
     refreshSession,
     canAutoSync,
+    getStatus: () => ({ ...status }),
   };
 })(window);

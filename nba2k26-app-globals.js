@@ -2249,11 +2249,7 @@ async function shareGame(id) {
 function openDataModal() {
   lockPageScroll();
   if (window.NBA2K26_DATA_PORTABILITY && window.NBA2K26_DATA_PORTABILITY.openDataModal) {
-    const result = window.NBA2K26_DATA_PORTABILITY.openDataModal(state);
-    if (window.NBA2K26_CLOUD_SYNC && window.NBA2K26_CLOUD_SYNC.hydrateCloudPanel) {
-      window.NBA2K26_CLOUD_SYNC.hydrateCloudPanel();
-    }
-    return result;
+    return window.NBA2K26_DATA_PORTABILITY.openDataModal(state);
   }
   const stats = document.getElementById('data-stats');
   if (stats) {
@@ -2266,9 +2262,6 @@ function openDataModal() {
     `;
   }
   document.getElementById('data-modal')?.classList.add('active');
-  if (window.NBA2K26_CLOUD_SYNC && window.NBA2K26_CLOUD_SYNC.hydrateCloudPanel) {
-    window.NBA2K26_CLOUD_SYNC.hydrateCloudPanel();
-  }
 }
 
 function closeDataModal() {
@@ -2287,6 +2280,19 @@ async function duplicateBuild(id) {
 }
 
 // ====================== CLOUD SYNC ======================
+function openAccountModal() {
+  lockPageScroll();
+  document.getElementById('account-modal')?.classList.add('active');
+  if (window.NBA2K26_CLOUD_SYNC && window.NBA2K26_CLOUD_SYNC.hydrateCloudPanel) {
+    window.NBA2K26_CLOUD_SYNC.hydrateCloudPanel();
+  }
+}
+
+function closeAccountModal() {
+  unlockPageScroll();
+  document.getElementById('account-modal')?.classList.remove('active');
+}
+
 function saveCloudConfig() {
   return window.NBA2K26_CLOUD_SYNC.configureFromInputs();
 }
@@ -2316,6 +2322,8 @@ function cloudSyncNow() {
 }
 
 Object.assign(window, {
+  openAccountModal,
+  closeAccountModal,
   saveCloudConfig,
   cloudSignUp,
   cloudSignIn,
@@ -2385,10 +2393,12 @@ function setupGlobalUi() {
     closeBuildModal: () => closeBuildModal(),
     closeGameModal: () => closeGameModal(),
     closeOCRModal: () => closeOCRModal(),
+    closeAccountModal: () => closeAccountModal(),
     closeDataModal: () => closeDataModal(),
     saveBuild: () => saveBuild(),
     saveGame: () => saveGame(),
     openDataModal: () => openDataModal(),
+    openAccountModal: () => openAccountModal(),
     openBuildModal: () => openBuildModal(),
     openGameModal: () => openGameModal(),
     saveCloudConfig: () => saveCloudConfig(),

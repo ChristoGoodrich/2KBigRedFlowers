@@ -11,6 +11,7 @@
     ['ocr-settings-modal', 'ocrSettingsModal'],
     ['confirm-modal', 'confirmModal'],
     ['data-menu-modal', 'dataMenuModal'],
+    ['account-center-modal', 'accountCenterModal'],
   ];
 
   function injectTemplate(slotName, html) {

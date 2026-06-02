@@ -25,7 +25,7 @@ $env:NBA2K26_SUPABASE_ANON_KEY = 'your-public-anon-key'
 ```
 
 Run `supabase-cloud-sync.sql` once in the Supabase SQL Editor. On every device,
-open `Settings > Backup > Cloud Sync` and sign in to the same account.
+open `Settings > Account > Advanced setup` and sign in to the same account.
 
 ## Windows
 

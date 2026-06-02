@@ -3230,7 +3230,7 @@ body::after {
   }
 
   .account-bar-wrap {
-    top: 0;
+    display: none;
   }
 
   .main {

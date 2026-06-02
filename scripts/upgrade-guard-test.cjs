@@ -90,6 +90,7 @@ function checkMobileBottomTabs() {
     'position: static;\n    min-height: 0;\n    height: 0;',
     '.header .logo {\n    display: none;',
     '-webkit-backdrop-filter: none !important;',
+    '.account-bar-wrap {\n    display: none;',
   ];
   cssRules.forEach(rule => assert(css.includes(rule), `Mobile navigation CSS is missing: ${rule}`));
   assert(pageShell.includes('window.closeMobileMoreMenu'), 'Mobile more menu close bridge is missing');

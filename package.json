@@ -1,7 +1,7 @@
 {
   "name": "2kbigredflowers",
   "productName": "2KBigRedFlowers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "NBA 2K26 build management, game tracking, and performance analytics",
   "author": "2KBigRedFlowers",
   "main": "desktop/main.cjs",

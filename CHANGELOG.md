@@ -12,6 +12,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GitHub community health files, issue forms, pull request template, Dependabot
   configuration, and CodeQL workflow.
 
+## [1.0.3] - 2026-06-02
+
+### Fixed
+
+- Removed the mobile career overview strip so narrow screens open directly on
+  the current page instead of requiring horizontal swipes through summary data.
+- Kept the full career overview strip available on desktop screens.
+
 ## [1.0.2] - 2026-06-02
 
 ### Added
@@ -48,7 +56,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Optional Supabase-backed cross-device sync while preserving local-first
   storage.
 
-[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/ChristoGoodrich/2KBigRedFlowers/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.3
 [1.0.2]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.2
 [1.0.1]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ChristoGoodrich/2KBigRedFlowers/releases/tag/v1.0.0

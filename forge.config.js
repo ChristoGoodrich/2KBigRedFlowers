@@ -13,7 +13,7 @@ module.exports = {
       /^\/\.claude(?:\/|$)/,
       /^\/node_modules\/@capacitor(?:\/|$)/,
       /^\/(?:\.gitignore|\.nvmrc|ARCHITECTURE\.md|PACKAGING\.md|capacitor\.config\.json|forge\.config\.js|package-lock\.json|supabase-cloud-sync\.sql)$/,
-      /^\/(?:icon\.svg|manifest\.json|og-image\.png|sw\.js|nba2k26-[^/]+|qa-[^/]+)$/,
+      /^\/(?:icon\.svg|manifest\.json|og-image\.png|sw\.js|nba2k-[^/]+|qa-[^/]+)$/,
     ],
   },
   makers: [
@@ -23,7 +23,7 @@ module.exports = {
       config: {
         name: '2KBigRedFlowers',
         authors: '2KBigRedFlowers',
-        description: 'NBA 2K26 build management, game tracking, and performance analytics',
+        description: 'NBA 2K27 build management, game tracking, and performance analytics',
         setupIcon: path.join(__dirname, 'build', 'icon.ico'),
       },
     },

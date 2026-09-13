@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./assets/logo.svg" alt="2KBigRedFlowers logo" width="120">
   <h1>2KBigRedFlowers</h1>
-  <p>Local-first NBA 2K26 build management, game tracking, scouting, OCR-assisted logging, and performance analytics.</p>
+  <p>Local-first NBA 2K27 build management, game tracking, scouting, OCR-assisted logging, and performance analytics.</p>
   <p>
     <a href="./README.md">English</a> |
     <a href="./README.zh-CN.md">简体中文</a>
@@ -15,7 +15,7 @@
 
 ## Overview
 
-2KBigRedFlowers is an unofficial companion tool for managing NBA 2K26 builds
+2KBigRedFlowers is an unofficial companion tool for managing NBA 2K27 builds
 and game records across Windows, Android, iOS, macOS, and the web. The web app
 is the source of truth. Electron packages it for desktop platforms, while
 Capacitor packages the same app for mobile platforms.
@@ -53,6 +53,37 @@ are not commercially code-signed, and the Android APK uses a debug certificate.
 - Export and import tools for local backups.
 - Optional Supabase-backed cross-device sync.
 - In-app version display and a manual GitHub release check from About.
+
+## Game Year Data
+
+Everything that changes when 2K ships a new game -- the badge catalog and tier
+thresholds, the attribute list, position weights, animation unlock thresholds,
+and the season calendar -- lives in a per-year dataset rather than being spread
+through the source:
+
+| File | Contents |
+| --- | --- |
+| [`nba2k-gamedata.js`](./nba2k-gamedata.js) | Registry, threshold builders, active-year resolution |
+| [`nba2k-gamedata-2k26.js`](./nba2k-gamedata-2k26.js) | NBA 2K26, complete and frozen |
+| [`nba2k-gamedata-2k27.js`](./nba2k-gamedata-2k27.js) | NBA 2K27, partial -- see below |
+
+The newest registered year is active by default. Setting `gamedata:year` in
+`localStorage` to `2k26` pins the older catalog instead; records are keyed by
+build and game id, not by game year, so switching never rewrites stored data.
+
+**The 2K27 dataset is deliberately incomplete.** 2K27 ships 53 badges across six
+disciplines, of which 19 are new and 6 2K26 badges were removed without being
+named. Badge names and disciplines are filled in where a source confirms them
+and marked `provisional` where they are carried over from 2K26 on the assumption
+they survived. Only five badges have published tier thresholds; the rest are
+`null`, which the badge editor surfaces as "requirements not published yet"
+rather than as a badge with no requirements. Attributes, position weights, and
+animation thresholds are carried over from 2K26 and are flagged unverified in
+`meta`. `scripts/gamedata-guard.cjs` enforces these invariants -- notably that a
+badge with unknown thresholds can never auto-unlock.
+
+Adding next year's game means adding one dataset file, one `<script>` tag, and
+one `sw.js` cache entry.
 
 ## Cloud Sync
 

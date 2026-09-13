@@ -3,8 +3,8 @@ const path = require('path');
 const vm = require('vm');
 
 const root = path.resolve(__dirname, '..');
-const parserPath = path.join(root, 'nba2k26-ocr-parser.js');
-const ocrPath = path.join(root, 'nba2k26-ocr.js');
+const parserPath = path.join(root, 'nba2k-ocr-parser.js');
+const ocrPath = path.join(root, 'nba2k-ocr.js');
 
 const context = {
   console,

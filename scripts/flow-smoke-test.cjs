@@ -170,18 +170,18 @@ context.window.t = context.t;
 context.window.OCRParser = context.OCRParser;
 context.window.Tesseract = context.Tesseract;
 
-loadScript(context, 'nba2k26-i18n.js');
+loadScript(context, 'nba2k-i18n.js');
 context.t = context.window.t;
-loadScript(context, 'nba2k26-ui-core.js');
-loadScript(context, 'nba2k26-game-analysis.js');
-loadScript(context, 'nba2k26-build-form.js');
-loadScript(context, 'nba2k26-game-form.js');
-loadScript(context, 'nba2k26-data-portability.js');
-loadScript(context, 'nba2k26-build-detail.js');
-loadScript(context, 'nba2k26-ocr-parser.js');
+loadScript(context, 'nba2k-ui-core.js');
+loadScript(context, 'nba2k-game-analysis.js');
+loadScript(context, 'nba2k-build-form.js');
+loadScript(context, 'nba2k-game-form.js');
+loadScript(context, 'nba2k-data-portability.js');
+loadScript(context, 'nba2k-build-detail.js');
+loadScript(context, 'nba2k-ocr-parser.js');
 context.OCRParser = context.window.OCRParser || context.OCRParser;
-loadScript(context, 'nba2k26-ocr.js');
-context.toast = context.window.NBA2K26_UI_CORE.toast;
+loadScript(context, 'nba2k-ocr.js');
+context.toast = context.window.NBA2K_UI_CORE.toast;
 context.customConfirm = async () => true;
 
 const state = { builds: [], games: [], currentBuildId: null, editingBuildId: null, editingGameId: null };
@@ -198,14 +198,14 @@ const deps = {
   saveToStorage: async (key, value) => { saved.set(key, value); return true; },
   deleteFromStorage: async key => { deleted.push(key); saved.delete(key); return true; },
   toast: (message, bad) => toasts.push({ message, bad: !!bad }),
-  closeBuildModal: () => context.window.NBA2K26_BUILD_FORM.closeBuildModal(state),
+  closeBuildModal: () => context.window.NBA2K_BUILD_FORM.closeBuildModal(state),
   renderBuilds() {},
   renderBuildDetail() {},
   customConfirm: async () => true,
   showPage: page => { state.page = page; },
   escapeHtml: value => String(value),
-  closeGameModal: () => context.window.NBA2K26_GAME_FORM.closeGameModal(state),
-  closeDataModal: () => context.window.NBA2K26_DATA_PORTABILITY.closeDataModal(),
+  closeGameModal: () => context.window.NBA2K_GAME_FORM.closeGameModal(state),
+  closeDataModal: () => context.window.NBA2K_DATA_PORTABILITY.closeDataModal(),
   loadData: async () => {
     state.builds = [];
     state.games = [];
@@ -239,11 +239,11 @@ document.getElementById('page-builds').classList.add('active');
 document.getElementById('page-overview').classList.add('active');
 
 (async () => {
-  const buildForm = context.window.NBA2K26_BUILD_FORM;
-  const gameForm = context.window.NBA2K26_GAME_FORM;
-  const dataPortability = context.window.NBA2K26_DATA_PORTABILITY;
-  const buildDetail = context.window.NBA2K26_BUILD_DETAIL;
-  const uiCore = context.window.NBA2K26_UI_CORE;
+  const buildForm = context.window.NBA2K_BUILD_FORM;
+  const gameForm = context.window.NBA2K_GAME_FORM;
+  const dataPortability = context.window.NBA2K_DATA_PORTABILITY;
+  const buildDetail = context.window.NBA2K_BUILD_DETAIL;
+  const uiCore = context.window.NBA2K_UI_CORE;
 
   uiCore.setThemeMode('dark');
   if (document.documentElement.getAttribute('data-theme') !== 'dark') throw new Error('dark theme did not apply');

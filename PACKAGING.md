@@ -20,8 +20,8 @@ To ship a preconfigured Cloud Sync connection, set the public Supabase values
 before staging or packaging. Never use a service-role key.
 
 ```powershell
-$env:NBA2K26_SUPABASE_URL = 'https://your-project.supabase.co'
-$env:NBA2K26_SUPABASE_ANON_KEY = 'your-public-anon-key'
+$env:NBA2K_SUPABASE_URL = 'https://your-project.supabase.co'
+$env:NBA2K_SUPABASE_ANON_KEY = 'your-public-anon-key'
 ```
 
 Run `supabase-cloud-sync.sql` once in the Supabase SQL Editor. On every device,

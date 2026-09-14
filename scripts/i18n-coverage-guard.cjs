@@ -16,18 +16,18 @@ const root = path.resolve(__dirname, '..');
 
 // Files that emit user-facing HTML (render functions + static modal templates).
 const UI_FILES = [
-  'nba2k26-performance-lab.js', 'nba2k26-visualizations.js', 'nba2k26-build-detail.js',
-  'nba2k26-build-detail-panels.js', 'nba2k26-game-panels.js', 'nba2k26-game-table.js',
-  'nba2k26-global-games.js', 'nba2k26-build-compare.js', 'nba2k26-player-profiles.js',
-  'nba2k26-render-modules.js', 'nba2k26-opponent-intel.js', 'nba2k26-data-quality.js',
-  'nba2k26-scout-report.js', 'nba2k26-share-card.js', 'nba2k26-game-form.js',
-  'nba2k26-build-form.js', 'nba2k26-badge-editor.js',
-  'nba2k26-build-template.js', 'nba2k26-game-template.js',
-  'nba2k26-ocr-templates.js', 'nba2k26-system-templates.js',
+  'nba2k-performance-lab.js', 'nba2k-visualizations.js', 'nba2k-build-detail.js',
+  'nba2k-build-detail-panels.js', 'nba2k-game-panels.js', 'nba2k-game-table.js',
+  'nba2k-global-games.js', 'nba2k-build-compare.js', 'nba2k-player-profiles.js',
+  'nba2k-render-modules.js', 'nba2k-opponent-intel.js', 'nba2k-data-quality.js',
+  'nba2k-scout-report.js', 'nba2k-share-card.js', 'nba2k-game-form.js',
+  'nba2k-build-form.js', 'nba2k-badge-editor.js',
+  'nba2k-build-template.js', 'nba2k-game-template.js',
+  'nba2k-ocr-templates.js', 'nba2k-system-templates.js',
 ];
 
 // ── Load the I18N_COPY key set (same slice the smoke test uses). ────────────
-const i18nSource = fs.readFileSync(path.join(root, 'nba2k26-i18n.js'), 'utf8');
+const i18nSource = fs.readFileSync(path.join(root, 'nba2k-i18n.js'), 'utf8');
 const copyStart = i18nSource.indexOf('const I18N_COPY = {');
 const copyEnd = i18nSource.indexOf('const I18N_PLACEHOLDERS', copyStart);
 const copySrc = i18nSource.slice(copyStart, copyEnd);

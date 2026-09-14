@@ -9,20 +9,20 @@ const root = path.resolve(__dirname, '..');
 
 // The analytics modules are IIFEs of the form (function(window){…})(window).
 // Provide a shared window shim and eval them in order (advanced-analytics reads
-// window.NBA2K26_GAME_ANALYSIS for its chronological sort).
+// window.NBA2K_GAME_ANALYSIS for its chronological sort).
 const sandbox = { window: {} };
 sandbox.window.window = sandbox.window;
 function load(file) {
   const code = fs.readFileSync(path.join(root, file), 'utf8');
   new Function('window', code)(sandbox.window);
 }
-load('nba2k26-game-analysis.js');
-load('nba2k26-advanced-analytics.js');
-load('nba2k26-ovr-estimator.js');
+load('nba2k-game-analysis.js');
+load('nba2k-advanced-analytics.js');
+load('nba2k-ovr-estimator.js');
 
-const GA = sandbox.window.NBA2K26_GAME_ANALYSIS;
-const AA = sandbox.window.NBA2K26_ADVANCED_ANALYTICS;
-const OVR = sandbox.window.NBA2K26_OVR_ESTIMATOR;
+const GA = sandbox.window.NBA2K_GAME_ANALYSIS;
+const AA = sandbox.window.NBA2K_ADVANCED_ANALYTICS;
+const OVR = sandbox.window.NBA2K_OVR_ESTIMATOR;
 
 let passed = 0;
 const failures = [];

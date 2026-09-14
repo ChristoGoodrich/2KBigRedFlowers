@@ -1,0 +1,11 @@
+/* Compatibility stylesheet. Edit the layered nba2k-*.css files instead. */
+@import url("./nba2k-theme.css");
+@import url("./nba2k-shell.css");
+@import url("./nba2k-visualizations.css");
+@import url("./nba2k-components.css");
+@import url("./nba2k-modals-forms.css");
+@import url("./nba2k-build-detail.css");
+@import url("./nba2k-ocr-data.css");
+@import url("./nba2k-scout-report.css");
+@import url("./nba2k-readability.css");
+@import url("./nba2k-beauty.css");

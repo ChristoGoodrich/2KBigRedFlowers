@@ -3,7 +3,7 @@ const path = require('path');
 const vm = require('vm');
 
 const root = path.resolve(__dirname, '..');
-const htmlPath = path.join(root, 'nba2k26-build-tracker.html');
+const htmlPath = path.join(root, 'nba2k-build-tracker.html');
 
 function read(file) {
   return fs.readFileSync(path.join(root, file), 'utf8');
@@ -43,7 +43,7 @@ function checkCssVariables() {
 }
 
 function checkMobileLightTheme() {
-  const css = read('nba2k26-premium.css').replace(/\r\n/g, '\n');
+  const css = read('nba2k-premium.css').replace(/\r\n/g, '\n');
   const labSkinIndex = css.indexOf('/* 2KLab reference dashboard skin */');
   const lightGuardIndex = css.indexOf('/* Keep the late 2KLab skin readable when the resolved system theme is light. */');
   assert(labSkinIndex > -1, '2KLab dashboard skin marker is missing');
@@ -70,8 +70,8 @@ function checkMobileLightTheme() {
 
 function checkMobileNativeTheme() {
   const html = fs.readFileSync(htmlPath, 'utf8');
-  const css = read('nba2k26-mobile.css').replace(/\r\n/g, '\n');
-  const pageShell = read('nba2k26-page-shell.js');
+  const css = read('nba2k-mobile.css').replace(/\r\n/g, '\n');
+  const pageShell = read('nba2k-page-shell.js');
   const required = [
     '.mobile-app-head,',
     '.mobile-first-run-summary,',
@@ -85,7 +85,7 @@ function checkMobileNativeTheme() {
     'background: #f5f7fa;',
     '[data-theme="light"] .mobile-tab-btn.active {',
   ];
-  assert(html.includes('href="./nba2k26-mobile.css"'), 'Mobile stylesheet must load after the premium desktop skin');
+  assert(html.includes('href="./nba2k-mobile.css"'), 'Mobile stylesheet must load after the premium desktop skin');
   assert(html.includes('id="mobile-app-title"'), 'Mobile page title is missing');
   assert(pageShell.includes('function updateMobileTitle(page)'), 'Mobile page title updater is missing');
   required.forEach(rule => assert(css.includes(rule), `Native mobile theme is missing: ${rule}`));
@@ -94,9 +94,9 @@ function checkMobileNativeTheme() {
 
 function checkMobileBottomTabs() {
   const html = fs.readFileSync(htmlPath, 'utf8');
-  const css = read('nba2k26-premium.css');
-  const pageShell = read('nba2k26-page-shell.js');
-  const uiCore = read('nba2k26-ui-core.js');
+  const css = read('nba2k-premium.css');
+  const pageShell = read('nba2k-page-shell.js');
+  const uiCore = read('nba2k-ui-core.js');
   const requiredIds = [
     'mobile-sheet-backdrop',
     'mobile-more-sheet',
@@ -130,10 +130,10 @@ function checkMobileBottomTabs() {
 
 function checkAccountCenter() {
   const html = fs.readFileSync(htmlPath, 'utf8');
-  const templates = read('nba2k26-system-templates.js');
-  const htmlTemplates = read('nba2k26-html-templates.js');
-  const uiCore = read('nba2k26-ui-core.js');
-  const cloudSync = read('nba2k26-cloud-sync.js');
+  const templates = read('nba2k-system-templates.js');
+  const htmlTemplates = read('nba2k-html-templates.js');
+  const uiCore = read('nba2k-ui-core.js');
+  const cloudSync = read('nba2k-cloud-sync.js');
   const dataMenuStart = templates.indexOf('registry.dataMenuModal');
   const accountCenterStart = templates.indexOf('registry.accountCenterModal');
   const dataMenu = templates.slice(dataMenuStart, accountCenterStart);
@@ -160,23 +160,23 @@ function checkAccountCenter() {
 function checkAboutUpdateCenter() {
   const pkg = JSON.parse(read('package.json'));
   const html = fs.readFileSync(htmlPath, 'utf8');
-  const templates = read('nba2k26-system-templates.js');
-  const htmlTemplates = read('nba2k26-html-templates.js');
-  const pageShell = read('nba2k26-page-shell.js');
-  const uiCore = read('nba2k26-ui-core.js');
-  const appGlobals = read('nba2k26-app-globals.js');
-  const runtimeConfig = read('nba2k26-runtime-config.js');
+  const templates = read('nba2k-system-templates.js');
+  const htmlTemplates = read('nba2k-html-templates.js');
+  const pageShell = read('nba2k-page-shell.js');
+  const uiCore = read('nba2k-ui-core.js');
+  const appGlobals = read('nba2k-app-globals.js');
+  const runtimeConfig = read('nba2k-runtime-config.js');
   const stageWeb = read('scripts/stage-web.cjs');
   const androidGradle = read('android/app/build.gradle');
   const iosProject = read('ios/App/App.xcodeproj/project.pbxproj');
   const syncNativeVersion = read('scripts/sync-native-version.cjs');
-  const appUpdate = read('nba2k26-app-update.js');
+  const appUpdate = read('nba2k-app-update.js');
 
   [
     'id="settings-about"',
     'id="mobile-more-about"',
     'data-template-slot="about-app-modal"',
-    'src="./nba2k26-app-update.js"',
+    'src="./nba2k-app-update.js"',
   ].forEach(rule => assert(html.includes(rule), `About/update shell is missing: ${rule}`));
   [
     'registry.aboutAppModal',
@@ -213,7 +213,7 @@ function checkPwaAssets() {
     manifest.start_url,
     ...(manifest.icons || []).map(icon => icon.src),
   ].filter(Boolean);
-  const requiredRefs = new Set(['./nba2k26-build-tracker.html', ...htmlRefs, ...manifestRefs]);
+  const requiredRefs = new Set(['./nba2k-build-tracker.html', ...htmlRefs, ...manifestRefs]);
 
   for (const ref of requiredRefs) {
     assert(fs.existsSync(path.join(root, localFile(ref))), `Referenced asset is missing: ${ref}`);
@@ -233,8 +233,8 @@ function checkPwaAssets() {
 
   const scripts = [...html.matchAll(/<script\s+src="([^"]+)"/g)].map(match => match[1]);
   assert(
-    scripts.indexOf('./nba2k26-player-profile-core.js') > -1 &&
-      scripts.indexOf('./nba2k26-player-profile-core.js') < scripts.indexOf('./nba2k26-player-profiles.js'),
+    scripts.indexOf('./nba2k-player-profile-core.js') > -1 &&
+      scripts.indexOf('./nba2k-player-profile-core.js') < scripts.indexOf('./nba2k-player-profiles.js'),
     'Player profile core must load before player profiles'
   );
 
@@ -243,8 +243,8 @@ function checkPwaAssets() {
 
 function checkRoutes() {
   const context = vm.createContext({ window: {} });
-  vm.runInContext(read('nba2k26-page-shell.js'), context, { filename: 'nba2k26-page-shell.js' });
-  const shell = context.window.NBA2K26_PAGE_SHELL;
+  vm.runInContext(read('nba2k-page-shell.js'), context, { filename: 'nba2k-page-shell.js' });
+  const shell = context.window.NBA2K_PAGE_SHELL;
   assert(shell, 'Page shell export missing');
 
   const cases = [
@@ -276,15 +276,15 @@ function checkRoutes() {
   assert(compareRoute.compareIds.join(',') === 'build-1,build-2', 'compare route ids failed');
   assert(shell.routeHash({ page: 'compare', compareIds: ['build-1', 'build-2'] }) === '#compare/build-1,build-2', 'compare route hash failed');
   assert(shell.routeHash({ page: 'compare', compareIds: [] }) === '#compare', 'empty compare route hash failed');
-  assert(read('nba2k26-cloud-sync.js').includes('routeFromHash(location.hash)'), 'Cloud reload must restore from routeFromHash(location.hash)');
+  assert(read('nba2k-cloud-sync.js').includes('routeFromHash(location.hash)'), 'Cloud reload must restore from routeFromHash(location.hash)');
 
   return { routes: cases.length };
 }
 
 function checkPlayersSubviewRouting() {
-  const appGlobals = read('nba2k26-app-globals.js');
-  const pageShell = read('nba2k26-page-shell.js');
-  const cloudSync = read('nba2k26-cloud-sync.js');
+  const appGlobals = read('nba2k-app-globals.js');
+  const pageShell = read('nba2k-page-shell.js');
+  const cloudSync = read('nba2k-cloud-sync.js');
 
   assert(appGlobals.includes("playersView: 'directory'"), 'Players subview state is missing');
   assert(appGlobals.includes('function normalizePlayersView'), 'Players subview normalizer is missing');
@@ -297,9 +297,9 @@ function checkPlayersSubviewRouting() {
 }
 
 function checkCompareRouting() {
-  const appGlobals = read('nba2k26-app-globals.js');
-  const pageShell = read('nba2k26-page-shell.js');
-  const cloudSync = read('nba2k26-cloud-sync.js');
+  const appGlobals = read('nba2k-app-globals.js');
+  const pageShell = read('nba2k-page-shell.js');
+  const cloudSync = read('nba2k-cloud-sync.js');
 
   assert(pageShell.includes("value.startsWith('compare/')"), 'Compare deep-link route parser is missing');
   assert(pageShell.includes("route.page === 'compare'"), 'Compare route hash branch is missing');
@@ -345,14 +345,14 @@ function escapeHtml(value) {
 function checkContextBarLogic() {
   const context = vm.createContext({
     window: {
-      NBA2K26_GAME_ANALYSIS: {
+      NBA2K_GAME_ANALYSIS: {
         compareGamesByChronology: (a, b) => String(b.date || '').localeCompare(String(a.date || '')),
       },
     },
     t: value => value,
   });
-  vm.runInContext(read('nba2k26-render-modules.js'), context, { filename: 'nba2k26-render-modules.js' });
-  const render = context.window.NBA2K26_RENDER;
+  vm.runInContext(read('nba2k-render-modules.js'), context, { filename: 'nba2k-render-modules.js' });
+  const render = context.window.NBA2K_RENDER;
   assert(render && render.accountBarHtml, 'Render account bar export missing');
 
   const state = {
@@ -406,8 +406,8 @@ function checkContextBarLogic() {
 }
 
 function checkActionableEmptyStates() {
-  const gamesJs = read('nba2k26-global-games.js');
-  const compareJs = read('nba2k26-build-compare.js');
+  const gamesJs = read('nba2k-global-games.js');
+  const compareJs = read('nba2k-build-compare.js');
   assert(gamesJs.includes('No games recorded yet') && gamesJs.includes('quickLogGame'), 'Games empty state must offer a next action');
   assert(compareJs.includes('Select two builds to compare') && compareJs.includes('Open Build Library'), 'Compare empty state must guide the next action');
   return { states: 2 };
@@ -419,8 +419,8 @@ function checkPlayerRendering() {
     localStorage: { getItem: () => 'en' },
   });
   context.window.localStorage = context.localStorage;
-  vm.runInContext(read('nba2k26-player-profile-core.js'), context, { filename: 'nba2k26-player-profile-core.js' });
-  vm.runInContext(read('nba2k26-player-profiles.js'), context, { filename: 'nba2k26-player-profiles.js' });
+  vm.runInContext(read('nba2k-player-profile-core.js'), context, { filename: 'nba2k-player-profile-core.js' });
+  vm.runInContext(read('nba2k-player-profiles.js'), context, { filename: 'nba2k-player-profiles.js' });
 
   const profiles = [{ id: 'p_alpha', primaryName: 'Alpha', aliases: ['Alpha', 'A1'], notes: '', createdAt: '2026-05-01' }];
   const games = [{
@@ -434,8 +434,8 @@ function checkPlayerRendering() {
       opponents: [{ name: 'Beta', position: 'SG', pts: 18, reb: 2, ast: 5 }],
     },
   }];
-  const html = context.window.NBA2K26_PLAYER_PROFILES.renderPlayersPanel(profiles, games, {
-    escapeHtml: context.window.NBA2K26_PLAYER_PROFILE_CORE.esc,
+  const html = context.window.NBA2K_PLAYER_PROFILES.renderPlayersPanel(profiles, games, {
+    escapeHtml: context.window.NBA2K_PLAYER_PROFILE_CORE.esc,
     t: value => value,
   });
 
@@ -494,14 +494,14 @@ function checkGlobalGamesFilterPersistence() {
   const context = vm.createContext({
     document,
     window: {
-      NBA2K26_GAME_ANALYSIS: {
+      NBA2K_GAME_ANALYSIS: {
         compareGamesByChronology: (a, b) => String(b.date || '').localeCompare(String(a.date || '')),
       },
     },
     t: value => value,
   });
-  vm.runInContext(read('nba2k26-global-games.js'), context, { filename: 'nba2k26-global-games.js' });
-  assert(context.window.NBA2K26_GLOBAL_GAMES, 'Global games module export missing');
+  vm.runInContext(read('nba2k-global-games.js'), context, { filename: 'nba2k-global-games.js' });
+  assert(context.window.NBA2K_GLOBAL_GAMES, 'Global games module export missing');
 
   document.getElementById('gp-filter-result').value = 'W';
   document.getElementById('gp-filter-mode').value = 'Rec';
@@ -517,7 +517,7 @@ function checkGlobalGamesFilterPersistence() {
     ],
   };
 
-  context.window.NBA2K26_GLOBAL_GAMES.renderAllGamesPage({ state, aggregate: sampleAggregate, t: value => value });
+  context.window.NBA2K_GLOBAL_GAMES.renderAllGamesPage({ state, aggregate: sampleAggregate, t: value => value });
   const html = document.getElementById('all-games-container').innerHTML;
   assert(html.includes('<option value="W" selected'), 'All Games result filter did not render selected state');
   assert(html.includes('<option value="Rec" selected'), 'All Games mode filter did not render selected state');
@@ -527,7 +527,7 @@ function checkGlobalGamesFilterPersistence() {
   assert(html.includes('Clear Filters'), 'All Games clear filter action missing');
   assert(state.allGamesFilter.result === 'W' && state.allGamesFilter.sortKey === 'pts', 'All Games filter state was not preserved after render');
 
-  context.window.NBA2K26_GLOBAL_GAMES.clearAllGamesFilters();
+  context.window.NBA2K_GLOBAL_GAMES.clearAllGamesFilters();
   assert(state.allGamesFilter.result === 'All', 'All Games clear filters did not reset result');
   assert(state.allGamesFilter.sortKey === 'date' && state.allGamesFilter.sortDir === 'desc', 'All Games clear filters did not reset sort');
 
@@ -535,8 +535,8 @@ function checkGlobalGamesFilterPersistence() {
 }
 
 function checkPlayerPageUiPersistence() {
-  const appGlobals = read('nba2k26-app-globals.js');
-  const playerProfiles = read('nba2k26-player-profiles.js');
+  const appGlobals = read('nba2k-app-globals.js');
+  const playerProfiles = read('nba2k-player-profiles.js');
 
   assert(appGlobals.includes('playerPageUi:'), 'Player page UI state is missing');
   assert(appGlobals.includes('function defaultPlayerPageUi'), 'Player page default UI helper is missing');
@@ -577,7 +577,7 @@ function checkOcrApply() {
   });
   context.window = context;
   context.window.top = context.window;
-  context.window.NBA2K26_GAME_FORM = { refreshGameModalPreview: () => { context.previewRefreshed = true; } };
+  context.window.NBA2K_GAME_FORM = { refreshGameModalPreview: () => { context.previewRefreshed = true; } };
 
   [
     'ocr-file', 'ocr-modal', 'ocr-img', 'ocr-status', 'ocr-tips', 'ocr-confirm-btn', 'ocr-result-area',
@@ -586,9 +586,9 @@ function checkOcrApply() {
     'g-opponent', 'g-teammate',
   ].forEach(id => document.getElementById(id));
 
-  vm.runInContext(read('nba2k26-ocr-parser.js'), context, { filename: 'nba2k26-ocr-parser.js' });
-  vm.runInContext(read('nba2k26-ocr.js'), context, { filename: 'nba2k26-ocr.js' });
-  assert(context.window.NBA2K26_OCR, 'OCR module export missing');
+  vm.runInContext(read('nba2k-ocr-parser.js'), context, { filename: 'nba2k-ocr-parser.js' });
+  vm.runInContext(read('nba2k-ocr.js'), context, { filename: 'nba2k-ocr.js' });
+  assert(context.window.NBA2K_OCR, 'OCR module export missing');
 
   const makeInput = (field, value) => {
     const el = new FakeElement();
@@ -607,7 +607,7 @@ function checkOcrApply() {
     : [];
   grid.querySelector = () => null;
 
-  context.window.NBA2K26_OCR.pendingResult = {
+  context.window.NBA2K_OCR.pendingResult = {
     strategy: 'upgrade-guard',
     values: {
       'g-pts': 24,
@@ -620,7 +620,7 @@ function checkOcrApply() {
     warnings: [{ fieldIds: ['g-score-own'], message: 'verify scoreboard' }],
   };
 
-  const count = context.window.NBA2K26_OCR.applyStaged();
+  const count = context.window.NBA2K_OCR.applyStaged();
   assert(count >= 6, `OCR apply filled too few fields: ${count}`);
   assert(document.getElementById('g-pts').value === '24', 'OCR did not apply points');
   assert(document.getElementById('g-result').value === 'W', 'OCR did not apply result');

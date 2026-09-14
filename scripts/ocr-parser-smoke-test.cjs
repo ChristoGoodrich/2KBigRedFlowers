@@ -3,7 +3,7 @@ const path = require('path');
 const vm = require('vm');
 
 const root = path.resolve(__dirname, '..');
-const parserPath = path.join(root, 'nba2k26-ocr-parser.js');
+const parserPath = path.join(root, 'nba2k-ocr-parser.js');
 const code = `${fs.readFileSync(parserPath, 'utf8')}\nthis.OCRParser = OCRParser;`;
 const context = {};
 vm.runInNewContext(code, context, { filename: parserPath });

@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const root = path.resolve(__dirname, '..');
-const htmlPath = path.join(root, 'nba2k26-build-tracker.html');
+const htmlPath = path.join(root, 'nba2k-build-tracker.html');
 const html = fs.readFileSync(htmlPath, 'utf8');
 
 const cssHrefRe = /<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"/g;
@@ -67,11 +67,11 @@ for (const script of extractScriptBlocks(html)) {
 
 new Function(combined);
 
-// nba2k26-ocr.js and nba2k26-ocr-parser.js are lazy-loaded at runtime by
-// nba2k26-ocr-lazy.js, so they are not in the HTML <script> set. Parse them
+// nba2k-ocr.js and nba2k-ocr-parser.js are lazy-loaded at runtime by
+// nba2k-ocr-lazy.js, so they are not in the HTML <script> set. Parse them
 // standalone and fold their source into the app-surface corpus so the
-// closeOCRModal / NBA2K26_OCR checks below still cover them.
-const lazyOcrScripts = ['./nba2k26-ocr-parser.js', './nba2k26-ocr.js'];
+// closeOCRModal / NBA2K_OCR checks below still cover them.
+const lazyOcrScripts = ['./nba2k-ocr-parser.js', './nba2k-ocr.js'];
 for (const src of lazyOcrScripts) {
   const code = fs.readFileSync(path.join(root, src.replace(/^\.\//, '')), 'utf8');
   new Function(code);
@@ -90,67 +90,70 @@ while ((match = cssHrefRe.exec(html))) {
 }
 
 const expectedCssLinks = [
-  './nba2k26-theme.css',
-  './nba2k26-shell.css',
-  './nba2k26-visualizations.css',
-  './nba2k26-components.css',
-  './nba2k26-modals-forms.css',
-  './nba2k26-build-detail.css',
-  './nba2k26-game-detail.css',
-  './nba2k26-ocr-data.css',
-  './nba2k26-scout-report.css',
-  './nba2k26-readability.css',
-  './nba2k26-beauty.css',
-  './nba2k26-ultra.css',
-  './nba2k26-compare.css',
-  './nba2k26-opponent-intel.css',
-  './nba2k26-premium.css',
-  './nba2k26-mobile.css'
+  './nba2k-theme.css',
+  './nba2k-shell.css',
+  './nba2k-visualizations.css',
+  './nba2k-components.css',
+  './nba2k-modals-forms.css',
+  './nba2k-build-detail.css',
+  './nba2k-game-detail.css',
+  './nba2k-ocr-data.css',
+  './nba2k-scout-report.css',
+  './nba2k-readability.css',
+  './nba2k-beauty.css',
+  './nba2k-ultra.css',
+  './nba2k-compare.css',
+  './nba2k-opponent-intel.css',
+  './nba2k-premium.css',
+  './nba2k-mobile.css'
 ];
 
 const expectedLocalExternalScripts = [
-  './nba2k26-scout-data.js',
-  './nba2k26-build-engine.js',
-  './nba2k26-badges.js',
-  './nba2k26-badge-editor.js',
-  './nba2k26-i18n.js',
-  './nba2k26-scout-report.js',
-  './nba2k26-storage.js',
-  './nba2k26-runtime-config.js',
-  './nba2k26-app-update.js',
-  './nba2k26-cloud-sync.js',
-  './nba2k26-game-analysis.js',
-  './nba2k26-advanced-analytics.js',
-  './nba2k26-visualizations.js',
-  './nba2k26-render-modules.js',
-  './nba2k26-performance-lab.js',
-  './nba2k26-game-panels.js',
-  './nba2k26-game-table.js',
-  './nba2k26-game-detail.js',
-  './nba2k26-player-profile-core.js',
-  './nba2k26-player-profiles.js',
-  './nba2k26-game-form.js',
-  './nba2k26-build-form.js',
-  './nba2k26-data-portability.js',
-  './nba2k26-data-quality.js',
-  './nba2k26-page-shell.js',
-  './nba2k26-build-detail.js',
-  './nba2k26-build-detail-panels.js',
-  './nba2k26-ui-core.js',
-  './nba2k26-build-template.js',
-  './nba2k26-game-template.js',
-  './nba2k26-ocr-templates.js',
-  './nba2k26-system-templates.js',
-  './nba2k26-html-templates.js',
-  './nba2k26-global-games.js',
-  './nba2k26-share-card.js',
-  './nba2k26-build-compare.js',
-  './nba2k26-opponent-intel.js',
-  './nba2k26-app-bootstrap.js',
-  './nba2k26-ovr-estimator.js',
-  './nba2k26-app-globals.js',
-  './nba2k26-ocr-lazy.js',
-  './nba2k26-interactions.js'
+  './nba2k-gamedata.js',
+  './nba2k-gamedata-2k26.js',
+  './nba2k-gamedata-2k27.js',
+  './nba2k-scout-data.js',
+  './nba2k-build-engine.js',
+  './nba2k-badges.js',
+  './nba2k-badge-editor.js',
+  './nba2k-i18n.js',
+  './nba2k-scout-report.js',
+  './nba2k-storage.js',
+  './nba2k-runtime-config.js',
+  './nba2k-app-update.js',
+  './nba2k-cloud-sync.js',
+  './nba2k-game-analysis.js',
+  './nba2k-advanced-analytics.js',
+  './nba2k-visualizations.js',
+  './nba2k-render-modules.js',
+  './nba2k-performance-lab.js',
+  './nba2k-game-panels.js',
+  './nba2k-game-table.js',
+  './nba2k-game-detail.js',
+  './nba2k-player-profile-core.js',
+  './nba2k-player-profiles.js',
+  './nba2k-game-form.js',
+  './nba2k-build-form.js',
+  './nba2k-data-portability.js',
+  './nba2k-data-quality.js',
+  './nba2k-page-shell.js',
+  './nba2k-build-detail.js',
+  './nba2k-build-detail-panels.js',
+  './nba2k-ui-core.js',
+  './nba2k-build-template.js',
+  './nba2k-game-template.js',
+  './nba2k-ocr-templates.js',
+  './nba2k-system-templates.js',
+  './nba2k-html-templates.js',
+  './nba2k-global-games.js',
+  './nba2k-share-card.js',
+  './nba2k-build-compare.js',
+  './nba2k-opponent-intel.js',
+  './nba2k-app-bootstrap.js',
+  './nba2k-ovr-estimator.js',
+  './nba2k-app-globals.js',
+  './nba2k-ocr-lazy.js',
+  './nba2k-interactions.js'
 ];
 
 function assertSameOrder(label, actual, expected) {
@@ -306,7 +309,7 @@ for (const id of templatedModalIds) {
   const marker = `id="${id}"`;
   const htmlCount = html.split(marker).length - 1;
   if (htmlCount !== 0) {
-    throw new Error(`Templated modal #${id} should live in nba2k26-html-templates.js, not the HTML shell`);
+    throw new Error(`Templated modal #${id} should live in nba2k-html-templates.js, not the HTML shell`);
   }
 }
 
@@ -357,9 +360,9 @@ const requiredSnippets = [
   'function renderDataQuality',
   'function closeDataModal',
   'function closeOCRModal',
-  'window.NBA2K26_PLAYER_PROFILE_CORE',
-  'window.NBA2K26_OCR',
-  'window.NBA2K26_HTML_TEMPLATES',
+  'window.NBA2K_PLAYER_PROFILE_CORE',
+  'window.NBA2K_OCR',
+  'window.NBA2K_HTML_TEMPLATES',
   'const ATTR_GROUPS',
   'const BADGE_CATEGORIES',
   'async function loadData',
@@ -372,7 +375,7 @@ for (const snippet of requiredSnippets) {
   }
 }
 
-const i18nPath = path.join(root, 'nba2k26-i18n.js');
+const i18nPath = path.join(root, 'nba2k-i18n.js');
 const i18nSource = fs.readFileSync(i18nPath, 'utf8');
 const i18nCopyStart = i18nSource.indexOf('const I18N_COPY = {');
 const i18nCopyEnd = i18nSource.indexOf('const I18N_PLACEHOLDERS', i18nCopyStart);

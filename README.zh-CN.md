@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./assets/logo.svg" alt="2KBigRedFlowers 标志" width="120">
   <h1>2KBigRedFlowers</h1>
-  <p>本地优先的 NBA 2K26 建模管理、比赛记录、球员球探、OCR 辅助录入与数据分析工具。</p>
+  <p>本地优先的 NBA 2K27 建模管理、比赛记录、球员球探、OCR 辅助录入与数据分析工具。</p>
   <p>
     <a href="./README.md">English</a> |
     <a href="./README.zh-CN.md">简体中文</a>
@@ -15,7 +15,7 @@
 
 ## 项目简介
 
-2KBigRedFlowers 是一款非官方 NBA 2K26 辅助工具，可在 Windows、Android、
+2KBigRedFlowers 是一款非官方 NBA 2K27 辅助工具，可在 Windows、Android、
 iOS、macOS 和网页端管理建模与比赛记录。网页应用是唯一的功能源代码；
 Electron 将它封装为桌面应用，Capacitor 将同一套应用封装为移动端应用。
 

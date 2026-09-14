@@ -105,6 +105,7 @@ const expectedCssLinks = [
   './nba2k-compare.css',
   './nba2k-opponent-intel.css',
   './nba2k-premium.css',
+  './nba2k-glass.css',
   './nba2k-mobile.css'
 ];
 

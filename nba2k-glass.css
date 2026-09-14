@@ -1,0 +1,501 @@
+/* ================================================================
+   SOFT-LIGHT GLASS LAYER
+   Implements DESIGN_TOKENS.md. Loaded after nba2k-premium.css so it
+   wins over the earlier desktop restyle layers, and before
+   nba2k-mobile.css so the mobile media-query rules still apply on top.
+
+   Nothing here touches app logic or markup. Every value traces back to
+   a token in DESIGN_TOKENS.md -- if a number needs changing, change it
+   there and here, not at a call site.
+   ================================================================ */
+
+:root {
+  /* --- Glass elevation: dark --- */
+  --glass-sunken-fill: rgba(0, 0, 0, 0.20);
+  --glass-raised-fill: rgba(26, 28, 33, 0.72);
+  --glass-floating-fill: rgba(18, 20, 24, 0.64);
+  --glass-overlay-fill: rgba(14, 15, 18, 0.78);
+
+  /* Opaque equivalents, used when blur is unavailable or unwanted. */
+  --glass-sunken-solid: #0c0d10;
+  --glass-raised-solid: #191b20;
+  --glass-floating-solid: #14161a;
+  --glass-overlay-solid: #101114;
+
+  --glass-blur-raised: blur(16px) saturate(150%);
+  --glass-blur-floating: blur(28px) saturate(165%);
+  --glass-blur-overlay: blur(40px) saturate(180%);
+
+  /* --- Catch-light borders --- */
+  --glass-hairline: rgba(255, 255, 255, 0.10);
+  --glass-hairline-strong: rgba(255, 255, 255, 0.18);
+  --glass-catch: inset 0 1px 0 rgba(255, 255, 255, 0.13);
+
+  /* --- Soft shadows: tight contact + broad ambient --- */
+  --glass-shadow-raised: 0 1px 2px rgba(0, 0, 0, 0.20), 0 8px 24px -8px rgba(0, 0, 0, 0.28);
+  --glass-shadow-floating: 0 2px 4px rgba(0, 0, 0, 0.22), 0 16px 40px -12px rgba(0, 0, 0, 0.34);
+  --glass-shadow-overlay: 0 4px 8px rgba(0, 0, 0, 0.26), 0 32px 72px -16px rgba(0, 0, 0, 0.46);
+
+  /* --- Radii --- */
+  --glass-r-xs: 8px;
+  --glass-r-sm: 12px;
+  --glass-r-md: 18px;
+  --glass-r-lg: 24px;
+  --glass-r-xl: 32px;
+  --glass-r-pill: 999px;
+
+  /* --- Motion --- */
+  --glass-t-fast: 160ms;
+  --glass-t-base: 240ms;
+  --glass-t-slow: 380ms;
+  --glass-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --glass-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Ambient backdrop pools: something for the blur to refract --- */
+  --glass-wash-warm: rgba(225, 29, 50, 0.055);
+  --glass-wash-cool: rgba(90, 169, 240, 0.042);
+  --glass-wash-base: #0a0b0d;
+
+  /* --- Accents, pulled back so quiet surfaces can carry one loud voice --- */
+  --orange: #E11D32;
+  --orange-dim: #B0121F;
+  --orange-glow: rgba(225, 29, 50, 0.34);
+  --orange-soft: rgba(225, 29, 50, 0.10);
+  --green: #3DDC97;
+  --green-soft: rgba(61, 220, 151, 0.10);
+  --yellow: #F0B429;
+  --yellow-soft: rgba(240, 180, 41, 0.10);
+  --red: #FF5C72;
+  --red-soft: rgba(255, 92, 114, 0.10);
+  --blue: #5AA9F0;
+  --purple: #A78BFA;
+
+  /* Re-point the shared surface tokens at the glass scale. */
+  --bg: var(--glass-wash-base);
+  --bg-elev: var(--glass-floating-solid);
+  --bg-soft: var(--glass-sunken-solid);
+  --bg-card: var(--glass-raised-fill);
+  --bg-card-hover: rgba(32, 35, 41, 0.78);
+  --border: var(--glass-hairline);
+  --border-hover: var(--glass-hairline-strong);
+  --glass-1: rgba(255, 255, 255, 0.026);
+  --glass-2: rgba(255, 255, 255, 0.048);
+  --glass-border: var(--glass-hairline);
+  --glass-border-strong: var(--glass-hairline-strong);
+  --r-sm: var(--glass-r-xs);
+  --r-md: var(--glass-r-sm);
+  --r-lg: var(--glass-r-md);
+  --r-inner: var(--glass-r-md);
+  --r-card: var(--glass-r-lg);
+  --r-pill: var(--glass-r-pill);
+  /* The premium layer pins radii through these two tokens with
+     !important across many selector groups. Re-pointing them lifts every
+     control to the glass scale without a counter-!important per group;
+     the larger card and overlay radii are set explicitly below. */
+  --premium-radius: var(--glass-r-sm);
+  --premium-radius-sm: var(--glass-r-xs);
+}
+
+[data-theme="light"] {
+  /* Light glass carries more body than dark glass: text over a busy
+     backdrop needs it to stay legible. */
+  --glass-sunken-fill: rgba(24, 20, 16, 0.045);
+  --glass-raised-fill: rgba(255, 255, 255, 0.74);
+  --glass-floating-fill: rgba(255, 255, 255, 0.68);
+  --glass-overlay-fill: rgba(255, 255, 255, 0.82);
+
+  --glass-sunken-solid: #f1ece4;
+  --glass-raised-solid: #fffdfa;
+  --glass-floating-solid: #fdfbf7;
+  --glass-overlay-solid: #fffefc;
+
+  --glass-hairline: rgba(30, 25, 20, 0.10);
+  --glass-hairline-strong: rgba(30, 25, 20, 0.17);
+  /* Near-opaque white: on a white-ish fill the highlight must be
+     brighter than the surface to read as a lit edge at all. */
+  --glass-catch: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+
+  /* Warm shadows. Cool grey on warm white reads as dirt. */
+  --glass-shadow-raised: 0 1px 2px rgba(52, 38, 20, 0.05), 0 8px 24px -8px rgba(52, 38, 20, 0.10);
+  --glass-shadow-floating: 0 2px 4px rgba(52, 38, 20, 0.05), 0 16px 40px -12px rgba(52, 38, 20, 0.12);
+  --glass-shadow-overlay: 0 4px 8px rgba(52, 38, 20, 0.07), 0 32px 72px -16px rgba(52, 38, 20, 0.16);
+
+  --glass-wash-warm: rgba(186, 16, 36, 0.040);
+  --glass-wash-cool: rgba(47, 111, 168, 0.034);
+  --glass-wash-base: #f6f3ed;
+
+  --orange: #BA1024;
+  --orange-dim: #950d1d;
+  --orange-glow: rgba(186, 16, 36, 0.18);
+  --orange-soft: rgba(186, 16, 36, 0.085);
+  --green: #157A45;
+  --green-soft: rgba(21, 122, 69, 0.085);
+  --yellow: #9C7330;
+  --yellow-soft: rgba(156, 115, 48, 0.10);
+  --red: #B3253A;
+  --red-soft: rgba(179, 37, 58, 0.085);
+  --blue: #2F6FA8;
+  --purple: #7A4FD0;
+
+  --bg-card-hover: rgba(255, 255, 255, 0.90);
+  --glass-1: rgba(24, 20, 16, 0.026);
+  --glass-2: rgba(24, 20, 16, 0.048);
+}
+
+/* ================================================================
+   Ambient backdrop
+   Two faint off-centre pools so blurred panels refract a gradient
+   instead of one dead colour. Amplitude stays under 4% luminance:
+   visible through 28px of blur, invisible as banding on a flat area.
+   ================================================================ */
+body {
+  background-color: var(--glass-wash-base);
+  background-image:
+    radial-gradient(62rem 48rem at 12% -6%, var(--glass-wash-warm), transparent 68%),
+    radial-gradient(52rem 44rem at 96% 8%, var(--glass-wash-cool), transparent 64%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* ================================================================
+   Floating tier: app chrome that content scrolls beneath
+   ================================================================ */
+.header,
+.desktop-nav,
+.mobile-tab-bar {
+  background: var(--glass-floating-fill);
+  -webkit-backdrop-filter: var(--glass-blur-floating);
+  backdrop-filter: var(--glass-blur-floating);
+  border-color: var(--glass-hairline);
+  box-shadow: var(--glass-catch), var(--glass-shadow-floating);
+}
+
+.mobile-tab-bar {
+  border-top: 1px solid var(--glass-hairline);
+}
+
+/* ================================================================
+   Raised tier: cards, panels, list rows
+   ================================================================ */
+.build-card,
+.account-bar-card,
+.detail-read-card,
+.decision-card,
+.chem-summary-card,
+.badge-rec-panel,
+.dq-panel,
+.build-compare-panel,
+.cloud-sync-panel,
+.cloud-session-panel,
+.build-command,
+.build-starter-panel,
+.home-dashboard,
+.performance-dashboard {
+  background: var(--glass-raised-fill);
+  -webkit-backdrop-filter: var(--glass-blur-raised);
+  backdrop-filter: var(--glass-blur-raised);
+  border-color: var(--glass-hairline);
+  border-radius: var(--glass-r-lg) !important;
+  box-shadow: var(--glass-catch), var(--glass-shadow-raised);
+  transition:
+    background var(--glass-t-fast) var(--glass-ease),
+    border-color var(--glass-t-fast) var(--glass-ease),
+    box-shadow var(--glass-t-base) var(--glass-ease),
+    transform var(--glass-t-base) var(--glass-ease);
+}
+
+.build-card:hover,
+.account-bar-card:hover {
+  background: var(--glass-raised-fill);
+  border-color: var(--glass-hairline-strong);
+  box-shadow: var(--glass-catch), var(--glass-shadow-floating);
+  transform: translateY(-2px);
+}
+
+/* Concentric corners: inner blocks sit inside a 24px card. */
+.build-card-header,
+.build-card-foot,
+.badge-rec-card,
+.attr-detail-card,
+.dq-category-card,
+.build-command-card,
+.home-action-card,
+.lab-game-card {
+  /* Inside a 24px panel. The premium layer pins these with !important. */
+  border-radius: var(--glass-r-md) !important;
+}
+
+/* ================================================================
+   Overlay tier: modals, sheets, menus
+   ================================================================ */
+.modal,
+.mobile-more-sheet,
+.game-modal-shell,
+.player-card-modal,
+.about-modal,
+.account-modal,
+.ocr-review-modal {
+  background: var(--glass-overlay-fill);
+  -webkit-backdrop-filter: var(--glass-blur-overlay);
+  backdrop-filter: var(--glass-blur-overlay);
+  border: 1px solid var(--glass-hairline);
+  /* The premium layer pins this radius with !important, so matching that
+     weight is the only way the overlay scale applies. */
+  border-radius: var(--glass-r-xl) !important;
+  box-shadow: var(--glass-catch), var(--glass-shadow-overlay);
+}
+
+/* The scrim stays plain: two stacked glass tiers is the readability
+   limit, and the overlay above it already blurs the page. */
+.modal-overlay,
+.mobile-sheet-backdrop {
+  background: rgba(6, 7, 9, 0.52);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+[data-theme="light"] .modal-overlay,
+[data-theme="light"] .mobile-sheet-backdrop {
+  background: rgba(44, 34, 24, 0.26);
+}
+
+.modal-header,
+.modal-footer {
+  background: transparent;
+  border-color: var(--glass-hairline);
+}
+
+.mobile-more-sheet {
+  border-radius: var(--glass-r-xl) var(--glass-r-xl) 0 0;
+}
+
+/* ================================================================
+   Sunken tier: wells and tracks read as cut into the surface
+   ================================================================ */
+.modal-body .attr-row,
+.badge-cat-body,
+.games-table thead,
+.mobile-more-list {
+  background: var(--glass-sunken-fill);
+  border-radius: var(--glass-r-md);
+}
+
+/* ================================================================
+   Controls
+   ================================================================ */
+.btn,
+.nav-btn,
+.card-action-btn,
+.mobile-tab-btn {
+  border-radius: var(--glass-r-sm);
+  transition:
+    background var(--glass-t-fast) var(--glass-ease),
+    border-color var(--glass-t-fast) var(--glass-ease),
+    color var(--glass-t-fast) var(--glass-ease),
+    box-shadow var(--glass-t-fast) var(--glass-ease);
+}
+
+.btn-ghost,
+.nav-btn {
+  background: var(--glass-1);
+  border: 1px solid var(--glass-hairline);
+}
+
+.btn-ghost:hover,
+.nav-btn:hover {
+  background: var(--glass-2);
+  border-color: var(--glass-hairline-strong);
+}
+
+.nav-btn.active {
+  background: var(--orange-soft);
+  border-color: var(--orange);
+  box-shadow: var(--glass-catch);
+}
+
+input,
+select,
+textarea {
+  border-radius: var(--glass-r-sm);
+  background: var(--glass-sunken-fill);
+  border: 1px solid var(--glass-hairline);
+  transition:
+    border-color var(--glass-t-fast) var(--glass-ease),
+    box-shadow var(--glass-t-fast) var(--glass-ease);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 3px var(--orange-soft);
+  outline: none;
+}
+
+
+/* ================================================================
+   Light theme at matching specificity
+
+   The premium and beauty layers scope their light surfaces as
+   `[data-theme="light"] <sel>`, which outranks a bare `<sel>` here
+   regardless of load order. These rules carry the same declarations as
+   above; only the selector weight changes. The values themselves still
+   come from the light token block, so there is one source of truth.
+   ================================================================ */
+[data-theme="light"] body {
+  background-color: var(--glass-wash-base);
+  background-image:
+    radial-gradient(62rem 48rem at 12% -6%, var(--glass-wash-warm), transparent 68%),
+    radial-gradient(52rem 44rem at 96% 8%, var(--glass-wash-cool), transparent 64%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+[data-theme="light"] .header,
+[data-theme="light"] .desktop-nav,
+[data-theme="light"] .mobile-tab-bar {
+  background: var(--glass-floating-fill);
+  -webkit-backdrop-filter: var(--glass-blur-floating);
+  backdrop-filter: var(--glass-blur-floating);
+  border-color: var(--glass-hairline);
+  box-shadow: var(--glass-catch), var(--glass-shadow-floating);
+}
+
+[data-theme="light"] .build-card,
+[data-theme="light"] .account-bar-card,
+[data-theme="light"] .detail-read-card,
+[data-theme="light"] .decision-card,
+[data-theme="light"] .chem-summary-card,
+[data-theme="light"] .badge-rec-panel,
+[data-theme="light"] .dq-panel,
+[data-theme="light"] .build-compare-panel,
+[data-theme="light"] .cloud-sync-panel,
+[data-theme="light"] .cloud-session-panel,
+[data-theme="light"] .build-command,
+[data-theme="light"] .build-starter-panel,
+[data-theme="light"] .home-dashboard,
+[data-theme="light"] .performance-dashboard {
+  background: var(--glass-raised-fill);
+  -webkit-backdrop-filter: var(--glass-blur-raised);
+  backdrop-filter: var(--glass-blur-raised);
+  border-color: var(--glass-hairline);
+  border-radius: var(--glass-r-lg) !important;
+  box-shadow: var(--glass-catch), var(--glass-shadow-raised);
+}
+
+[data-theme="light"] .modal,
+[data-theme="light"] .mobile-more-sheet,
+[data-theme="light"] .game-modal-shell,
+[data-theme="light"] .player-card-modal,
+[data-theme="light"] .about-modal,
+[data-theme="light"] .account-modal,
+[data-theme="light"] .ocr-review-modal {
+  background: var(--glass-overlay-fill);
+  -webkit-backdrop-filter: var(--glass-blur-overlay);
+  backdrop-filter: var(--glass-blur-overlay);
+  border: 1px solid var(--glass-hairline);
+  border-radius: var(--glass-r-xl) !important;
+  box-shadow: var(--glass-catch), var(--glass-shadow-overlay);
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background: var(--glass-sunken-fill);
+  border-color: var(--glass-hairline);
+}
+
+/* ================================================================
+   Fallbacks
+   ================================================================ */
+/* A glass tier is never the only path to a legible surface. */
+
+/* No backdrop-filter support: a 0.64-alpha fill without blur behind it
+   is simply unreadable, so go fully opaque. */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .header,
+  .desktop-nav,
+  .mobile-tab-bar {
+    background: var(--glass-floating-solid);
+  }
+
+  .build-card,
+  .account-bar-card,
+  .detail-read-card,
+  .decision-card,
+  .chem-summary-card,
+  .badge-rec-panel,
+  .dq-panel,
+  .build-compare-panel,
+  .cloud-sync-panel,
+  .cloud-session-panel {
+    background: var(--glass-raised-solid);
+  }
+
+  .modal,
+  .mobile-more-sheet,
+  .game-modal-shell,
+  .player-card-modal,
+  .about-modal,
+  .account-modal,
+  .ocr-review-modal {
+    background: var(--glass-overlay-solid);
+  }
+}
+
+/* The OS says this reader cannot parse text over translucency. Believe it. */
+@media (prefers-reduced-transparency: reduce) {
+  .header,
+  .desktop-nav,
+  .mobile-tab-bar {
+    background: var(--glass-floating-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .build-card,
+  .account-bar-card,
+  .detail-read-card,
+  .decision-card,
+  .chem-summary-card,
+  .badge-rec-panel,
+  .dq-panel,
+  .build-compare-panel,
+  .cloud-sync-panel,
+  .cloud-session-panel {
+    background: var(--glass-raised-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .modal,
+  .mobile-more-sheet,
+  .game-modal-shell,
+  .player-card-modal,
+  .about-modal,
+  .account-modal,
+  .ocr-review-modal {
+    background: var(--glass-overlay-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .modal-overlay,
+  .mobile-sheet-backdrop {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --glass-t-fast: 0.01ms;
+    --glass-t-base: 0.01ms;
+    --glass-t-slow: 0.01ms;
+  }
+
+  .build-card:hover,
+  .account-bar-card:hover {
+    transform: none;
+  }
+}

@@ -10,6 +10,9 @@
   },
   "scripts": {
     "test": "node scripts/test-all.cjs",
+    "core:test": "cargo test --manifest-path rust-core/Cargo.toml",
+    "core:check": "cargo fmt --manifest-path rust-core/Cargo.toml --all -- --check && cargo clippy --manifest-path rust-core/Cargo.toml --all-targets -- -D warnings",
+    "gamedata:export": "node scripts/export-gamedata.cjs",
     "stage": "node scripts/stage-web.cjs",
     "native:version": "node scripts/sync-native-version.cjs",
     "icons:desktop": "node scripts/generate-desktop-icons.cjs",

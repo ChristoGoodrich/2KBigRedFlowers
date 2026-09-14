@@ -1,0 +1,14 @@
+# Workspace for the native core.
+#
+# The app is local-first: records live on the device and never need a server to
+# be useful. So "backend" here is a library linked into the client, not a
+# service -- Flutter calls it over FFI (flutter_rust_bridge) and the same crate
+# compiles to WASM for the web build.
+[workspace]
+resolver = "3"
+members = ["nba2k-core"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "LicenseRef-All-Rights-Reserved"

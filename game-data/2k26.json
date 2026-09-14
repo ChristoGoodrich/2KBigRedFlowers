@@ -1,0 +1,3966 @@
+{
+  "animThresholds": {
+    "agility": [
+      {
+        "en": "Agile Movement",
+        "label": "灵活移动",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Agility",
+        "label": "顶级敏捷",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "ballHandle": [
+      {
+        "en": "Bronze Ankle Assassin",
+        "label": "铜脚踝终结",
+        "tier": "bronze",
+        "val": 75
+      },
+      {
+        "en": "Speed Boost Threshold",
+        "label": "速度加成阈值",
+        "tier": "silver",
+        "val": 85
+      },
+      {
+        "en": "Best Dribble Moves",
+        "label": "顶级运球动作",
+        "tier": "gold",
+        "val": 92
+      },
+      {
+        "en": "HOF Ankle Assassin",
+        "label": "HOF 脚踝终结",
+        "tier": "hof",
+        "val": 95
+      }
+    ],
+    "block": [
+      {
+        "en": "Basic Chase-Down Blocks",
+        "label": "基础追帽",
+        "tier": "bronze",
+        "val": 74
+      },
+      {
+        "en": "Effective Rim Protection",
+        "label": "有效护框",
+        "tier": "silver",
+        "val": 78
+      },
+      {
+        "en": "Elite Chase-Down Animations",
+        "label": "精英追帽动画",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "closeShot": [
+      {
+        "en": "Reliable Close Shot",
+        "label": "可靠近距离",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Close Shot",
+        "label": "精英近距离",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "defensiveRebound": [
+      {
+        "en": "Competitive Rebound Threshold",
+        "label": "竞技篮板门槛",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Rebounder",
+        "label": "精英篮板手",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "drivingDunk": [
+      {
+        "en": "Basic Contact Dunks",
+        "label": "基础隔扣",
+        "tier": "bronze",
+        "val": 84
+      },
+      {
+        "en": "Standard Contact Dunk Packages",
+        "label": "标准隔扣包",
+        "tier": "silver",
+        "val": 86
+      },
+      {
+        "en": "Elite Contact Dunks",
+        "label": "精英隔扣",
+        "tier": "gold",
+        "val": 92
+      },
+      {
+        "en": "Best Dunk Packages",
+        "label": "顶级隔扣包",
+        "tier": "hof",
+        "val": 93
+      }
+    ],
+    "drivingLayup": [
+      {
+        "en": "Basic Layup Packages",
+        "label": "基础终结包",
+        "tier": "bronze",
+        "val": 80
+      },
+      {
+        "en": "Advanced Layup Styles",
+        "label": "高级终结风格",
+        "tier": "silver",
+        "val": 85
+      },
+      {
+        "en": "Elite Layup Packages",
+        "label": "精英终结包",
+        "tier": "gold",
+        "val": 93
+      }
+    ],
+    "freeThrow": [
+      {
+        "en": "Consistent in Rec",
+        "label": "Rec/Pro-Am 可靠",
+        "tier": "bronze",
+        "val": 70
+      },
+      {
+        "en": "Reliable Free Throw",
+        "label": "稳定罚球",
+        "tier": "silver",
+        "val": 79
+      },
+      {
+        "en": "Very Consistent",
+        "label": "非常稳定",
+        "tier": "gold",
+        "val": 85
+      }
+    ],
+    "interiorDefense": [
+      {
+        "en": "Basic Paint Protection",
+        "label": "基础油漆区防守",
+        "tier": "bronze",
+        "val": 60
+      },
+      {
+        "en": "Effective vs Finishers",
+        "label": "有效内线防守",
+        "tier": "silver",
+        "val": 70
+      },
+      {
+        "en": "Elite Paint Protection",
+        "label": "精英油漆区防守",
+        "tier": "gold",
+        "val": 85
+      }
+    ],
+    "midRange": [
+      {
+        "en": "Reliable Mid-Range",
+        "label": "可靠中投",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Mid-Range",
+        "label": "精英中投",
+        "tier": "gold",
+        "val": 88
+      },
+      {
+        "en": "Elite Mid-Range",
+        "label": "顶级中投",
+        "tier": "hof",
+        "val": 95
+      }
+    ],
+    "offensiveRebound": [
+      {
+        "en": "Competitive Rebound Threshold",
+        "label": "竞技篮板门槛",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Rebounder",
+        "label": "精英篮板手",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "passAccuracy": [
+      {
+        "en": "Bronze Dimer",
+        "label": "铜妙传手",
+        "tier": "bronze",
+        "val": 55
+      },
+      {
+        "en": "Silver Dimer",
+        "label": "银妙传手",
+        "tier": "silver",
+        "val": 71
+      },
+      {
+        "en": "Gold Dimer",
+        "label": "金妙传手",
+        "tier": "gold",
+        "val": 82
+      },
+      {
+        "en": "HOF Dimer",
+        "label": "HOF 妙传手",
+        "tier": "hof",
+        "val": 92
+      }
+    ],
+    "perimeterDefense": [
+      {
+        "en": "Competitive Lock Threshold",
+        "label": "竞技锁防门槛",
+        "tier": "silver",
+        "val": 85
+      },
+      {
+        "en": "Elite Perimeter Lockdown",
+        "label": "精英外线锁防",
+        "tier": "gold",
+        "val": 92
+      },
+      {
+        "en": "Top-Tier Lock Build",
+        "label": "顶级锁防建模",
+        "tier": "hof",
+        "val": 94
+      }
+    ],
+    "speed": [
+      {
+        "en": "Fast Guard",
+        "label": "快速后卫",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Speed",
+        "label": "极速",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "speedWithBall": [
+      {
+        "en": "Bronze Lightning Launch",
+        "label": "铜闪电启动",
+        "tier": "bronze",
+        "val": 68
+      },
+      {
+        "en": "Silver Lightning Launch",
+        "label": "银闪电启动",
+        "tier": "silver",
+        "val": 75
+      },
+      {
+        "en": "Gold Lightning Launch",
+        "label": "金闪电启动",
+        "tier": "gold",
+        "val": 86
+      },
+      {
+        "en": "HOF Lightning Launch",
+        "label": "HOF 闪电启动",
+        "tier": "hof",
+        "val": 91
+      }
+    ],
+    "standingDunk": [
+      {
+        "en": "Basic Standing Dunks",
+        "label": "基础站扣",
+        "tier": "bronze",
+        "val": 60
+      },
+      {
+        "en": "Silver Aerial Wizard",
+        "label": "银空接奇才",
+        "tier": "silver",
+        "val": 75
+      },
+      {
+        "en": "Gold Aerial Wizard",
+        "label": "金空接奇才",
+        "tier": "gold",
+        "val": 84
+      },
+      {
+        "en": "HOF Aerial Wizard",
+        "label": "HOF 空接奇才",
+        "tier": "hof",
+        "val": 92
+      }
+    ],
+    "steal": [
+      {
+        "en": "Bronze Interceptor/Glove",
+        "label": "铜拦截/手套",
+        "tier": "bronze",
+        "val": 73
+      },
+      {
+        "en": "Silver Interceptor/Glove",
+        "label": "银拦截/手套",
+        "tier": "silver",
+        "val": 79
+      },
+      {
+        "en": "Gold Interceptor",
+        "label": "金拦截",
+        "tier": "gold",
+        "val": 85
+      },
+      {
+        "en": "HOF Interceptor/Glove",
+        "label": "HOF 拦截/手套",
+        "tier": "hof",
+        "val": 91
+      }
+    ],
+    "strength": [
+      {
+        "en": "Post Move Foundation",
+        "label": "背身基础",
+        "tier": "bronze",
+        "val": 70
+      },
+      {
+        "en": "Strong Physical Play",
+        "label": "强力对抗",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Dominant Physical Play",
+        "label": "统治级对抗",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "threePoint": [
+      {
+        "en": "Bronze Deadeye",
+        "label": "铜 Deadeye",
+        "tier": "bronze",
+        "val": 73
+      },
+      {
+        "en": "Consistent Green Window",
+        "label": "稳定绿窗",
+        "tier": "bronze",
+        "val": 76
+      },
+      {
+        "en": "Bronze Limitless Range",
+        "label": "铜无限射程",
+        "tier": "silver",
+        "val": 83
+      },
+      {
+        "en": "Silver Limitless Range",
+        "label": "银无限射程",
+        "tier": "gold",
+        "val": 89
+      },
+      {
+        "en": "Gold Limitless Range",
+        "label": "金无限射程",
+        "tier": "hof",
+        "val": 93
+      },
+      {
+        "en": "HOF Limitless Range",
+        "label": "名人堂无限射程",
+        "tier": "legend",
+        "val": 96
+      }
+    ],
+    "vertical": [
+      {
+        "en": "Contact Dunk Vertical",
+        "label": "基础隔扣垂直要求",
+        "tier": "bronze",
+        "val": 70
+      },
+      {
+        "en": "Elite Vertical",
+        "label": "精英弹跳",
+        "tier": "silver",
+        "val": 80
+      }
+    ]
+  },
+  "attrGroups": {
+    "def": {
+      "keys": [
+        "interiorDefense",
+        "perimeterDefense",
+        "steal",
+        "block"
+      ],
+      "label": "DEFENSE",
+      "zhLabel": "防守"
+    },
+    "fin": {
+      "keys": [
+        "closeShot",
+        "drivingLayup",
+        "drivingDunk",
+        "standingDunk",
+        "postControl"
+      ],
+      "label": "FINISHING",
+      "zhLabel": "终结"
+    },
+    "phy": {
+      "keys": [
+        "speed",
+        "agility",
+        "strength",
+        "vertical"
+      ],
+      "label": "PHYSICALS",
+      "zhLabel": "身体"
+    },
+    "pla": {
+      "keys": [
+        "passAccuracy",
+        "ballHandle",
+        "speedWithBall"
+      ],
+      "label": "PLAYMAKING",
+      "zhLabel": "组织"
+    },
+    "reb": {
+      "keys": [
+        "offensiveRebound",
+        "defensiveRebound"
+      ],
+      "label": "REBOUNDING",
+      "zhLabel": "篮板"
+    },
+    "sho": {
+      "keys": [
+        "midRange",
+        "threePoint",
+        "freeThrow"
+      ],
+      "label": "SHOOTING",
+      "zhLabel": "投篮"
+    }
+  },
+  "attrLabels": {
+    "agility": [
+      "Agility",
+      "敏捷"
+    ],
+    "ballHandle": [
+      "Ball Handle",
+      "控球"
+    ],
+    "block": [
+      "Block",
+      "盖帽"
+    ],
+    "closeShot": [
+      "Close Shot",
+      "近距投篮"
+    ],
+    "defensiveRebound": [
+      "Defensive Rebound",
+      "后板"
+    ],
+    "drivingDunk": [
+      "Driving Dunk",
+      "移动扣篮"
+    ],
+    "drivingLayup": [
+      "Driving Layup",
+      "上篮"
+    ],
+    "freeThrow": [
+      "Free Throw",
+      "罚球"
+    ],
+    "interiorDefense": [
+      "Interior Defense",
+      "内防"
+    ],
+    "midRange": [
+      "Mid-Range",
+      "中距"
+    ],
+    "offensiveRebound": [
+      "Offensive Rebound",
+      "前板"
+    ],
+    "passAccuracy": [
+      "Pass Accuracy",
+      "传球准度"
+    ],
+    "perimeterDefense": [
+      "Perimeter Defense",
+      "外防"
+    ],
+    "postControl": [
+      "Post Control",
+      "背身单打"
+    ],
+    "speed": [
+      "Speed",
+      "速度"
+    ],
+    "speedWithBall": [
+      "Speed With Ball",
+      "带球速度"
+    ],
+    "standingDunk": [
+      "Standing Dunk",
+      "站立扣篮"
+    ],
+    "steal": [
+      "Steal",
+      "抢断"
+    ],
+    "strength": [
+      "Strength",
+      "力量"
+    ],
+    "threePoint": [
+      "Three-Point",
+      "三分"
+    ],
+    "vertical": [
+      "Vertical",
+      "弹跳"
+    ]
+  },
+  "badgeCategories": [
+    {
+      "badges": [
+        {
+          "desc": "Contact dunks and strong finishes / 隔扣与强力终结",
+          "id": "posterizer",
+          "name": "Posterizer"
+        },
+        {
+          "desc": "Finishing through contact / 对抗下完成终结",
+          "id": "physicalFinisher",
+          "name": "Physical Finisher"
+        },
+        {
+          "desc": "Lobs, putbacks, and aerial finishes / 空接、补扣与空中终结",
+          "id": "aerialWizard",
+          "name": "Aerial Wizard"
+        },
+        {
+          "desc": "Post hooks near the rim / 低位勾手能力",
+          "id": "hookSpecialist",
+          "name": "Hook Specialist"
+        },
+        {
+          "desc": "Power moves from the post / 背身强攻能力",
+          "id": "postPowerhouse",
+          "name": "Post Powerhouse"
+        },
+        {
+          "desc": "Creative layup packages / 多样化上篮变化",
+          "id": "layupMixmaster",
+          "name": "Layup Mixmaster"
+        },
+        {
+          "desc": "Post footwork and scoring touch / 低位脚步与手感",
+          "id": "postUpPoet",
+          "name": "Post-Up Poet"
+        },
+        {
+          "desc": "Standing dunks in traffic / 人群中的原地扣篮",
+          "id": "riseUp",
+          "name": "Rise Up"
+        },
+        {
+          "desc": "Interior touch and paint scoring / 禁区手感与篮下得分",
+          "id": "paintProdigy",
+          "name": "Paint Prodigy"
+        },
+        {
+          "desc": "Floaters and soft touch / 抛投与柔和手感",
+          "id": "floatGame",
+          "name": "Float Game"
+        },
+        {
+          "desc": "Post fades and turnarounds / 背身后仰与转身跳投",
+          "id": "postFadePhenom",
+          "name": "Post Fade Phenom"
+        }
+      ],
+      "id": "finishing",
+      "label": "FINISHING / 终结"
+    },
+    {
+      "badges": [
+        {
+          "desc": "Stationary jumpers and spot-ups / 定点跳投与接球投篮",
+          "id": "setShotSpecialist",
+          "name": "Set Shot Specialist"
+        },
+        {
+          "desc": "Deep three-point shooting / 超远三分投射",
+          "id": "limitlessRange",
+          "name": "Limitless Range"
+        },
+        {
+          "desc": "Shooting boost for smaller guards / 小个后卫投篮加成",
+          "id": "miniMarksman",
+          "name": "Mini Marksman"
+        },
+        {
+          "desc": "Off-dribble and movement shooting / 运球后与移动投篮",
+          "id": "shiftyShooter",
+          "name": "Shifty Shooter"
+        },
+        {
+          "desc": "Contested jumper resistance / 顶投抗干扰能力",
+          "id": "deadeye",
+          "name": "Deadeye"
+        }
+      ],
+      "id": "shooting",
+      "label": "SHOOTING / 投篮"
+    },
+    {
+      "badges": [
+        {
+          "desc": "Dribble moves that create separation / 运球晃动制造空间",
+          "id": "ankleAssassin",
+          "name": "Ankle Assassin"
+        },
+        {
+          "desc": "Quick first step with the ball / 持球快速启动",
+          "id": "lightningLaunch",
+          "name": "Lightning Launch"
+        },
+        {
+          "desc": "Passing out of bad shots or drives / 出手或突破中的救球传球",
+          "id": "bailOut",
+          "name": "Bail Out"
+        },
+        {
+          "desc": "Ball security under pressure / 对抗压力下护球",
+          "id": "unpluckable",
+          "name": "Unpluckable"
+        },
+        {
+          "desc": "Advanced passing reads / 高阶传球视野",
+          "id": "versatileVisionary",
+          "name": "Versatile Visionary"
+        },
+        {
+          "desc": "Control through bumps and contact / 对抗中的控球稳定性",
+          "id": "strongHandle",
+          "name": "Strong Handle"
+        },
+        {
+          "desc": "Dribble stamina and combo control / 运球体力与连招控制",
+          "id": "handlesForDays",
+          "name": "Handles for Days"
+        },
+        {
+          "desc": "Outlet passes after rebounds / 抢板后的快攻长传",
+          "id": "breakStarter",
+          "name": "Break Starter"
+        },
+        {
+          "desc": "Boosts teammates after passes / 传球后提升队友终结",
+          "id": "dimer",
+          "name": "Dimer"
+        }
+      ],
+      "id": "playmaking",
+      "label": "PLAYMAKING / 组织"
+    },
+    {
+      "badges": [
+        {
+          "desc": "Perimeter shot contests / 外线投篮干扰",
+          "id": "challenger",
+          "name": "Challenger"
+        },
+        {
+          "desc": "On-ball pressure defense / 持球人压迫防守",
+          "id": "onBallMenace",
+          "name": "On-Ball Menace"
+        },
+        {
+          "desc": "Steals and strip attempts / 抢断与掏球",
+          "id": "glove",
+          "name": "Glove"
+        },
+        {
+          "desc": "Navigating screens / 绕过掩护",
+          "id": "pickDodger",
+          "name": "Pick Dodger"
+        },
+        {
+          "desc": "Passing lane steals / 传球路线拦截",
+          "id": "interceptor",
+          "name": "Interceptor"
+        },
+        {
+          "desc": "Defending post scorers / 低位防守",
+          "id": "postLockdown",
+          "name": "Post Lockdown"
+        },
+        {
+          "desc": "Holding ground on defense / 防守端站稳位置",
+          "id": "immovableEnforcer",
+          "name": "Immovable Enforcer"
+        },
+        {
+          "desc": "Denying off-ball movement / 无球纠缠与干扰",
+          "id": "offBallPest",
+          "name": "Off-Ball Pest"
+        },
+        {
+          "desc": "Interior deterrence and contests / 禁区威慑与干扰",
+          "id": "paintPatroller",
+          "name": "Paint Patroller"
+        },
+        {
+          "desc": "Chase-downs and vertical blocks / 追帽与高点封盖",
+          "id": "highFlyingDenier",
+          "name": "High-Flying Denier"
+        }
+      ],
+      "id": "defense",
+      "label": "DEFENSE / 防守"
+    },
+    {
+      "badges": [
+        {
+          "desc": "Boxouts and rebounding position / 卡位与篮板位置",
+          "id": "boxoutBeast",
+          "name": "Boxout Beast"
+        },
+        {
+          "desc": "Pursuing loose rebounds / 篮板追逐能力",
+          "id": "reboundChaser",
+          "name": "Rebound Chaser"
+        },
+        {
+          "desc": "Repeated jumps and blocks / 连续起跳与封盖",
+          "id": "pogoStick",
+          "name": "Pogo Stick"
+        },
+        {
+          "desc": "Screens and physical contact / 掩护质量与身体对抗",
+          "id": "brickWall",
+          "name": "Brick Wall"
+        },
+        {
+          "desc": "Getting open without the ball / 无球摆脱跑位",
+          "id": "slipperyOffBall",
+          "name": "Slippery Off-Ball"
+        }
+      ],
+      "id": "rebGeneral",
+      "label": "REBOUNDING / PHYSICAL / 篮板身体"
+    }
+  ],
+  "badgeThresholds": {
+    "aerialWizard": {
+      "attrs": [
+        {
+          "k": "drivingDunk"
+        },
+        {
+          "k": "standingDunk"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "drivingDunk",
+                "val": 64
+              },
+              {
+                "k": "standingDunk",
+                "val": 60
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "drivingDunk",
+                "val": 80
+              },
+              {
+                "k": "standingDunk",
+                "val": 84
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "drivingDunk",
+                "val": 89
+              },
+              {
+                "k": "standingDunk",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "drivingDunk",
+                "val": 97
+              },
+              {
+                "k": "standingDunk",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "drivingDunk",
+                "val": 70
+              },
+              {
+                "k": "standingDunk",
+                "val": 75
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ankleAssassin": {
+      "attrs": [
+        {
+          "k": "ballHandle"
+        }
+      ],
+      "height": "5'9-6'10",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 75
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 93
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 86
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "bailOut": {
+      "attrs": [
+        {
+          "k": "passAccuracy"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 91
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "boxoutBeast": {
+      "attrs": [
+        {
+          "k": "defensiveRebound"
+        },
+        {
+          "k": "offensiveRebound"
+        }
+      ],
+      "height": "6'3-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 55
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 55
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 85
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 94
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 98
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 70
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 70
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "breakStarter": {
+      "attrs": [
+        {
+          "k": "passAccuracy"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 65
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 87
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 93
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 75
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "brickWall": {
+      "attrs": [
+        {
+          "k": "strength"
+        }
+      ],
+      "height": "6'5-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 72
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 91
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 83
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "challenger": {
+      "attrs": [
+        {
+          "k": "perimeterDefense"
+        }
+      ],
+      "height": "5'9-6'11",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 71
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 82
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "deadeye": {
+      "attrs": [
+        {
+          "k": "midRange"
+        },
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 73
+              },
+              {
+                "k": "threePoint",
+                "val": 73
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 92
+              },
+              {
+                "k": "threePoint",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 95
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 99
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 85
+              },
+              {
+                "k": "threePoint",
+                "val": 85
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dimer": {
+      "attrs": [
+        {
+          "k": "passAccuracy"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 55
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 82
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 71
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "floatGame": {
+      "attrs": [
+        {
+          "k": "closeShot"
+        },
+        {
+          "k": "drivingLayup"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "closeShot",
+                "val": 68
+              },
+              {
+                "k": "drivingLayup",
+                "val": 65
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "closeShot",
+                "val": 86
+              },
+              {
+                "k": "drivingLayup",
+                "val": 88
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "closeShot",
+                "val": 92
+              },
+              {
+                "k": "drivingLayup",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "closeShot",
+                "val": 99
+              },
+              {
+                "k": "drivingLayup",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "closeShot",
+                "val": 78
+              },
+              {
+                "k": "drivingLayup",
+                "val": 78
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "glove": {
+      "attrs": [
+        {
+          "k": "steal"
+        }
+      ],
+      "height": "5'9-7'0",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 67
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 91
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 79
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "handlesForDays": {
+      "attrs": [
+        {
+          "k": "ballHandle"
+        }
+      ],
+      "height": "5'9-7'0",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 71
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 90
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 97
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 81
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "highFlyingDenier": {
+      "attrs": [
+        {
+          "k": "block"
+        },
+        {
+          "k": "vertical"
+        }
+      ],
+      "height": "6'3-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "block",
+                "val": 68
+              },
+              {
+                "k": "vertical",
+                "val": 60
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "block",
+                "val": 88
+              },
+              {
+                "k": "vertical",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "block",
+                "val": 92
+              },
+              {
+                "k": "vertical",
+                "val": 88
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "block",
+                "val": 99
+              },
+              {
+                "k": "vertical",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "block",
+                "val": 78
+              },
+              {
+                "k": "vertical",
+                "val": 74
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "hookSpecialist": {
+      "attrs": [
+        {
+          "k": "closeShot"
+        },
+        {
+          "k": "postControl"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 60
+              },
+              {
+                "k": "postControl",
+                "val": 61
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 87
+              },
+              {
+                "k": "postControl",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 94
+              },
+              {
+                "k": "postControl",
+                "val": 90
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 99
+              },
+              {
+                "k": "postControl",
+                "val": 97
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 75
+              },
+              {
+                "k": "postControl",
+                "val": 65
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "immovableEnforcer": {
+      "attrs": [
+        {
+          "k": "perimeterDefense"
+        },
+        {
+          "k": "strength"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 62
+              },
+              {
+                "k": "strength",
+                "val": 71
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 84
+              },
+              {
+                "k": "strength",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 89
+              },
+              {
+                "k": "strength",
+                "val": 91
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 94
+              },
+              {
+                "k": "strength",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 72
+              },
+              {
+                "k": "strength",
+                "val": 82
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "interceptor": {
+      "attrs": [
+        {
+          "k": "steal"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 60
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "steal",
+                "val": 73
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "layupMixmaster": {
+      "attrs": [
+        {
+          "k": "drivingLayup"
+        }
+      ],
+      "height": "5'9-6'11",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "drivingLayup",
+                "val": 75
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "drivingLayup",
+                "val": 93
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "drivingLayup",
+                "val": 97
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "drivingLayup",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "drivingLayup",
+                "val": 85
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "lightningLaunch": {
+      "attrs": [
+        {
+          "k": "speedWithBall"
+        }
+      ],
+      "height": "5'9-6'11",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "speedWithBall",
+                "val": 68
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "speedWithBall",
+                "val": 86
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "speedWithBall",
+                "val": 91
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "speedWithBall",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "speedWithBall",
+                "val": 75
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "limitlessRange": {
+      "attrs": [
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "threePoint",
+                "val": 83
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "threePoint",
+                "val": 93
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "threePoint",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "threePoint",
+                "val": 89
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "miniMarksman": {
+      "attrs": [
+        {
+          "k": "midRange"
+        },
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": "5'9-6'3",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 71
+              },
+              {
+                "k": "threePoint",
+                "val": 71
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 94
+              },
+              {
+                "k": "threePoint",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 97
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 99
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 82
+              },
+              {
+                "k": "threePoint",
+                "val": 82
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "offBallPest": {
+      "attrs": [
+        {
+          "k": "interiorDefense"
+        },
+        {
+          "k": "perimeterDefense"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "interiorDefense",
+                "val": 69
+              },
+              {
+                "k": "perimeterDefense",
+                "val": 58
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "interiorDefense",
+                "val": 85
+              },
+              {
+                "k": "perimeterDefense",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "interiorDefense",
+                "val": 92
+              },
+              {
+                "k": "perimeterDefense",
+                "val": 87
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "interiorDefense",
+                "val": 97
+              },
+              {
+                "k": "perimeterDefense",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "interiorDefense",
+                "val": 76
+              },
+              {
+                "k": "perimeterDefense",
+                "val": 68
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "onBallMenace": {
+      "attrs": [
+        {
+          "k": "perimeterDefense"
+        },
+        {
+          "k": "agility"
+        }
+      ],
+      "height": "5'9-6'9",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 74
+              },
+              {
+                "k": "agility",
+                "val": 70
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 91
+              },
+              {
+                "k": "agility",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 96
+              },
+              {
+                "k": "agility",
+                "val": 84
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 99
+              },
+              {
+                "k": "agility",
+                "val": 86
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 79
+              },
+              {
+                "k": "agility",
+                "val": 76
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "paintPatroller": {
+      "attrs": [
+        {
+          "k": "interiorDefense"
+        },
+        {
+          "k": "block"
+        }
+      ],
+      "height": "6'6-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 60
+              },
+              {
+                "k": "block",
+                "val": 74
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 84
+              },
+              {
+                "k": "block",
+                "val": 93
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 94
+              },
+              {
+                "k": "block",
+                "val": 97
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 99
+              },
+              {
+                "k": "block",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 70
+              },
+              {
+                "k": "block",
+                "val": 84
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "paintProdigy": {
+      "attrs": [
+        {
+          "k": "closeShot"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 73
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "closeShot",
+                "val": 84
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "physicalFinisher": {
+      "attrs": [
+        {
+          "k": "strength"
+        },
+        {
+          "k": "drivingLayup"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 60
+              },
+              {
+                "k": "drivingLayup",
+                "val": 70
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 75
+              },
+              {
+                "k": "drivingLayup",
+                "val": 90
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 83
+              },
+              {
+                "k": "drivingLayup",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 97
+              },
+              {
+                "k": "drivingLayup",
+                "val": 97
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "strength",
+                "val": 67
+              },
+              {
+                "k": "drivingLayup",
+                "val": 80
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pickDodger": {
+      "attrs": [
+        {
+          "k": "perimeterDefense"
+        },
+        {
+          "k": "agility"
+        }
+      ],
+      "height": "5'9-6'10",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 73
+              },
+              {
+                "k": "agility",
+                "val": 71
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 90
+              },
+              {
+                "k": "agility",
+                "val": 79
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 97
+              },
+              {
+                "k": "agility",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 99
+              },
+              {
+                "k": "agility",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "perimeterDefense",
+                "val": 83
+              },
+              {
+                "k": "agility",
+                "val": 75
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "pogoStick": {
+      "attrs": [
+        {
+          "k": "vertical"
+        }
+      ],
+      "height": "6'4-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "vertical",
+                "val": 63
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "vertical",
+                "val": 77
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "vertical",
+                "val": 83
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "vertical",
+                "val": 88
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "vertical",
+                "val": 70
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "postFadePhenom": {
+      "attrs": [
+        {
+          "k": "postControl"
+        },
+        {
+          "k": "midRange"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 60
+              },
+              {
+                "k": "midRange",
+                "val": 61
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 79
+              },
+              {
+                "k": "midRange",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 84
+              },
+              {
+                "k": "midRange",
+                "val": 90
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 90
+              },
+              {
+                "k": "midRange",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 70
+              },
+              {
+                "k": "midRange",
+                "val": 71
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "postLockdown": {
+      "attrs": [
+        {
+          "k": "interiorDefense"
+        },
+        {
+          "k": "strength"
+        }
+      ],
+      "height": "6'5-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 74
+              },
+              {
+                "k": "strength",
+                "val": 70
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 88
+              },
+              {
+                "k": "strength",
+                "val": 84
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 93
+              },
+              {
+                "k": "strength",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 99
+              },
+              {
+                "k": "strength",
+                "val": 97
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 82
+              },
+              {
+                "k": "strength",
+                "val": 78
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "postPowerhouse": {
+      "attrs": [
+        {
+          "k": "postControl"
+        },
+        {
+          "k": "strength"
+        }
+      ],
+      "height": "6'4-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 64
+              },
+              {
+                "k": "strength",
+                "val": 70
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 85
+              },
+              {
+                "k": "strength",
+                "val": 86
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 93
+              },
+              {
+                "k": "strength",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 98
+              },
+              {
+                "k": "strength",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 75
+              },
+              {
+                "k": "strength",
+                "val": 79
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "postUpPoet": {
+      "attrs": [
+        {
+          "k": "postControl"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 67
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 87
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "postControl",
+                "val": 77
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "posterizer": {
+      "attrs": [
+        {
+          "k": "drivingDunk"
+        },
+        {
+          "k": "vertical"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 73
+              },
+              {
+                "k": "vertical",
+                "val": 65
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 93
+              },
+              {
+                "k": "vertical",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 96
+              },
+              {
+                "k": "vertical",
+                "val": 85
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 99
+              },
+              {
+                "k": "vertical",
+                "val": 90
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 87
+              },
+              {
+                "k": "vertical",
+                "val": 75
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "reboundChaser": {
+      "attrs": [
+        {
+          "k": "defensiveRebound"
+        },
+        {
+          "k": "offensiveRebound"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 60
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 60
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 82
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 82
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 94
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 94
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 98
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "defensiveRebound",
+                "val": 70
+              },
+              {
+                "k": "offensiveRebound",
+                "val": 70
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "riseUp": {
+      "attrs": [
+        {
+          "k": "standingDunk"
+        },
+        {
+          "k": "vertical"
+        }
+      ],
+      "height": "6'6-7'4",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "standingDunk",
+                "val": 72
+              },
+              {
+                "k": "vertical",
+                "val": 60
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "standingDunk",
+                "val": 90
+              },
+              {
+                "k": "vertical",
+                "val": 66
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "standingDunk",
+                "val": 95
+              },
+              {
+                "k": "vertical",
+                "val": 69
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "standingDunk",
+                "val": 99
+              },
+              {
+                "k": "vertical",
+                "val": 71
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "standingDunk",
+                "val": 81
+              },
+              {
+                "k": "vertical",
+                "val": 62
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "setShotSpecialist": {
+      "attrs": [
+        {
+          "k": "midRange"
+        },
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 65
+              },
+              {
+                "k": "threePoint",
+                "val": 65
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 89
+              },
+              {
+                "k": "threePoint",
+                "val": 89
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 93
+              },
+              {
+                "k": "threePoint",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 98
+              },
+              {
+                "k": "threePoint",
+                "val": 98
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 78
+              },
+              {
+                "k": "threePoint",
+                "val": 78
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "shiftyShooter": {
+      "attrs": [
+        {
+          "k": "midRange"
+        },
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": "5'9-6'11",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 76
+              },
+              {
+                "k": "threePoint",
+                "val": 76
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 91
+              },
+              {
+                "k": "threePoint",
+                "val": 91
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 96
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 99
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 87
+              },
+              {
+                "k": "threePoint",
+                "val": 87
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "slipperyOffBall": {
+      "attrs": [
+        {
+          "k": "speed"
+        },
+        {
+          "k": "agility"
+        }
+      ],
+      "height": "5'9-6'9",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "speed",
+                "val": 57
+              },
+              {
+                "k": "agility",
+                "val": 57
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "speed",
+                "val": 85
+              },
+              {
+                "k": "agility",
+                "val": 77
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "speed",
+                "val": 92
+              },
+              {
+                "k": "agility",
+                "val": 88
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "speed",
+                "val": 99
+              },
+              {
+                "k": "agility",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "speed",
+                "val": 73
+              },
+              {
+                "k": "agility",
+                "val": 65
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "strongHandle": {
+      "attrs": [
+        {
+          "k": "ballHandle"
+        },
+        {
+          "k": "strength"
+        }
+      ],
+      "height": "5'9-6'11",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 60
+              },
+              {
+                "k": "strength",
+                "val": 60
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 73
+              },
+              {
+                "k": "strength",
+                "val": 73
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 77
+              },
+              {
+                "k": "strength",
+                "val": 84
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 80
+              },
+              {
+                "k": "strength",
+                "val": 93
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 67
+              },
+              {
+                "k": "strength",
+                "val": 65
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "unpluckable": {
+      "attrs": [
+        {
+          "k": "ballHandle"
+        },
+        {
+          "k": "postControl"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "any": [
+              {
+                "k": "postControl",
+                "val": 75
+              },
+              {
+                "k": "ballHandle",
+                "val": 70
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 96
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "ballHandle",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "any": [
+              {
+                "k": "postControl",
+                "val": 86
+              },
+              {
+                "k": "ballHandle",
+                "val": 80
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "versatileVisionary": {
+      "attrs": [
+        {
+          "k": "passAccuracy"
+        }
+      ],
+      "height": "All",
+      "tiers": {
+        "bronze": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 70
+              }
+            ]
+          }
+        ],
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 84
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 95
+              }
+            ]
+          }
+        ],
+        "legend": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "silver": [
+          {
+            "all": [
+              {
+                "k": "passAccuracy",
+                "val": 76
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "label": "NBA 2K26",
+  "meta": {
+    "badgeCountOfficial": 40,
+    "complete": true,
+    "legendViaSynergy": false,
+    "notes": [],
+    "sources": [
+      "https://nba.2k.com/2k26/seasons/"
+    ]
+  },
+  "positionWeights": {
+    "C": {
+      "agility": 0.4,
+      "ballHandle": 0.1,
+      "block": 0.9,
+      "closeShot": 0.7,
+      "defensiveRebound": 0.9,
+      "drivingDunk": 0.4,
+      "drivingLayup": 0.3,
+      "freeThrow": 0.3,
+      "interiorDefense": 0.9,
+      "midRange": 0.3,
+      "offensiveRebound": 0.7,
+      "passAccuracy": 0.3,
+      "perimeterDefense": 0.3,
+      "postControl": 0.7,
+      "speed": 0.4,
+      "speedWithBall": 0.1,
+      "standingDunk": 0.8,
+      "steal": 0.3,
+      "strength": 0.9,
+      "threePoint": 0.3,
+      "vertical": 0.6
+    },
+    "PF": {
+      "agility": 0.5,
+      "ballHandle": 0.3,
+      "block": 0.7,
+      "closeShot": 0.6,
+      "defensiveRebound": 0.7,
+      "drivingDunk": 0.6,
+      "drivingLayup": 0.5,
+      "freeThrow": 0.4,
+      "interiorDefense": 0.7,
+      "midRange": 0.5,
+      "offensiveRebound": 0.6,
+      "passAccuracy": 0.4,
+      "perimeterDefense": 0.5,
+      "postControl": 0.6,
+      "speed": 0.5,
+      "speedWithBall": 0.3,
+      "standingDunk": 0.7,
+      "steal": 0.4,
+      "strength": 0.8,
+      "threePoint": 0.5,
+      "vertical": 0.6
+    },
+    "PG": {
+      "agility": 0.9,
+      "ballHandle": 1,
+      "block": 0.1,
+      "closeShot": 0.3,
+      "defensiveRebound": 0.3,
+      "drivingDunk": 0.5,
+      "drivingLayup": 0.7,
+      "freeThrow": 0.5,
+      "interiorDefense": 0.2,
+      "midRange": 0.8,
+      "offensiveRebound": 0.2,
+      "passAccuracy": 0.9,
+      "perimeterDefense": 0.7,
+      "postControl": 0.2,
+      "speed": 0.8,
+      "speedWithBall": 0.9,
+      "standingDunk": 0.1,
+      "steal": 0.6,
+      "strength": 0.3,
+      "threePoint": 1,
+      "vertical": 0.4
+    },
+    "SF": {
+      "agility": 0.7,
+      "ballHandle": 0.6,
+      "block": 0.4,
+      "closeShot": 0.5,
+      "defensiveRebound": 0.5,
+      "drivingDunk": 0.7,
+      "drivingLayup": 0.6,
+      "freeThrow": 0.4,
+      "interiorDefense": 0.5,
+      "midRange": 0.7,
+      "offensiveRebound": 0.4,
+      "passAccuracy": 0.5,
+      "perimeterDefense": 0.7,
+      "postControl": 0.4,
+      "speed": 0.6,
+      "speedWithBall": 0.5,
+      "standingDunk": 0.4,
+      "steal": 0.5,
+      "strength": 0.6,
+      "threePoint": 0.7,
+      "vertical": 0.5
+    },
+    "SG": {
+      "agility": 0.8,
+      "ballHandle": 0.8,
+      "block": 0.2,
+      "closeShot": 0.4,
+      "defensiveRebound": 0.4,
+      "drivingDunk": 0.7,
+      "drivingLayup": 0.7,
+      "freeThrow": 0.5,
+      "interiorDefense": 0.3,
+      "midRange": 0.8,
+      "offensiveRebound": 0.3,
+      "passAccuracy": 0.6,
+      "perimeterDefense": 0.8,
+      "postControl": 0.3,
+      "speed": 0.7,
+      "speedWithBall": 0.7,
+      "standingDunk": 0.2,
+      "steal": 0.6,
+      "strength": 0.4,
+      "threePoint": 0.9,
+      "vertical": 0.5
+    }
+  },
+  "seasons": [
+    {
+      "from": "2025-09-05",
+      "label": "S1",
+      "n": 1,
+      "name": "Season 1",
+      "to": "2025-10-16",
+      "zh": "第1赛季"
+    },
+    {
+      "from": "2025-10-17",
+      "label": "S2",
+      "n": 2,
+      "name": "Season 2",
+      "to": "2025-11-27",
+      "zh": "第2赛季"
+    },
+    {
+      "from": "2025-11-28",
+      "label": "S3",
+      "n": 3,
+      "name": "Season 3",
+      "to": "2026-01-08",
+      "zh": "第3赛季"
+    },
+    {
+      "from": "2026-01-09",
+      "label": "S4",
+      "n": 4,
+      "name": "Season 4",
+      "to": "2026-02-19",
+      "zh": "第4赛季"
+    },
+    {
+      "from": "2026-02-20",
+      "label": "S5",
+      "n": 5,
+      "name": "Season 5",
+      "to": "2026-04-02",
+      "zh": "第5赛季"
+    },
+    {
+      "from": "2026-04-03",
+      "label": "S6",
+      "n": 6,
+      "name": "Season 6",
+      "to": "2026-05-14",
+      "zh": "第6赛季"
+    },
+    {
+      "from": "2026-05-15",
+      "label": "S7",
+      "n": 7,
+      "name": "Season 7",
+      "to": "2026-06-25",
+      "zh": "第7赛季"
+    },
+    {
+      "from": "2026-06-26",
+      "label": "S8",
+      "n": 8,
+      "name": "Season 8",
+      "to": "2026-08-06",
+      "zh": "第8赛季"
+    }
+  ],
+  "subtitle": [
+    "NBA 2K26 // THE CITY ARCHIVE",
+    "NBA 2K26 // 城市档案"
+  ],
+  "tiers": [
+    {
+      "cls": "bronze",
+      "id": "bronze",
+      "label": "BR"
+    },
+    {
+      "cls": "silver",
+      "id": "silver",
+      "label": "SI"
+    },
+    {
+      "cls": "gold",
+      "id": "gold",
+      "label": "GO"
+    },
+    {
+      "cls": "hof",
+      "id": "hof",
+      "label": "HOF"
+    },
+    {
+      "cls": "legend",
+      "id": "legend",
+      "label": "LEG"
+    }
+  ],
+  "year": "2k26"
+}

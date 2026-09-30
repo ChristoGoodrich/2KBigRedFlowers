@@ -6,6 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Added `DESIGN_TOKENS.md`, a stack-agnostic soft-light glass design spec: a
+  four-tier glass elevation scale, catch-light borders, two-layer soft shadows,
+  a radius ramp with a concentric rule, motion curves, and a calmed accent
+  palette. Every token names the Flutter construct it maps to.
+- Added `nba2k-glass.css` implementing that spec, loaded after
+  `nba2k-premium.css` and before `nba2k-mobile.css`. Blur, saturation, and
+  radii now come from one scale instead of being chosen per call site.
+- Added `rust-core/nba2k-core`, the native core: game-year datasets, a build's
+  attribute ratings, badge tier evaluation, the position-weighted OVR estimate,
+  and season lookup. Pure logic only -- no storage, UI, clock, or network.
+  `npm run core:test` and `npm run core:check`; CI runs both in a `core` job.
+- Added `game-data/<year>.json`, exported from the JS datasets by
+  `scripts/export-gamedata.cjs` so the JS app and the Rust core read the same
+  numbers, with `scripts/gamedata-export-guard.cjs` failing the suite on drift.
+- Added `MIGRATION.md` recording the decided architecture (a Rust core linked
+  into the client over FFI, not a server, so records stay on the device), what
+  is done, and the migration cost that needs planning: a Flutter sandbox cannot
+  read the browser `localStorage` records, so the existing export/import path
+  has to carry them across.
+
+### Changed
+
+- Accent colours were pulled back from the previous broadcast palette. Neon
+  green and pure yellow bloomed through a blurred backdrop and stopped reading
+  as text colour. Semantics are unchanged.
+
 ## [1.1.0] - 2026-09-14
 
 ### Added

@@ -1,0 +1,1339 @@
+{
+  "animThresholds": {
+    "agility": [
+      {
+        "en": "Agile Movement",
+        "label": "灵活移动",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Agility",
+        "label": "顶级敏捷",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "ballHandle": [
+      {
+        "en": "Bronze Ankle Assassin",
+        "label": "铜脚踝终结",
+        "tier": "bronze",
+        "val": 75
+      },
+      {
+        "en": "Speed Boost Threshold",
+        "label": "速度加成阈值",
+        "tier": "silver",
+        "val": 85
+      },
+      {
+        "en": "Best Dribble Moves",
+        "label": "顶级运球动作",
+        "tier": "gold",
+        "val": 92
+      },
+      {
+        "en": "HOF Ankle Assassin",
+        "label": "HOF 脚踝终结",
+        "tier": "hof",
+        "val": 95
+      }
+    ],
+    "block": [
+      {
+        "en": "Basic Chase-Down Blocks",
+        "label": "基础追帽",
+        "tier": "bronze",
+        "val": 74
+      },
+      {
+        "en": "Effective Rim Protection",
+        "label": "有效护框",
+        "tier": "silver",
+        "val": 78
+      },
+      {
+        "en": "Elite Chase-Down Animations",
+        "label": "精英追帽动画",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "closeShot": [
+      {
+        "en": "Reliable Close Shot",
+        "label": "可靠近距离",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Close Shot",
+        "label": "精英近距离",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "defensiveRebound": [
+      {
+        "en": "Competitive Rebound Threshold",
+        "label": "竞技篮板门槛",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Rebounder",
+        "label": "精英篮板手",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "drivingDunk": [
+      {
+        "en": "Basic Contact Dunks",
+        "label": "基础隔扣",
+        "tier": "bronze",
+        "val": 84
+      },
+      {
+        "en": "Standard Contact Dunk Packages",
+        "label": "标准隔扣包",
+        "tier": "silver",
+        "val": 86
+      },
+      {
+        "en": "Elite Contact Dunks",
+        "label": "精英隔扣",
+        "tier": "gold",
+        "val": 92
+      },
+      {
+        "en": "Best Dunk Packages",
+        "label": "顶级隔扣包",
+        "tier": "hof",
+        "val": 93
+      }
+    ],
+    "drivingLayup": [
+      {
+        "en": "Basic Layup Packages",
+        "label": "基础终结包",
+        "tier": "bronze",
+        "val": 80
+      },
+      {
+        "en": "Advanced Layup Styles",
+        "label": "高级终结风格",
+        "tier": "silver",
+        "val": 85
+      },
+      {
+        "en": "Elite Layup Packages",
+        "label": "精英终结包",
+        "tier": "gold",
+        "val": 93
+      }
+    ],
+    "freeThrow": [
+      {
+        "en": "Consistent in Rec",
+        "label": "Rec/Pro-Am 可靠",
+        "tier": "bronze",
+        "val": 70
+      },
+      {
+        "en": "Reliable Free Throw",
+        "label": "稳定罚球",
+        "tier": "silver",
+        "val": 79
+      },
+      {
+        "en": "Very Consistent",
+        "label": "非常稳定",
+        "tier": "gold",
+        "val": 85
+      }
+    ],
+    "interiorDefense": [
+      {
+        "en": "Basic Paint Protection",
+        "label": "基础油漆区防守",
+        "tier": "bronze",
+        "val": 60
+      },
+      {
+        "en": "Effective vs Finishers",
+        "label": "有效内线防守",
+        "tier": "silver",
+        "val": 70
+      },
+      {
+        "en": "Elite Paint Protection",
+        "label": "精英油漆区防守",
+        "tier": "gold",
+        "val": 85
+      }
+    ],
+    "midRange": [
+      {
+        "en": "Reliable Mid-Range",
+        "label": "可靠中投",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Mid-Range",
+        "label": "精英中投",
+        "tier": "gold",
+        "val": 88
+      },
+      {
+        "en": "Elite Mid-Range",
+        "label": "顶级中投",
+        "tier": "hof",
+        "val": 95
+      }
+    ],
+    "offensiveRebound": [
+      {
+        "en": "Competitive Rebound Threshold",
+        "label": "竞技篮板门槛",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Rebounder",
+        "label": "精英篮板手",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "passAccuracy": [
+      {
+        "en": "Bronze Dimer",
+        "label": "铜妙传手",
+        "tier": "bronze",
+        "val": 55
+      },
+      {
+        "en": "Silver Dimer",
+        "label": "银妙传手",
+        "tier": "silver",
+        "val": 71
+      },
+      {
+        "en": "Gold Dimer",
+        "label": "金妙传手",
+        "tier": "gold",
+        "val": 82
+      },
+      {
+        "en": "HOF Dimer",
+        "label": "HOF 妙传手",
+        "tier": "hof",
+        "val": 92
+      }
+    ],
+    "perimeterDefense": [
+      {
+        "en": "Competitive Lock Threshold",
+        "label": "竞技锁防门槛",
+        "tier": "silver",
+        "val": 85
+      },
+      {
+        "en": "Elite Perimeter Lockdown",
+        "label": "精英外线锁防",
+        "tier": "gold",
+        "val": 92
+      },
+      {
+        "en": "Top-Tier Lock Build",
+        "label": "顶级锁防建模",
+        "tier": "hof",
+        "val": 94
+      }
+    ],
+    "speed": [
+      {
+        "en": "Fast Guard",
+        "label": "快速后卫",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Elite Speed",
+        "label": "极速",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "speedWithBall": [
+      {
+        "en": "Bronze Lightning Launch",
+        "label": "铜闪电启动",
+        "tier": "bronze",
+        "val": 68
+      },
+      {
+        "en": "Silver Lightning Launch",
+        "label": "银闪电启动",
+        "tier": "silver",
+        "val": 75
+      },
+      {
+        "en": "Gold Lightning Launch",
+        "label": "金闪电启动",
+        "tier": "gold",
+        "val": 86
+      },
+      {
+        "en": "HOF Lightning Launch",
+        "label": "HOF 闪电启动",
+        "tier": "hof",
+        "val": 91
+      }
+    ],
+    "standingDunk": [
+      {
+        "en": "Basic Standing Dunks",
+        "label": "基础站扣",
+        "tier": "bronze",
+        "val": 60
+      },
+      {
+        "en": "Silver Aerial Wizard",
+        "label": "银空接奇才",
+        "tier": "silver",
+        "val": 75
+      },
+      {
+        "en": "Gold Aerial Wizard",
+        "label": "金空接奇才",
+        "tier": "gold",
+        "val": 84
+      },
+      {
+        "en": "HOF Aerial Wizard",
+        "label": "HOF 空接奇才",
+        "tier": "hof",
+        "val": 92
+      }
+    ],
+    "steal": [
+      {
+        "en": "Bronze Interceptor/Glove",
+        "label": "铜拦截/手套",
+        "tier": "bronze",
+        "val": 73
+      },
+      {
+        "en": "Silver Interceptor/Glove",
+        "label": "银拦截/手套",
+        "tier": "silver",
+        "val": 79
+      },
+      {
+        "en": "Gold Interceptor",
+        "label": "金拦截",
+        "tier": "gold",
+        "val": 85
+      },
+      {
+        "en": "HOF Interceptor/Glove",
+        "label": "HOF 拦截/手套",
+        "tier": "hof",
+        "val": 91
+      }
+    ],
+    "strength": [
+      {
+        "en": "Post Move Foundation",
+        "label": "背身基础",
+        "tier": "bronze",
+        "val": 70
+      },
+      {
+        "en": "Strong Physical Play",
+        "label": "强力对抗",
+        "tier": "silver",
+        "val": 80
+      },
+      {
+        "en": "Dominant Physical Play",
+        "label": "统治级对抗",
+        "tier": "gold",
+        "val": 90
+      }
+    ],
+    "threePoint": [
+      {
+        "en": "Bronze Deadeye",
+        "label": "铜 Deadeye",
+        "tier": "bronze",
+        "val": 73
+      },
+      {
+        "en": "Consistent Green Window",
+        "label": "稳定绿窗",
+        "tier": "bronze",
+        "val": 76
+      },
+      {
+        "en": "Bronze Limitless Range",
+        "label": "铜无限射程",
+        "tier": "silver",
+        "val": 83
+      },
+      {
+        "en": "Silver Limitless Range",
+        "label": "银无限射程",
+        "tier": "gold",
+        "val": 89
+      },
+      {
+        "en": "Gold Limitless Range",
+        "label": "金无限射程",
+        "tier": "hof",
+        "val": 93
+      },
+      {
+        "en": "HOF Limitless Range",
+        "label": "名人堂无限射程",
+        "tier": "legend",
+        "val": 96
+      }
+    ],
+    "vertical": [
+      {
+        "en": "Contact Dunk Vertical",
+        "label": "基础隔扣垂直要求",
+        "tier": "bronze",
+        "val": 70
+      },
+      {
+        "en": "Elite Vertical",
+        "label": "精英弹跳",
+        "tier": "silver",
+        "val": 80
+      }
+    ]
+  },
+  "attrGroups": {
+    "def": {
+      "keys": [
+        "interiorDefense",
+        "perimeterDefense",
+        "steal",
+        "block"
+      ],
+      "label": "DEFENSE",
+      "zhLabel": "防守"
+    },
+    "fin": {
+      "keys": [
+        "closeShot",
+        "drivingLayup",
+        "drivingDunk",
+        "standingDunk",
+        "postControl"
+      ],
+      "label": "FINISHING",
+      "zhLabel": "终结"
+    },
+    "phy": {
+      "keys": [
+        "speed",
+        "agility",
+        "strength",
+        "vertical"
+      ],
+      "label": "PHYSICALS",
+      "zhLabel": "身体"
+    },
+    "pla": {
+      "keys": [
+        "passAccuracy",
+        "ballHandle",
+        "speedWithBall"
+      ],
+      "label": "PLAYMAKING",
+      "zhLabel": "组织"
+    },
+    "reb": {
+      "keys": [
+        "offensiveRebound",
+        "defensiveRebound"
+      ],
+      "label": "REBOUNDING",
+      "zhLabel": "篮板"
+    },
+    "sho": {
+      "keys": [
+        "midRange",
+        "threePoint",
+        "freeThrow"
+      ],
+      "label": "SHOOTING",
+      "zhLabel": "投篮"
+    }
+  },
+  "attrLabels": {
+    "agility": [
+      "Agility",
+      "敏捷"
+    ],
+    "ballHandle": [
+      "Ball Handle",
+      "控球"
+    ],
+    "block": [
+      "Block",
+      "盖帽"
+    ],
+    "closeShot": [
+      "Close Shot",
+      "近距投篮"
+    ],
+    "defensiveRebound": [
+      "Defensive Rebound",
+      "后板"
+    ],
+    "drivingDunk": [
+      "Driving Dunk",
+      "移动扣篮"
+    ],
+    "drivingLayup": [
+      "Driving Layup",
+      "上篮"
+    ],
+    "freeThrow": [
+      "Free Throw",
+      "罚球"
+    ],
+    "interiorDefense": [
+      "Interior Defense",
+      "内防"
+    ],
+    "midRange": [
+      "Mid-Range",
+      "中距"
+    ],
+    "offensiveRebound": [
+      "Offensive Rebound",
+      "前板"
+    ],
+    "passAccuracy": [
+      "Pass Accuracy",
+      "传球准度"
+    ],
+    "perimeterDefense": [
+      "Perimeter Defense",
+      "外防"
+    ],
+    "postControl": [
+      "Post Control",
+      "背身单打"
+    ],
+    "speed": [
+      "Speed",
+      "速度"
+    ],
+    "speedWithBall": [
+      "Speed With Ball",
+      "带球速度"
+    ],
+    "standingDunk": [
+      "Standing Dunk",
+      "站立扣篮"
+    ],
+    "steal": [
+      "Steal",
+      "抢断"
+    ],
+    "strength": [
+      "Strength",
+      "力量"
+    ],
+    "threePoint": [
+      "Three-Point",
+      "三分"
+    ],
+    "vertical": [
+      "Vertical",
+      "弹跳"
+    ]
+  },
+  "badgeCategories": [
+    {
+      "badges": [
+        {
+          "confidence": "confirmed",
+          "desc": "Contact dunks and strong finishes / 隔扣与强力终结",
+          "id": "posterizer",
+          "name": "Posterizer"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Finishing through contact / 对抗下完成终结",
+          "id": "physicalFinisher",
+          "name": "Physical Finisher"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Lobs, putbacks, and aerial finishes / 空接、补扣与空中终结",
+          "id": "aerialWizard",
+          "name": "Aerial Wizard"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Post hooks near the rim / 低位勾手能力",
+          "id": "hookSpecialist",
+          "name": "Hook Specialist"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Power moves from the post / 背身强攻能力",
+          "id": "postPowerhouse",
+          "name": "Post Powerhouse"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Creative layup packages / 多样化上篮变化",
+          "id": "layupMixmaster",
+          "name": "Layup Mixmaster"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Standing dunks in traffic / 人群中的原地扣篮",
+          "id": "riseUp",
+          "name": "Rise Up"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Interior touch and paint scoring / 禁区手感与篮下得分",
+          "id": "paintProdigy",
+          "name": "Paint Prodigy"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Floaters and soft touch / 抛投与柔和手感",
+          "id": "floatGame",
+          "name": "Float Game"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "postSpinCatalyst",
+          "isNew": true,
+          "name": "Post Spin Catalyst"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "ghostStepper",
+          "isNew": true,
+          "name": "Ghost Stepper"
+        }
+      ],
+      "id": "finishing",
+      "label": "FINISHING / 终结"
+    },
+    {
+      "badges": [
+        {
+          "confidence": "confirmed",
+          "desc": "Deep three-point shooting / 超远三分投射",
+          "id": "limitlessRange",
+          "name": "Limitless Range"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Shooting boost for smaller guards / 小个后卫投篮加成",
+          "id": "miniMarksman",
+          "name": "Mini Marksman"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Contested jumper resistance / 顶投抗干扰能力",
+          "id": "deadeye",
+          "name": "Deadeye"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Post fades and turnarounds / 背身后仰与转身跳投",
+          "id": "postFadePhenom",
+          "name": "Post Fade Phenom"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "setAndFire",
+          "isNew": true,
+          "name": "Set and Fire"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "arcCadence",
+          "isNew": true,
+          "name": "Arc Cadence"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "staticMiddy",
+          "isNew": true,
+          "name": "Static Middy"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "smoothOperator",
+          "isNew": true,
+          "name": "Smooth Operator"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "quickTrigger",
+          "isNew": true,
+          "name": "Quick Trigger"
+        }
+      ],
+      "id": "shooting",
+      "label": "SHOOTING / 投篮"
+    },
+    {
+      "badges": [
+        {
+          "confidence": "confirmed",
+          "desc": "Dribble moves that create separation / 运球晃动制造空间",
+          "id": "ankleAssassin",
+          "name": "Ankle Assassin"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Quick first step with the ball / 持球快速启动",
+          "id": "lightningLaunch",
+          "name": "Lightning Launch"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Passing out of bad shots or drives / 出手或突破中的救球传球",
+          "id": "bailOut",
+          "name": "Bail Out"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Ball security under pressure / 对抗压力下护球",
+          "id": "unpluckable",
+          "name": "Unpluckable"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Advanced passing reads / 高阶传球视野",
+          "id": "versatileVisionary",
+          "name": "Versatile Visionary"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Control through bumps and contact / 对抗中的控球稳定性",
+          "id": "strongHandle",
+          "name": "Strong Handle"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Dribble stamina and combo control / 运球体力与连招控制",
+          "id": "handlesForDays",
+          "name": "Handles for Days"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Outlet passes after rebounds / 抢板后的快攻长传",
+          "id": "breakStarter",
+          "name": "Break Starter"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Boosts teammates after passes / 传球后提升队友终结",
+          "id": "dimer",
+          "name": "Dimer"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "",
+          "id": "pace",
+          "isNew": true,
+          "name": "Pace"
+        }
+      ],
+      "id": "playmaking",
+      "label": "PLAYMAKING / 组织"
+    },
+    {
+      "badges": [
+        {
+          "confidence": "confirmed",
+          "desc": "Bodies up the drive, pairing perimeter defense with agility / 贴身跟防突破，结合外防与敏捷",
+          "id": "seatbelt",
+          "isNew": true,
+          "name": "Seatbelt"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Hands-up contests in the paint / 禁区举手干扰",
+          "id": "wallUp",
+          "isNew": true,
+          "name": "Wall Up"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Perimeter shot contests / 外线投篮干扰",
+          "id": "challenger",
+          "name": "Challenger"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "On-ball pressure defense / 持球人压迫防守",
+          "id": "onBallMenace",
+          "name": "On-Ball Menace"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Steals and strip attempts / 抢断与掏球",
+          "id": "glove",
+          "name": "Glove"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Navigating screens / 绕过掩护",
+          "id": "pickDodger",
+          "name": "Pick Dodger"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Passing lane steals / 传球路线拦截",
+          "id": "interceptor",
+          "name": "Interceptor"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Defending post scorers / 低位防守",
+          "id": "postLockdown",
+          "name": "Post Lockdown"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Holding ground on defense / 防守端站稳位置",
+          "id": "immovableEnforcer",
+          "name": "Immovable Enforcer"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Denying off-ball movement / 无球纠缠与干扰",
+          "id": "offBallPest",
+          "name": "Off-Ball Pest"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Interior deterrence and contests / 禁区威慑与干扰",
+          "id": "paintPatroller",
+          "name": "Paint Patroller"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Chase-downs and vertical blocks / 追帽与高点封盖",
+          "id": "highFlyingDenier",
+          "name": "High-Flying Denier"
+        }
+      ],
+      "id": "defense",
+      "label": "DEFENSE / 防守"
+    },
+    {
+      "badges": [
+        {
+          "confidence": "confirmed",
+          "desc": "Attacking the offensive glass / 冲抢前场篮板",
+          "id": "crasher",
+          "isNew": true,
+          "name": "Crasher"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Improves boxouts when you initiate them / 主动卡位时提升卡位效果",
+          "id": "boxoutBoss",
+          "isNew": true,
+          "name": "Boxout Boss"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Speed to loose balls and beating opponents to them / 争抢地板球的速度与抢先能力",
+          "id": "workHorse",
+          "isNew": true,
+          "name": "Work Horse"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Boxouts and rebounding position / 卡位与篮板位置",
+          "id": "boxoutBeast",
+          "name": "Boxout Beast"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Pursuing loose rebounds / 篮板追逐能力",
+          "id": "reboundChaser",
+          "name": "Rebound Chaser"
+        }
+      ],
+      "id": "rebounding",
+      "label": "REBOUNDING / 篮板"
+    },
+    {
+      "badges": [
+        {
+          "confidence": "confirmed",
+          "desc": "Faster off-ball movement in transition, on offense or defense / 转换中无球移动更快，攻防皆可",
+          "id": "flash",
+          "isNew": true,
+          "name": "Flash"
+        },
+        {
+          "confidence": "confirmed",
+          "desc": "Physical contact drains the opponent's energy / 身体对抗消耗对手体力",
+          "id": "bruiser",
+          "isNew": true,
+          "name": "Bruiser"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Repeated jumps and blocks / 连续起跳与封盖",
+          "id": "pogoStick",
+          "name": "Pogo Stick"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Screens and physical contact / 掩护质量与身体对抗",
+          "id": "brickWall",
+          "name": "Brick Wall"
+        },
+        {
+          "confidence": "provisional",
+          "desc": "Getting open without the ball / 无球摆脱跑位",
+          "id": "slipperyOffBall",
+          "name": "Slippery Off-Ball"
+        }
+      ],
+      "id": "physicals",
+      "label": "PHYSICALS / 身体"
+    }
+  ],
+  "badgeThresholds": {
+    "limitlessRange": {
+      "attrs": [
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": null,
+      "tiers": {
+        "bronze": null,
+        "gold": null,
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "legend": null,
+        "silver": null
+      }
+    },
+    "posterizer": {
+      "attrs": [
+        {
+          "k": "drivingDunk"
+        },
+        {
+          "k": "vertical"
+        }
+      ],
+      "height": null,
+      "tiers": {
+        "bronze": null,
+        "gold": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 93
+              },
+              {
+                "k": "vertical",
+                "val": 80
+              }
+            ]
+          }
+        ],
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "drivingDunk",
+                "val": 99
+              },
+              {
+                "k": "vertical",
+                "val": 90
+              }
+            ]
+          }
+        ],
+        "legend": null,
+        "silver": null
+      }
+    },
+    "quickTrigger": {
+      "attrs": [
+        {
+          "k": "midRange"
+        },
+        {
+          "k": "threePoint"
+        }
+      ],
+      "height": null,
+      "tiers": {
+        "bronze": null,
+        "gold": null,
+        "hof": [
+          {
+            "any": [
+              {
+                "k": "midRange",
+                "val": 99
+              },
+              {
+                "k": "threePoint",
+                "val": 99
+              }
+            ]
+          }
+        ],
+        "legend": null,
+        "silver": null
+      }
+    },
+    "seatbelt": {
+      "attrs": [
+        {
+          "k": "perimeterDefense"
+        },
+        {
+          "k": "agility"
+        }
+      ],
+      "height": null,
+      "tiers": {
+        "bronze": null,
+        "gold": null,
+        "hof": null,
+        "legend": null,
+        "silver": null
+      }
+    },
+    "wallUp": {
+      "attrs": [
+        {
+          "k": "interiorDefense"
+        },
+        {
+          "k": "strength"
+        }
+      ],
+      "height": null,
+      "tiers": {
+        "bronze": null,
+        "gold": null,
+        "hof": [
+          {
+            "all": [
+              {
+                "k": "interiorDefense",
+                "val": 99
+              },
+              {
+                "k": "strength",
+                "val": 92
+              }
+            ]
+          }
+        ],
+        "legend": null,
+        "silver": null
+      }
+    }
+  },
+  "label": "NBA 2K27",
+  "meta": {
+    "animThresholdsVerified": false,
+    "attributesVerified": false,
+    "badgeCountOfficial": 53,
+    "badgeSlots": 20,
+    "complete": false,
+    "legendViaSynergy": true,
+    "notes": [
+      "Badge disciplines are six in 2K27 (Rebounding and Physicals are separate catalogs); 2K26 merged them into one.",
+      "Post Fade Phenom moved from Finishing (2K26) to Shooting (2K27).",
+      "2K has not named the six badges removed from the 2K26 set, so entries marked provisional may no longer exist.",
+      "Four confirmed new badges have no published discipline yet and are listed in meta.pendingBadges instead of a catalog group.",
+      "Published HOF thresholds match 2K26 legend numbers (Posterizer HOF is 99 Driving Dunk / 90 Vertical), so the tier ladder appears compressed by one step.",
+      "2K27 links some attributes: raising one can force related minimums up. The build form does not model this yet.",
+      "Attributes, attribute groups, position weights, and animation unlock thresholds are carried over from 2K26 and are NOT verified against 2K27."
+    ],
+    "pendingBadges": [
+      "Ankle Braces",
+      "Possession Closer",
+      "Sync Snatcher",
+      "Breaker"
+    ],
+    "positionWeightsVerified": false,
+    "seasonsVerified": "season1StartOnly",
+    "sources": [
+      "https://newsroom.2k.com/news/nbar-2k27-season-1-tips-off-with-early-access-on-august-26",
+      "https://timesaver.gg/blog/nba-2k27-new-badges-explained",
+      "https://www.shacknews.com/article/150389/nba-2k27-all-badges",
+      "https://www.nba2klab.com/badge-descriptions",
+      "https://2kmyplayer.com/badges/2k27"
+    ]
+  },
+  "positionWeights": {
+    "C": {
+      "agility": 0.3,
+      "ballHandle": 0.1,
+      "block": 0.9,
+      "closeShot": 0.7,
+      "defensiveRebound": 0.9,
+      "drivingDunk": 0.4,
+      "drivingLayup": 0.3,
+      "freeThrow": 0.3,
+      "interiorDefense": 0.9,
+      "midRange": 0.3,
+      "offensiveRebound": 0.7,
+      "passAccuracy": 0.3,
+      "perimeterDefense": 0.3,
+      "postControl": 0.7,
+      "speed": 0.5,
+      "speedWithBall": 0.1,
+      "standingDunk": 0.8,
+      "steal": 0.3,
+      "strength": 0.9,
+      "threePoint": 0.3,
+      "vertical": 0.6
+    },
+    "PF": {
+      "agility": 0.5,
+      "ballHandle": 0.3,
+      "block": 0.7,
+      "closeShot": 0.6,
+      "defensiveRebound": 0.7,
+      "drivingDunk": 0.6,
+      "drivingLayup": 0.5,
+      "freeThrow": 0.4,
+      "interiorDefense": 0.7,
+      "midRange": 0.5,
+      "offensiveRebound": 0.6,
+      "passAccuracy": 0.4,
+      "perimeterDefense": 0.5,
+      "postControl": 0.6,
+      "speed": 0.5,
+      "speedWithBall": 0.3,
+      "standingDunk": 0.7,
+      "steal": 0.4,
+      "strength": 0.8,
+      "threePoint": 0.5,
+      "vertical": 0.6
+    },
+    "PG": {
+      "agility": 0.9,
+      "ballHandle": 1,
+      "block": 0.1,
+      "closeShot": 0.3,
+      "defensiveRebound": 0.3,
+      "drivingDunk": 0.5,
+      "drivingLayup": 0.7,
+      "freeThrow": 0.5,
+      "interiorDefense": 0.2,
+      "midRange": 0.8,
+      "offensiveRebound": 0.2,
+      "passAccuracy": 0.9,
+      "perimeterDefense": 0.7,
+      "postControl": 0.2,
+      "speed": 0.8,
+      "speedWithBall": 0.9,
+      "standingDunk": 0.1,
+      "steal": 0.6,
+      "strength": 0.3,
+      "threePoint": 1,
+      "vertical": 0.4
+    },
+    "SF": {
+      "agility": 0.7,
+      "ballHandle": 0.6,
+      "block": 0.4,
+      "closeShot": 0.5,
+      "defensiveRebound": 0.5,
+      "drivingDunk": 0.7,
+      "drivingLayup": 0.6,
+      "freeThrow": 0.4,
+      "interiorDefense": 0.5,
+      "midRange": 0.7,
+      "offensiveRebound": 0.4,
+      "passAccuracy": 0.5,
+      "perimeterDefense": 0.7,
+      "postControl": 0.4,
+      "speed": 0.6,
+      "speedWithBall": 0.5,
+      "standingDunk": 0.4,
+      "steal": 0.5,
+      "strength": 0.6,
+      "threePoint": 0.7,
+      "vertical": 0.5
+    },
+    "SG": {
+      "agility": 0.8,
+      "ballHandle": 0.8,
+      "block": 0.2,
+      "closeShot": 0.4,
+      "defensiveRebound": 0.4,
+      "drivingDunk": 0.7,
+      "drivingLayup": 0.7,
+      "freeThrow": 0.5,
+      "interiorDefense": 0.3,
+      "midRange": 0.8,
+      "offensiveRebound": 0.3,
+      "passAccuracy": 0.6,
+      "perimeterDefense": 0.8,
+      "postControl": 0.3,
+      "speed": 0.7,
+      "speedWithBall": 0.7,
+      "standingDunk": 0.2,
+      "steal": 0.6,
+      "strength": 0.4,
+      "threePoint": 0.9,
+      "vertical": 0.5
+    }
+  },
+  "seasons": [
+    {
+      "estimated": true,
+      "from": "2026-08-26",
+      "label": "S1",
+      "n": 1,
+      "name": "Season 1",
+      "to": "2026-10-15",
+      "zh": "第1赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2026-10-16",
+      "label": "S2",
+      "n": 2,
+      "name": "Season 2",
+      "to": "2026-11-26",
+      "zh": "第2赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2026-11-27",
+      "label": "S3",
+      "n": 3,
+      "name": "Season 3",
+      "to": "2027-01-07",
+      "zh": "第3赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2027-01-08",
+      "label": "S4",
+      "n": 4,
+      "name": "Season 4",
+      "to": "2027-02-18",
+      "zh": "第4赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2027-02-19",
+      "label": "S5",
+      "n": 5,
+      "name": "Season 5",
+      "to": "2027-04-01",
+      "zh": "第5赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2027-04-02",
+      "label": "S6",
+      "n": 6,
+      "name": "Season 6",
+      "to": "2027-05-13",
+      "zh": "第6赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2027-05-14",
+      "label": "S7",
+      "n": 7,
+      "name": "Season 7",
+      "to": "2027-06-24",
+      "zh": "第7赛季"
+    },
+    {
+      "estimated": true,
+      "from": "2027-06-25",
+      "label": "S8",
+      "n": 8,
+      "name": "Season 8",
+      "to": "2027-08-05",
+      "zh": "第8赛季"
+    }
+  ],
+  "subtitle": [
+    "NBA 2K27 // THE CITY ARCHIVE",
+    "NBA 2K27 // 城市档案"
+  ],
+  "tiers": [
+    {
+      "cls": "bronze",
+      "id": "bronze",
+      "label": "BR"
+    },
+    {
+      "cls": "silver",
+      "id": "silver",
+      "label": "SI"
+    },
+    {
+      "cls": "gold",
+      "id": "gold",
+      "label": "GO"
+    },
+    {
+      "cls": "hof",
+      "id": "hof",
+      "label": "HOF"
+    },
+    {
+      "cls": "legend",
+      "id": "legend",
+      "label": "LEG",
+      "viaSynergy": true
+    }
+  ],
+  "year": "2k27"
+}

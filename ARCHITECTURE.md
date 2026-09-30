@@ -41,6 +41,39 @@ Styles are split by page layer and loaded in cascade order:
 - `nba2k-i18n.js`: Translation dictionary and `t()` helper.
 - `nba2k-render-modules.js`: Shared render HTML snippets, including build list and account bar.
 
+## Native Core
+
+`rust-core/nba2k-core` holds the pure logic the clients share: badge tier
+evaluation, the position-weighted OVR estimate, and season lookup, over the
+game-year datasets. No storage, no UI, no clock, no network -- the caller passes
+the date in, so the boundary cases are testable.
+
+It is a library linked into the client, not a service. The app is local-first,
+so "backend" here means a crate reached over FFI (`flutter_rust_bridge`) or
+compiled to WASM, with records staying on the device. See `MIGRATION.md` for the
+staged plan and for the one user-visible cost: browser `localStorage` records
+cannot be read by a Flutter sandbox, so the existing export/import path has to
+carry them across.
+
+- `rust-core/nba2k-core/src/gamedata.rs`: dataset types, deserialized from
+  `game-data/*.json` embedded at compile time.
+- `rust-core/nba2k-core/src/attrs.rs`: a build's ratings, keyed by dataset
+  attribute id rather than by struct fields, because the attribute list is
+  per-year data.
+- `rust-core/nba2k-core/src/badges.rs`: tier evaluation and auto-unlock.
+- `rust-core/nba2k-core/src/ovr.rs`: position-weighted estimate.
+- `rust-core/nba2k-core/src/seasons.rs`: date to season, with an explicit stale
+  answer past the end of the table.
+- `rust-core/nba2k-core/tests/invariants.rs`: the same invariants
+  `scripts/gamedata-guard.cjs` pins on the JS side, so the two implementations
+  cannot diverge in behaviour.
+
+Run it with `npm run core:test`, and `npm run core:check` for fmt plus clippy.
+CI runs both in a separate `core` job.
+
+An unpublished badge tier is `None`, never an empty list: an empty requirement
+list reads as "no requirement" and would unlock the badge for every build.
+
 ## Game Year Data
 
 Per-game data is registered with a small registry instead of living inline in

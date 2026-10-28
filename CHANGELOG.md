@@ -33,6 +33,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Accent colours were pulled back from the previous broadcast palette. Neon
   green and pure yellow bloomed through a blurred backdrop and stopped reading
   as text colour. Semantics are unchanged.
+- `sharp` moves to 0.35 for desktop icon generation, and CI moves to
+  `actions/checkout` v7 and `actions/setup-node` v7.
+
+### Security
+
+- Applied every `npm audit` fix that stays within the declared version ranges,
+  taking the dependency tree from 49 advisories (4 critical) to 38 (3 critical)
+  and 163 fewer installed packages. All of it is build tooling; nothing that
+  ships in the app changed. The remaining advisories need a deliberate
+  upgrade: Capacitor 8.5.3, Electron Forge 8, and an Electron 42 patch release.
 
 ## [1.1.0] - 2026-09-14
 

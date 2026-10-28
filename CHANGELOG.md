@@ -36,6 +36,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `sharp` moves to 0.35 for desktop icon generation, and CI moves to
   `actions/checkout` v7 and `actions/setup-node` v7.
 
+### Fixed
+
+- 2K27 Season 1 is no longer shown as an estimate. Season 2 launched on
+  2026-10-16, per 2K's announcement, so Season 1 ran 2026-08-26 to
+  2026-10-15. Season 2 now starts on its real date; its end and every later
+  season are still projections and still marked as such.
+
 ### Security
 
 - Applied every `npm audit` fix that stays within the declared version ranges,

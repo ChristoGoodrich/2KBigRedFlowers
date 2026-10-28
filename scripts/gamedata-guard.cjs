@@ -183,8 +183,16 @@ assert(
   '2k27 season table starts on the confirmed Season 1 date',
 );
 assert(
-  d27.seasons.every(s => s.estimated === true),
-  '2k27 marks every season range estimated while 2K has not published end dates',
+  d27.seasons[0].estimated === false && d27.seasons[0].to === '2026-10-15',
+  '2k27 Season 1 is confirmed: it ends the day before the announced Season 2 launch',
+);
+assert(
+  d27.seasons[1].from === '2026-10-16',
+  '2k27 Season 2 starts on its announced 2026-10-16 launch',
+);
+assert(
+  d27.seasons.slice(1).every(s => s.estimated === true),
+  '2k27 marks every range from Season 2 on estimated while 2K has not published their end dates',
 );
 for (let i = 1; i < d27.seasons.length; i++) {
   assert(

@@ -17,12 +17,13 @@
   const G = window.NBA2K_GAMEDATA;
   const { req, reqAll, reqAny, tierReq } = G.helpers;
 
-  // Season 1 start is confirmed. The end date has not been published, so the
-  // remaining ranges follow the six-week cadence 2K has used since 2K25 and are
-  // flagged estimated so the UI can say so.
+  // Season 1 is fully known: 2K announced its 2026-08-26 start, and Season 2
+  // launched 2026-10-16, so Season 1 ended the day before. Season 2's end and
+  // every later season follow the six-week cadence 2K has used since 2K25 and
+  // stay flagged estimated so the UI can say so.
   const SEASON_WEEKS = 6;
   const seasons = [
-    { n: 1, label: 'S1', name: 'Season 1', zh: '第1赛季', from: '2026-08-26', to: '2026-10-15', estimated: true },
+    { n: 1, label: 'S1', name: 'Season 1', zh: '第1赛季', from: '2026-08-26', to: '2026-10-15', estimated: false },
   ];
   for (let n = 2; n <= 8; n++) {
     const prev = seasons[n - 2];
@@ -54,12 +55,13 @@
       // so every legend tier below is null by design, not by omission.
       legendViaSynergy: true,
       badgeSlots: 20,
-      seasonsVerified: 'season1StartOnly',
+      seasonsVerified: 'throughSeason2Start',
       attributesVerified: false,
       positionWeightsVerified: false,
       animThresholdsVerified: false,
       sources: [
         'https://newsroom.2k.com/news/nbar-2k27-season-1-tips-off-with-early-access-on-august-26',
+        'https://newsroom.2k.com/news/nbar-2k27-season-2-celebrates-nba-tip-off',
         'https://timesaver.gg/blog/nba-2k27-new-badges-explained',
         'https://www.shacknews.com/article/150389/nba-2k27-all-badges',
         'https://www.nba2klab.com/badge-descriptions',

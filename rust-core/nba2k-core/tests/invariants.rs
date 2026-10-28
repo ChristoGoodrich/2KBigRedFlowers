@@ -289,16 +289,23 @@ fn a_date_before_the_first_season_is_reported_too() {
 }
 
 #[test]
-fn the_2k27_table_starts_on_the_confirmed_date_and_is_marked_estimated() {
+fn the_2k27_table_confirms_season_1_and_projects_the_rest() {
     let data = gamedata::load("2k27").unwrap();
+    let first = data.seasons.first().unwrap();
     assert_eq!(
-        data.seasons.first().map(|s| s.from.as_str()),
-        Some("2026-08-26")
+        (first.from.as_str(), first.to.as_str()),
+        ("2026-08-26", "2026-10-15")
     );
-    assert_eq!(seasons::season_number(&data, "2026-08-26"), Some(1));
     assert!(
-        data.seasons.iter().all(|s| s.estimated),
-        "no 2k27 season end date is published, so every bound is a projection",
+        !first.estimated,
+        "Season 1 ends the day before the announced Season 2 launch, so it is not a projection",
+    );
+    assert_eq!(data.seasons[1].from, "2026-10-16");
+    assert_eq!(seasons::season_number(&data, "2026-10-15"), Some(1));
+    assert_eq!(seasons::season_number(&data, "2026-10-16"), Some(2));
+    assert!(
+        data.seasons[1..].iter().all(|s| s.estimated),
+        "no 2k27 end date from Season 2 on is published, so those bounds are projections",
     );
     assert!(seasons::has_estimated_bounds(&data));
 }
